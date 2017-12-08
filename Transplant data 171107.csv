@@ -1,0 +1,601 @@
+newID,DonorSpp,Transplant,Treatment,Rep,Transect,Position,Offset,Side,Transplant date,Surv171015,VWC171110,Notes
+1,POSE,ARTR,Feedback,1,1,4,4,R,10-Oct-17,3,0.7,extra plant added 171030
+2,POSE,ARTR,Exclusion,1,1,4,4,R,10-Oct-17,4,,
+3,POSE,ARTR,Control,1,1,4,4,R,10-Oct-17,3,,
+4,POSE,HECO,Feedback,1,1,4.6,4,R,10-Oct-17,1,7.9,
+5,POSE,HECO,Exclusion,1,1,4.6,4,R,15-Oct-17,0,,replace after grasshopper
+6,POSE,HECO,Control,1,1,4.6,4,R,15-Oct-17,0,,replace after grasshopper
+7,POSE,PSSP,Feedback,1,1,4.6,3,R,10-Oct-17,1,5.9,
+8,POSE,PSSP,Exclusion,1,1,4.6,3,R,10-Oct-17,1,,additional plant 28 Oct 2017
+9,POSE,PSSP,Control,1,1,4.6,3,R,10-Oct-17,1,,
+10,HECO,POSE,Feedback,1,1,5.4,0,,13-Oct-17,1,,
+11,HECO,POSE,Exclusion,1,1,5.4,0,,13-Oct-17,1,4.8,
+12,HECO,POSE,Control,1,1,5.4,0,,13-Oct-17,1,,
+13,POSE,POSE,Feedback,1,1,6,2.5,L,13-Oct-17,1,7.6,
+14,POSE,POSE,Exclusion,1,1,6,2.5,L,13-Oct-17,1,,
+15,POSE,POSE,Control,1,1,6,2.5,L,13-Oct-17,1,,
+16,HECO,ARTR,Feedback,1,1,7.7,0.5,R,10-Oct-17,3,,extra plant added 171030
+17,HECO,ARTR,Exclusion,1,1,7.7,0.5,R,10-Oct-17,3,2.6,extra plant added 171030
+18,HECO,ARTR,Control,1,1,7.7,0.5,R,10-Oct-17,3,,
+19,PSSP,ARTR,Feedback,1,1,7.7,1,R,13-Oct-17,3,2.1,
+20,PSSP,ARTR,Exclusion,1,1,7.7,1,R,13-Oct-17,3,,
+21,PSSP,ARTR,Control,1,1,7.7,1,R,13-Oct-17,3,,
+22,HECO,HECO,Feedback,1,1,8.5,2,R,10-Oct-17,1,,2 plants
+23,HECO,HECO,Exclusion,1,1,8.5,2,R,10-Oct-17,1,,
+24,HECO,HECO,Control,1,1,8.5,2,R,10-Oct-17,1,9.4,
+25,HECO,PSSP,Feedback,1,1,8.5,2,R,10-Oct-17,1,,additional plant 28 Oct 2017
+26,HECO,PSSP,Exclusion,1,1,8.5,2,R,10-Oct-17,1,,
+27,HECO,PSSP,Control,1,1,8.5,2,R,10-Oct-17,1,,
+28,BARE,ARTR,Feedback,1,1,8.6,3.5,L,10-Oct-17,4,,
+29,BARE,ARTR,Exclusion,1,1,8.6,3.5,L,10-Oct-17,3,,
+30,BARE,ARTR,Control,1,1,8.6,3.5,L,10-Oct-17,3,,
+31,BARE,HECO,Feedback,1,1,8.6,3.5,L,10-Oct-17,1,,
+32,BARE,HECO,Exclusion,1,1,8.6,3.5,L,10-Oct-17,1,,
+33,BARE,HECO,Control,1,1,8.6,3.5,L,10-Oct-17,1,,
+34,BARE,PSSP,Feedback,1,1,8.6,3.5,L,10-Oct-17,1,,additional plant 28 Oct 2017
+35,BARE,PSSP,Exclusion,1,1,8.6,3.5,L,10-Oct-17,1,,additional plant 28 Oct 2017
+36,BARE,PSSP,Control,1,1,8.6,3.5,L,10-Oct-17,1,9.3,additional plant 28 Oct 2017
+37,BARE,POSE,Feedback,1,1,8.6,3.5,L,13-Oct-17,1,1.3,
+38,BARE,POSE,Exclusion,1,1,8.6,3.5,L,13-Oct-17,1,,
+39,BARE,POSE,Control,1,1,8.6,3.5,L,13-Oct-17,1,,
+40,ARTR,ARTR,Feedback,1,1,9.5,0.5,L,10-Oct-17,3,,
+41,ARTR,ARTR,Exclusion,1,1,9.5,0.5,L,10-Oct-17,3,,
+42,ARTR,ARTR,Control,1,1,9.5,0.5,L,10-Oct-17,3,,
+43,ARTR,HECO,Feedback,1,1,9.5,0.5,L,10-Oct-17,1,,
+44,ARTR,HECO,Exclusion,1,1,9.5,0.5,L,10-Oct-17,1,,
+45,ARTR,HECO,Control,1,1,9.5,0.5,L,10-Oct-17,1,,
+46,ARTR,PSSP,Feedback,1,1,9.5,0.5,L,10-Oct-17,1,,
+47,ARTR,PSSP,Exclusion,1,1,9.5,0.5,L,10-Oct-17,1,,additional plant 28 Oct 2017
+48,ARTR,PSSP,Control,1,1,9.5,0.5,L,10-Oct-17,1,,
+49,ARTR,POSE,Feedback,1,1,9.5,0.5,L,13-Oct-17,1,,
+50,ARTR,POSE,Exclusion,1,1,9.5,0.5,L,13-Oct-17,1,,
+51,ARTR,POSE,Control,1,1,9.5,0.5,L,13-Oct-17,1,,
+52,PSSP,HECO,Feedback,1,1,10,1,R,10-Oct-17,1,,
+53,PSSP,HECO,Exclusion,1,1,10,1,R,15-Oct-17,0,,replace after grasshopper
+54,PSSP,HECO,Control,1,1,10,1,R,10-Oct-17,1,,
+55,PSSP,PSSP,Feedback,1,1,10,1,R,10-Oct-17,1,8.2,
+56,PSSP,PSSP,Exclusion,1,1,10,1,R,15-Oct-17,0,,
+57,PSSP,PSSP,Control,1,1,10,1,R,10-Oct-17,1,,
+58,PSSP,POSE,Feedback,1,1,10,1,R,13-Oct-17,1,,
+59,PSSP,POSE,Exclusion,1,1,10,1,R,13-Oct-17,1,,
+60,PSSP,POSE,Control,1,1,10,1,R,13-Oct-17,1,,
+61,POSE,ARTR,Feedback,2,1,15,1,L,10-Oct-17,3,,
+62,POSE,ARTR,Exclusion,2,1,15,1,L,10-Oct-17,3,9.4,
+63,POSE,ARTR,Control,2,1,15,1,L,10-Oct-17,3,,
+64,POSE,HECO,Feedback,2,1,16.7,4,L,10-Oct-17,1,5.1,
+65,POSE,HECO,Exclusion,2,1,16.7,4,L,10-Oct-17,1,,
+66,POSE,HECO,Control,2,1,16.7,4,L,10-Oct-17,1,,
+67,HECO,ARTR,Feedback,2,1,17.2,4,L,10-Oct-17,2,,patch of 4 plants; 2 extra seedlings added 171030
+68,HECO,ARTR,Exclusion,2,1,17.2,4,L,10-Oct-17,3,,additional plant 28 Oct 2017
+69,HECO,ARTR,Control,2,1,17.2,4,L,10-Oct-17,3,,
+70,HECO,HECO,Feedback,2,1,17.2,4,L,10-Oct-17,1,,
+71,HECO,HECO,Exclusion,2,1,17.2,4,L,18-Oct-17,1,5.4,replace after grasshopper
+72,HECO,HECO,Control,2,1,17.2,4,L,10-Oct-17,1,,
+73,HECO,PSSP,Feedback,2,1,17.2,4,L,18-Oct-17,1,,replace after grasshopper
+74,HECO,PSSP,Exclusion,2,1,17.2,4,L,10-Oct-17,1,,
+75,HECO,PSSP,Control,2,1,17.2,4,L,10-Oct-17,1,4.6,additional plant 28 Oct 2017
+76,HECO,POSE,Feedback,2,1,17.2,4,L,15-Oct-17,0,,replace after grasshopper
+77,HECO,POSE,Exclusion,2,1,17.2,4,L,15-Oct-17,0,3.6,replace after grasshopper
+78,HECO,POSE,Control,2,1,17.2,4,L,13-Oct-17,1,,
+79,BARE,ARTR,Feedback,2,1,17.4,0,,10-Oct-17,4,,
+80,BARE,ARTR,Exclusion,2,1,17.4,0,,10-Oct-17,3,,
+81,BARE,ARTR,Control,2,1,17.4,0,,10-Oct-17,3,,
+82,BARE,HECO,Feedback,2,1,17.4,0,,10-Oct-17,1,,
+83,BARE,HECO,Exclusion,2,1,17.4,0,,10-Oct-17,1,,
+84,BARE,HECO,Control,2,1,17.4,0,,10-Oct-17,1,,
+85,BARE,PSSP,Feedback,2,1,17.4,0,,10-Oct-17,1,10.3,additional plant 28 Oct 2017
+86,BARE,PSSP,Exclusion,2,1,17.4,0,,10-Oct-17,1,,
+87,BARE,PSSP,Control,2,1,17.4,0,,10-Oct-17,1,,additional plant 28 Oct 2017
+88,BARE,POSE,Feedback,2,1,17.4,0,,13-Oct-17,1,,
+89,BARE,POSE,Exclusion,2,1,17.4,0,,13-Oct-17,1,,
+90,BARE,POSE,Control,2,1,17.4,0,,13-Oct-17,1,,
+91,ARTR,ARTR,Feedback,2,1,19,1.5,R,10-Oct-17,3,,
+92,ARTR,ARTR,Exclusion,2,1,19,1.5,R,10-Oct-17,2,,
+93,ARTR,ARTR,Control,2,1,19,1.5,R,10-Oct-17,3,3.7,
+94,ARTR,HECO,Feedback,2,1,19,1.5,R,10-Oct-17,1,,
+95,ARTR,HECO,Exclusion,2,1,19,1.5,R,10-Oct-17,1,,
+96,ARTR,HECO,Control,2,1,19,1.5,R,10-Oct-17,1,,
+97,ARTR,PSSP,Feedback,2,1,19,1.5,R,10-Oct-17,1,,
+98,ARTR,PSSP,Exclusion,2,1,19,1.5,R,10-Oct-17,1,,
+99,ARTR,PSSP,Control,2,1,19,1.5,R,10-Oct-17,1,,
+100,ARTR,POSE,Feedback,2,1,19,1.5,R,13-Oct-17,1,9.7,
+101,ARTR,POSE,Exclusion,2,1,19,1.5,R,13-Oct-17,1,,
+102,ARTR,POSE,Control,2,1,19,1.5,R,13-Oct-17,1,,
+103,POSE,PSSP,Feedback,2,1,19,3,R,10-Oct-17,1,9.2,
+104,POSE,PSSP,Exclusion,2,1,19,3,R,10-Oct-17,1,,
+105,POSE,PSSP,Control,2,1,19,3,R,10-Oct-17,1,,
+106,PSSP,ARTR,Feedback,2,1,19.6,5,R,10-Oct-17,3,,patch of 3 plants
+107,PSSP,ARTR,Exclusion,2,1,19.6,5,R,15-Oct-17,3,,3 buried and small plants replaced 171015
+108,PSSP,ARTR,Control,2,1,19.6,5,R,10-Oct-17,3,,
+109,PSSP,HECO,Feedback,2,1,19.6,5,R,10-Oct-17,1,,
+110,PSSP,HECO,Exclusion,2,1,19.6,5,R,10-Oct-17,1,,
+111,PSSP,HECO,Control,2,1,19.6,5,R,10-Oct-17,1,,
+112,PSSP,PSSP,Feedback,2,1,19.6,5,R,10-Oct-17,1,9,
+113,PSSP,PSSP,Exclusion,2,1,19.6,5,R,15-Oct-17,0,,replace after grasshopper
+114,PSSP,PSSP,Control,2,1,19.6,5,R,10-Oct-17,1,,
+115,PSSP,POSE,Feedback,2,1,19.6,5,R,13-Oct-17,1,2.3,
+116,PSSP,POSE,Exclusion,2,1,19.6,5,R,13-Oct-17,1,,
+117,PSSP,POSE,Control,2,1,19.6,5,R,13-Oct-17,1,,
+118,POSE,POSE,Feedback,2,1,21,0.5,R,13-Oct-17,1,6,
+119,POSE,POSE,Exclusion,2,1,21,0.5,R,13-Oct-17,1,,
+120,POSE,POSE,Control,2,1,21,0.5,R,13-Oct-17,1,,
+121,HECO,POSE,Feedback,3,1,24.4,0.5,L,13-Oct-17,1,,
+122,HECO,POSE,Exclusion,3,1,24.4,0.5,L,13-Oct-17,1,4.8,
+123,HECO,POSE,Control,3,1,24.4,0.5,L,13-Oct-17,1,,
+124,HECO,ARTR,Feedback,3,1,25.2,1.5,L,10-Oct-17,3,,
+125,HECO,ARTR,Exclusion,3,1,25.2,1.5,L,10-Oct-17,3,4,
+126,HECO,ARTR,Control,3,1,25.2,1.5,L,10-Oct-17,2,,
+127,HECO,HECO,Feedback,3,1,25.2,1.5,L,10-Oct-17,1,,
+128,HECO,HECO,Exclusion,3,1,25.2,1.5,L,10-Oct-17,1,,
+129,HECO,HECO,Control,3,1,25.2,1.5,L,10-Oct-17,1,,
+130,HECO,PSSP,Feedback,3,1,26.4,1.5,L,10-Oct-17,1,,
+131,HECO,PSSP,Exclusion,3,1,26.4,1.5,L,10-Oct-17,1,0.4,additional plant 28 Oct 2017; replaced again 171030
+132,HECO,PSSP,Control,3,1,26.4,1.5,L,10-Oct-17,1,,
+133,PSSP,PSSP,Feedback,3,1,29,1.5,R,10-Oct-17,1,,2 plants
+134,PSSP,PSSP,Exclusion,3,1,29,1.5,R,10-Oct-17,1,,
+135,PSSP,PSSP,Control,3,1,29,1.5,R,10-Oct-17,1,,
+136,PSSP,POSE,Feedback,3,1,29,1.5,R,13-Oct-17,1,,
+137,PSSP,POSE,Exclusion,3,1,29,1.5,R,13-Oct-17,1,,
+138,PSSP,POSE,Control,3,1,29,1.5,R,13-Oct-17,1,8.6,
+139,POSE,HECO,Feedback,3,1,30.6,1.5,R,10-Oct-17,1,,2 plants
+140,POSE,HECO,Exclusion,3,1,30.6,1.5,R,10-Oct-17,1,,
+141,POSE,HECO,Control,3,1,30.6,1.5,R,10-Oct-17,1,10.8,
+142,POSE,PSSP,Feedback,3,1,30.6,1.5,R,10-Oct-17,1,,
+143,POSE,PSSP,Exclusion,3,1,30.6,1.5,R,10-Oct-17,1,,additional plant 28 Oct 2017
+144,POSE,PSSP,Control,3,1,30.6,1.5,R,10-Oct-17,1,,
+145,POSE,ARTR,Feedback,3,1,31.6,2,L,10-Oct-17,3,,
+146,POSE,ARTR,Exclusion,3,1,31.6,2,L,10-Oct-17,3,6.7,
+147,POSE,ARTR,Control,3,1,31.6,2,L,10-Oct-17,3,,
+148,BARE,ARTR,Feedback,3,1,31.6,3,L,10-Oct-17,3,,
+149,BARE,ARTR,Exclusion,3,1,31.6,3,L,10-Oct-17,3,,
+150,BARE,ARTR,Control,3,1,31.6,3,L,10-Oct-17,3,,
+151,BARE,HECO,Feedback,3,1,31.6,3,L,10-Oct-17,1,,
+152,BARE,HECO,Exclusion,3,1,31.6,3,L,10-Oct-17,1,,
+153,BARE,HECO,Control,3,1,31.6,3,L,10-Oct-17,1,,
+154,BARE,PSSP,Feedback,3,1,31.6,3,L,10-Oct-17,1,,
+155,BARE,PSSP,Exclusion,3,1,31.6,3,L,10-Oct-17,1,7.3,
+156,BARE,PSSP,Control,3,1,31.6,3,L,10-Oct-17,1,,
+157,BARE,POSE,Feedback,3,1,31.6,3,L,26-Oct-17,1,,replace after grasshopper
+158,BARE,POSE,Exclusion,3,1,31.6,3,L,13-Oct-17,1,,
+159,BARE,POSE,Control,3,1,31.6,3,L,26-Oct-17,1,,replace after grasshopper
+160,ARTR,ARTR,Feedback,3,1,33.6,0,,10-Oct-17,3,,in between 2 sagebrush
+161,ARTR,ARTR,Exclusion,3,1,33.6,0,,10-Oct-17,3,6.8,
+162,ARTR,ARTR,Control,3,1,33.6,0,,10-Oct-17,3,,
+163,ARTR,HECO,Feedback,3,1,33.6,0,,10-Oct-17,1,,
+164,ARTR,HECO,Exclusion,3,1,33.6,0,,10-Oct-17,1,,
+165,ARTR,HECO,Control,3,1,33.6,0,,10-Oct-17,1,,
+166,ARTR,PSSP,Feedback,3,1,33.6,0,,18-Oct-17,1,,replace after grasshopper
+167,ARTR,PSSP,Exclusion,3,1,33.6,0,,10-Oct-17,1,,
+168,ARTR,PSSP,Control,3,1,33.6,0,,18-Oct-17,1,,replace after grasshopper
+169,ARTR,POSE,Feedback,3,1,33.6,0,,13-Oct-17,1,,
+170,ARTR,POSE,Exclusion,3,1,33.6,0,,26-Oct-17,1,,replace after grasshopper
+171,ARTR,POSE,Control,3,1,33.6,0,,26-Oct-17,1,,replace after grasshopper
+172,PSSP,ARTR,Feedback,3,1,33.6,4,R,10-Oct-17,3,,2 plants
+173,PSSP,ARTR,Exclusion,3,1,33.6,4,R,10-Oct-17,3,,
+174,PSSP,ARTR,Control,3,1,33.6,4,R,10-Oct-17,3,,
+175,PSSP,HECO,Feedback,3,1,33.6,4,R,10-Oct-17,1,,
+176,PSSP,HECO,Exclusion,3,1,33.6,4,R,10-Oct-17,1,8,
+177,PSSP,HECO,Control,3,1,33.6,4,R,10-Oct-17,1,,
+178,POSE,POSE,Feedback,3,1,35.4,1,L,13-Oct-17,1,,
+179,POSE,POSE,Exclusion,3,1,35.4,1,L,13-Oct-17,1,,
+180,POSE,POSE,Control,3,1,35.4,1,L,13-Oct-17,1,6.8,
+181,PSSP,PSSP,Feedback,4,2,6,4,L,10-Oct-17,1,,2 plants
+182,PSSP,PSSP,Exclusion,4,2,6,4,L,10-Oct-17,1,8.9,
+183,PSSP,PSSP,Control,4,2,6,4,L,10-Oct-17,1,,
+184,PSSP,POSE,Feedback,4,2,6,4,L,13-Oct-17,1,,
+185,PSSP,POSE,Exclusion,4,2,6,4,L,13-Oct-17,1,,
+186,PSSP,POSE,Control,4,2,6,4,L,13-Oct-17,1,,
+187,HECO,POSE,Feedback,4,2,7.3,5,L,13-Oct-17,1,,
+188,HECO,POSE,Exclusion,4,2,7.3,5,L,26-Oct-17,0,,replace after grasshopper (once 10/15 and again 10/26)
+189,HECO,POSE,Control,4,2,7.3,5,L,13-Oct-17,1,4.4,
+190,HECO,ARTR,Feedback,4,2,7.9,4,L,10-Oct-17,3,,additional plant 28 Oct 2017
+191,HECO,ARTR,Exclusion,4,2,7.9,4,L,10-Oct-17,3,4.4,
+192,HECO,ARTR,Control,4,2,7.9,4,L,10-Oct-17,3,,
+193,HECO,HECO,Feedback,4,2,7.9,4,L,10-Oct-17,1,,
+194,HECO,HECO,Exclusion,4,2,7.9,4,L,10-Oct-17,1,,
+195,HECO,HECO,Control,4,2,7.9,4,L,10-Oct-17,1,,
+196,ARTR,ARTR,Feedback,4,2,8.2,1,L,10-Oct-17,3,,
+197,ARTR,ARTR,Exclusion,4,2,8.2,1,L,10-Oct-17,3,,
+198,ARTR,ARTR,Control,4,2,8.2,1,L,10-Oct-17,3,,
+199,ARTR,HECO,Feedback,4,2,8.2,1,L,10-Oct-17,1,,
+200,ARTR,HECO,Exclusion,4,2,8.2,1,L,10-Oct-17,1,,
+201,ARTR,HECO,Control,4,2,8.2,1,L,10-Oct-17,1,,
+202,ARTR,PSSP,Feedback,4,2,8.2,1,L,10-Oct-17,1,12.9,
+203,ARTR,PSSP,Exclusion,4,2,8.2,1,L,10-Oct-17,1,,
+204,ARTR,PSSP,Control,4,2,8.2,1,L,10-Oct-17,1,,
+205,ARTR,POSE,Feedback,4,2,8.2,1,L,13-Oct-17,1,5.9,
+206,ARTR,POSE,Exclusion,4,2,8.2,1,L,13-Oct-17,1,,
+207,ARTR,POSE,Control,4,2,8.2,1,L,13-Oct-17,1,,
+208,HECO,PSSP,Feedback,4,2,9.5,4,L,10-Oct-17,1,,additional plant 28 Oct 2017
+209,HECO,PSSP,Exclusion,4,2,9.5,4,L,10-Oct-17,1,,
+210,HECO,PSSP,Control,4,2,9.5,4,L,10-Oct-17,1,5.5,additional plant 28 Oct 2017
+211,POSE,ARTR,Feedback,4,2,9.5,1,R,10-Oct-17,3,,
+212,POSE,ARTR,Exclusion,4,2,9.5,1,R,10-Oct-17,3,8.7,
+213,POSE,ARTR,Control,4,2,9.5,1,R,10-Oct-17,3,,
+214,POSE,HECO,Feedback,4,2,9.5,1,R,10-Oct-17,1,,
+215,POSE,HECO,Exclusion,4,2,9.5,1,R,10-Oct-17,1,,
+216,POSE,HECO,Control,4,2,9.5,1,R,10-Oct-17,1,,
+217,BARE,ARTR,Feedback,4,2,9.5,0,,10-Oct-17,3,,and adjacent areas
+218,BARE,ARTR,Exclusion,4,2,9.5,0,,10-Oct-17,3,7.9,
+219,BARE,ARTR,Control,4,2,9.5,0,,10-Oct-17,3,,
+220,BARE,HECO,Feedback,4,2,9.5,0,,10-Oct-17,1,,
+221,BARE,HECO,Exclusion,4,2,9.5,0,,10-Oct-17,1,,
+222,BARE,HECO,Control,4,2,9.5,0,,10-Oct-17,1,,
+223,BARE,PSSP,Feedback,4,2,9.5,0,,10-Oct-17,1,,
+224,BARE,PSSP,Exclusion,4,2,9.5,0,,10-Oct-17,1,,additional plant 28 Oct 2017
+225,BARE,PSSP,Control,4,2,9.5,0,,10-Oct-17,1,,
+226,BARE,POSE,Feedback,4,2,9.5,0,,13-Oct-17,1,,
+227,BARE,POSE,Exclusion,4,2,9.5,0,,13-Oct-17,1,,
+228,BARE,POSE,Control,4,2,9.5,0,,13-Oct-17,1,,
+229,POSE,PSSP,Feedback,4,2,10.2,1,L,10-Oct-17,1,,small patch
+230,POSE,PSSP,Exclusion,4,2,10.2,1,L,10-Oct-17,1,3.8,
+231,POSE,PSSP,Control,4,2,10.2,1,L,10-Oct-17,1,,
+232,POSE,POSE,Feedback,4,2,10.2,1,L,13-Oct-17,1,,
+233,POSE,POSE,Exclusion,4,2,10.2,1,L,13-Oct-17,1,,
+234,POSE,POSE,Control,4,2,10.2,1,L,13-Oct-17,1,,
+235,PSSP,ARTR,Feedback,4,2,10.9,2,R,12-Oct-17,3,,
+236,PSSP,ARTR,Exclusion,4,2,10.9,2,R,12-Oct-17,3,3.8,
+237,PSSP,ARTR,Control,4,2,10.9,2,R,12-Oct-17,3,,
+238,PSSP,HECO,Feedback,4,2,13,0.8,R,10-Oct-17,1,,
+239,PSSP,HECO,Exclusion,4,2,13,0.8,R,10-Oct-17,1,3.3,
+240,PSSP,HECO,Control,4,2,13,0.8,R,10-Oct-17,1,,
+241,HECO,ARTR,Feedback,5,2,17.8,0,,13-Oct-17,3,,
+242,HECO,ARTR,Exclusion,5,2,17.8,0,,13-Oct-17,3,,
+243,HECO,ARTR,Control,5,2,17.8,0,,13-Oct-17,3,7.7,
+244,HECO,HECO,Feedback,5,2,17.8,0,,10-Oct-17,1,,
+245,HECO,HECO,Exclusion,5,2,17.8,0,,10-Oct-17,1,,
+246,HECO,HECO,Control,5,2,17.8,0,,10-Oct-17,1,,
+247,HECO,PSSP,Feedback,5,2,17.8,0,,10-Oct-17,1,,plant 0.5 away L
+248,HECO,PSSP,Exclusion,5,2,17.8,0,,10-Oct-17,1,,
+249,HECO,PSSP,Control,5,2,17.8,0,,10-Oct-17,1,,additional plant 28 Oct 2017
+250,PSSP,PSSP,Feedback,5,2,18.3,3,L,10-Oct-17,1,,additional plant 28 Oct 2017
+251,PSSP,PSSP,Exclusion,5,2,18.3,3,L,10-Oct-17,1,3.4,additional plant 28 Oct 2017
+252,PSSP,PSSP,Control,5,2,18.3,3,L,15-Oct-17,1,,only on small leaf leaft replaced 171015; additional plant 28 Oct 2017
+253,PSSP,POSE,Feedback,5,2,18.3,3,L,13-Oct-17,1,,
+254,PSSP,POSE,Exclusion,5,2,18.3,3,L,13-Oct-17,1,,
+255,PSSP,POSE,Control,5,2,18.3,3,L,13-Oct-17,1,,
+256,POSE,ARTR,Feedback,5,2,18.3,2,L,12-Oct-17,3,,
+257,POSE,ARTR,Exclusion,5,2,18.3,2,L,12-Oct-17,3,,
+258,POSE,ARTR,Control,5,2,18.3,2,L,12-Oct-17,3,5.9,
+259,PSSP,ARTR,Feedback,5,2,18.5,0,L,12-Oct-17,3,,
+260,PSSP,ARTR,Exclusion,5,2,18.5,0,L,12-Oct-17,3,6.5,
+261,PSSP,ARTR,Control,5,2,18.5,0,L,12-Oct-17,3,,
+262,PSSP,HECO,Feedback,5,2,18.5,0,L,10-Oct-17,1,,
+263,PSSP,HECO,Exclusion,5,2,18.5,0,L,10-Oct-17,1,,
+264,PSSP,HECO,Control,5,2,18.5,0,L,10-Oct-17,1,,
+265,POSE,HECO,Feedback,5,2,18.5,3,L,10-Oct-17,1,,
+266,POSE,HECO,Exclusion,5,2,18.5,3,L,10-Oct-17,1,,
+267,POSE,HECO,Control,5,2,18.5,3,L,10-Oct-17,1,5,
+268,POSE,PSSP,Feedback,5,2,18.5,1.5,L,10-Oct-17,1,,
+269,POSE,PSSP,Exclusion,5,2,18.5,1.5,L,10-Oct-17,1,5,
+270,POSE,PSSP,Control,5,2,18.5,1.5,L,10-Oct-17,1,,additional plant 28 Oct 2017
+271,HECO,POSE,Feedback,5,2,19.3,3,R,18-Oct-17,1,,replace after grasshopper
+272,HECO,POSE,Exclusion,5,2,19.3,3,R,18-Oct-17,1,1.7,replace after grasshopper
+273,HECO,POSE,Control,5,2,19.3,3,R,26-Oct-17,1,,replace after grasshopper
+274,POSE,POSE,Feedback,5,2,20,0.5,L,13-Oct-17,1,,
+275,POSE,POSE,Exclusion,5,2,20,0.5,L,13-Oct-17,1,2.5,
+276,POSE,POSE,Control,5,2,20,0.5,L,13-Oct-17,1,,
+277,BARE,ARTR,Feedback,5,2,20.8,1.5,L,13-Oct-17,3,,
+278,BARE,ARTR,Exclusion,5,2,20.8,1.5,L,13-Oct-17,3,,
+279,BARE,ARTR,Control,5,2,20.8,1.5,L,13-Oct-17,3,,
+280,BARE,HECO,Feedback,5,2,20.8,1.5,L,10-Oct-17,1,5.6,
+281,BARE,HECO,Exclusion,5,2,20.8,1.5,L,10-Oct-17,1,,
+282,BARE,HECO,Control,5,2,20.8,1.5,L,10-Oct-17,1,,
+283,BARE,PSSP,Feedback,5,2,20.8,1.5,L,10-Oct-17,1,,
+284,BARE,PSSP,Exclusion,5,2,20.8,1.5,L,18-Oct-17,1,,color looked bad replaced 171018
+285,BARE,PSSP,Control,5,2,20.8,1.5,L,10-Oct-17,1,,
+286,BARE,POSE,Feedback,5,2,20.8,1.5,L,13-Oct-17,1,,
+287,BARE,POSE,Exclusion,5,2,20.8,1.5,L,26-Oct-17,1,,replace after grasshopper
+288,BARE,POSE,Control,5,2,20.8,1.5,L,26-Oct-17,1,,replace after grasshopper
+289,ARTR,ARTR,Feedback,5,2,22,1,R,13-Oct-17,3,,
+290,ARTR,ARTR,Exclusion,5,2,22,1,R,13-Oct-17,3,,
+291,ARTR,ARTR,Control,5,2,22,1,R,13-Oct-17,3,,
+292,ARTR,HECO,Feedback,5,2,22,1,R,10-Oct-17,1,,
+293,ARTR,HECO,Exclusion,5,2,22,1,R,15-Oct-17,0,,replace after grasshopper
+294,ARTR,HECO,Control,5,2,22,1,R,10-Oct-17,1,,
+295,ARTR,PSSP,Feedback,5,2,22,1,R,10-Oct-17,1,,
+296,ARTR,PSSP,Exclusion,5,2,22,1,R,10-Oct-17,1,,additional plant 28 Oct 2017
+297,ARTR,PSSP,Control,5,2,22,1,R,10-Oct-17,1,,additional plant 28 Oct 2017
+298,ARTR,POSE,Feedback,5,2,22,1,R,26-Oct-17,1,,replace after grasshopper (two times)
+299,ARTR,POSE,Exclusion,5,2,22,1,R,26-Oct-17,1,,replace after grasshopper (two times)
+300,ARTR,POSE,Control,5,2,22,1,R,26-Oct-17,1,,replace after grasshopper (two times)
+301,POSE,PSSP,Feedback,6,2,26,0,L,15-Oct-17,1,,group of 3
+302,POSE,PSSP,Exclusion,6,2,26,0,L,15-Oct-17,1,,
+303,POSE,PSSP,Control,6,2,26,0,L,15-Oct-17,1,3.4,
+304,POSE,POSE,Feedback,6,2,26,0,L,18-Oct-17,1,,replace after grasshopper
+305,POSE,POSE,Exclusion,6,2,26,0,L,18-Oct-17,1,,replace after grasshopper
+306,POSE,POSE,Control,6,2,26,0,L,13-Oct-17,1,,
+307,HECO,PSSP,Feedback,6,2,26.7,4,R,14-Oct-17,1,,group of 3
+308,HECO,PSSP,Exclusion,6,2,26.7,4,R,14-Oct-17,1,,
+309,HECO,PSSP,Control,6,2,26.7,4,R,14-Oct-17,1,,
+310,HECO,POSE,Feedback,6,2,26.7,4,R,13-Oct-17,1,,
+311,HECO,POSE,Exclusion,6,2,26.7,4,R,13-Oct-17,1,,
+312,HECO,POSE,Control,6,2,26.7,4,R,13-Oct-17,1,,
+313,PSSP,ARTR,Feedback,6,2,26.7,1.5,R,14-Oct-17,3,,group of 4
+314,PSSP,ARTR,Exclusion,6,2,26.7,1.5,R,14-Oct-17,3,,
+315,PSSP,ARTR,Control,6,2,26.7,1.5,R,14-Oct-17,3,,
+316,PSSP,HECO,Feedback,6,2,26.7,1.5,R,14-Oct-17,1,,
+317,PSSP,HECO,Exclusion,6,2,26.7,1.5,R,14-Oct-17,1,,
+318,PSSP,HECO,Control,6,2,26.7,1.5,R,14-Oct-17,1,,
+319,PSSP,PSSP,Feedback,6,2,26.7,1.5,R,15-Oct-17,1,,
+320,PSSP,PSSP,Exclusion,6,2,26.7,1.5,R,15-Oct-17,1,,
+321,PSSP,PSSP,Control,6,2,26.7,1.5,R,15-Oct-17,1,,
+322,PSSP,POSE,Feedback,6,2,26.7,1.5,R,13-Oct-17,1,,
+323,PSSP,POSE,Exclusion,6,2,26.7,1.5,R,26-Oct-17,1,,replace after grasshopper
+324,PSSP,POSE,Control,6,2,26.7,1.5,R,26-Oct-17,1,,replace after grasshopper
+325,HECO,ARTR,Feedback,6,2,27.6,0.5,R,14-Oct-17,3,,
+326,HECO,ARTR,Exclusion,6,2,27.6,0.5,R,14-Oct-17,3,,
+327,HECO,ARTR,Control,6,2,27.6,0.5,R,14-Oct-17,3,,
+328,ARTR,ARTR,Feedback,6,2,28.2,3,L,14-Oct-17,3,6.9,
+329,ARTR,ARTR,Exclusion,6,2,28.2,3,L,14-Oct-17,3,,
+330,ARTR,ARTR,Control,6,2,28.2,3,L,14-Oct-17,3,,
+331,ARTR,HECO,Feedback,6,2,28.2,3,L,14-Oct-17,0,,replace after grasshopper
+332,ARTR,HECO,Exclusion,6,2,28.2,3,L,14-Oct-17,1,,
+333,ARTR,HECO,Control,6,2,28.2,3,L,15-Oct-17,0,,replace after grasshopper
+334,ARTR,PSSP,Feedback,6,2,28.2,3,L,15-Oct-17,0,6.7,replace after grasshopper
+335,ARTR,PSSP,Exclusion,6,2,28.2,3,L,15-Oct-17,0,,replace after grasshopper
+336,ARTR,PSSP,Control,6,2,28.2,3,L,15-Oct-17,0,,replace after grasshopper
+337,ARTR,POSE,Feedback,6,2,28.2,3,L,18-Oct-17,1,,replace after grasshopper
+338,ARTR,POSE,Exclusion,6,2,28.2,3,L,18-Oct-17,0,,replace after grasshopper
+339,ARTR,POSE,Control,6,2,28.2,3,L,26-Oct-17,1,,replace after grasshopper (two times)
+340,HECO,HECO,Feedback,6,2,28.6,1.5,L,14-Oct-17,1,1.5,
+341,HECO,HECO,Exclusion,6,2,28.6,1.5,L,14-Oct-17,1,,
+342,HECO,HECO,Control,6,2,28.6,1.5,L,14-Oct-17,1,,
+343,BARE,ARTR,Feedback,6,2,29,2,L,14-Oct-17,3,,
+344,BARE,ARTR,Exclusion,6,2,29,2,L,14-Oct-17,3,,
+345,BARE,ARTR,Control,6,2,29,2,L,14-Oct-17,3,,
+346,BARE,HECO,Feedback,6,2,29,2,L,15-Oct-17,0,,replace after grasshopper
+347,BARE,HECO,Exclusion,6,2,29,2,L,15-Oct-17,0,3.7,replace after grasshopper
+348,BARE,HECO,Control,6,2,29,2,L,14-Oct-17,1,,
+349,BARE,PSSP,Feedback,6,2,29,2,L,15-Oct-17,1,,
+350,BARE,PSSP,Exclusion,6,2,29,2,L,15-Oct-17,1,,
+351,BARE,PSSP,Control,6,2,29,2,L,18-Oct-17,1,,replace after grasshopper
+352,BARE,POSE,Feedback,6,2,29,2,L,26-Oct-17,1,,replace after grasshopper
+353,BARE,POSE,Exclusion,6,2,29,2,L,26-Oct-17,1,,2 leaves left but good 171015; replace after grasshopper 171026
+354,BARE,POSE,Control,6,2,29,2,L,13-Oct-17,1,,
+355,POSE,ARTR,Feedback,6,2,30.9,0,L,14-Oct-17,3,,group of 3
+356,POSE,ARTR,Exclusion,6,2,30.9,0,L,14-Oct-17,3,,
+357,POSE,ARTR,Control,6,2,30.9,0,L,14-Oct-17,3,,
+358,POSE,HECO,Feedback,6,2,30.9,0,L,14-Oct-17,0,6.1,replace after grasshopper
+359,POSE,HECO,Exclusion,6,2,30.9,0,L,14-Oct-17,0,,replace after grasshopper
+360,POSE,HECO,Control,6,2,30.9,0,L,14-Oct-17,0,,replace after grasshopper
+361,ARTR,ARTR,Feedback,7,2,34,2,R,14-Oct-17,3,,
+362,ARTR,ARTR,Exclusion,7,2,34,2,R,14-Oct-17,3,,
+363,ARTR,ARTR,Control,7,2,34,2,R,14-Oct-17,3,,
+364,ARTR,HECO,Feedback,7,2,34,2,R,18-Oct-17,1,,replace after grasshopper
+365,ARTR,HECO,Exclusion,7,2,34,2,R,18-Oct-17,1,,replace after grasshopper
+366,ARTR,HECO,Control,7,2,34,2,R,18-Oct-17,1,,replace after grasshopper
+367,ARTR,PSSP,Feedback,7,2,34,2,R,18-Oct-17,1,1.4,replace after grasshopper
+368,ARTR,PSSP,Exclusion,7,2,34,2,R,18-Oct-17,1,,replace after grasshopper
+369,ARTR,PSSP,Control,7,2,34,2,R,18-Oct-17,1,,replace after grasshopper
+370,ARTR,POSE,Feedback,7,2,34,2,R,26-Oct-17,1,,replace after grasshopper (two times)
+371,ARTR,POSE,Exclusion,7,2,34,2,R,26-Oct-17,1,,replace after grasshopper (two times)
+372,ARTR,POSE,Control,7,2,34,2,R,26-Oct-17,1,,replace after grasshopper (two times)
+373,HECO,ARTR,Feedback,7,2,36,1,R,14-Oct-17,3,,
+374,HECO,ARTR,Exclusion,7,2,36,1,R,14-Oct-17,3,6.1,
+375,HECO,ARTR,Control,7,2,36,1,R,14-Oct-17,3,,
+376,POSE,ARTR,Feedback,7,2,36.5,3,R,14-Oct-17,3,,
+377,POSE,ARTR,Exclusion,7,2,36.5,3,R,14-Oct-17,3,8.6,
+378,POSE,ARTR,Control,7,2,36.5,3,R,14-Oct-17,3,,
+379,POSE,HECO,Feedback,7,2,36.5,3,R,14-Oct-17,1,,
+380,POSE,HECO,Exclusion,7,2,36.5,3,R,18-Oct-17,1,,replace after grasshopper
+381,POSE,HECO,Control,7,2,36.5,3,R,14-Oct-17,1,,
+382,POSE,POSE,Feedback,7,2,37,3.5,R,13-Oct-17,1,8.2,
+383,POSE,POSE,Exclusion,7,2,37,3.5,R,13-Oct-17,1,,
+384,POSE,POSE,Control,7,2,37,3.5,R,13-Oct-17,1,,
+385,POSE,PSSP,Feedback,7,2,38,3,R,15-Oct-17,1,,
+386,POSE,PSSP,Exclusion,7,2,38,3,R,15-Oct-17,1,,
+387,POSE,PSSP,Control,7,2,38,3,R,15-Oct-17,1,,
+388,BARE,ARTR,Feedback,7,2,38.8,4,R,14-Oct-17,3,,
+389,BARE,ARTR,Exclusion,7,2,38.8,4,R,14-Oct-17,3,,
+390,BARE,ARTR,Control,7,2,38.8,4,R,14-Oct-17,3,,
+391,BARE,HECO,Feedback,7,2,38.8,4,R,14-Oct-17,1,,
+392,BARE,HECO,Exclusion,7,2,38.8,4,R,14-Oct-17,1,,
+393,BARE,HECO,Control,7,2,38.8,4,R,14-Oct-17,1,,
+394,BARE,PSSP,Feedback,7,2,38.8,4,R,15-Oct-17,1,,
+395,BARE,PSSP,Exclusion,7,2,38.8,4,R,15-Oct-17,1,,
+396,BARE,PSSP,Control,7,2,38.8,4,R,15-Oct-17,1,9,
+397,BARE,POSE,Feedback,7,2,38.8,4,R,13-Oct-17,1,,
+398,BARE,POSE,Exclusion,7,2,38.8,4,R,13-Oct-17,1,,
+399,BARE,POSE,Control,7,2,38.8,4,R,13-Oct-17,1,,
+400,HECO,HECO,Feedback,7,2,39,0,R,15-Oct-17,0,,replace after grasshopper
+401,HECO,HECO,Exclusion,7,2,39,0,R,15-Oct-17,0,3.4,replace after grasshopper
+402,HECO,HECO,Control,7,2,39,0,R,15-Oct-17,0,,replace after grasshopper
+403,HECO,PSSP,Feedback,7,2,39.5,2,R,14-Oct-17,1,,2 plants
+404,HECO,PSSP,Exclusion,7,2,39.5,2,R,14-Oct-17,1,4.4,
+405,HECO,PSSP,Control,7,2,39.5,2,R,14-Oct-17,1,,
+406,HECO,POSE,Feedback,7,2,39.5,2,R,13-Oct-17,1,,
+407,HECO,POSE,Exclusion,7,2,39.5,2,R,13-Oct-17,1,,
+408,HECO,POSE,Control,7,2,39.5,2,R,13-Oct-17,1,,
+409,PSSP,ARTR,Feedback,7,2,40.7,2,R,14-Oct-17,3,,2 plants
+410,PSSP,ARTR,Exclusion,7,2,40.7,2,R,14-Oct-17,3,,
+411,PSSP,ARTR,Control,7,2,40.7,2,R,14-Oct-17,3,,
+412,PSSP,HECO,Feedback,7,2,40.7,2,R,14-Oct-17,1,4.3,
+413,PSSP,HECO,Exclusion,7,2,40.7,2,R,14-Oct-17,1,,
+414,PSSP,HECO,Control,7,2,40.7,2,R,14-Oct-17,1,,
+415,PSSP,PSSP,Feedback,7,2,40.7,3,R,15-Oct-17,1,3.7,
+416,PSSP,PSSP,Exclusion,7,2,40.7,3,R,15-Oct-17,1,,
+417,PSSP,PSSP,Control,7,2,40.7,3,R,15-Oct-17,1,,
+418,PSSP,POSE,Feedback,7,2,40.7,3,R,13-Oct-17,1,,
+419,PSSP,POSE,Exclusion,7,2,40.7,3,R,13-Oct-17,1,,
+420,PSSP,POSE,Control,7,2,40.7,3,R,13-Oct-17,1,,
+421,BARE,ARTR,Feedback,8,3,3.7,3,L,14-Oct-17,3,,
+422,BARE,ARTR,Exclusion,8,3,3.7,3,L,14-Oct-17,3,,
+423,BARE,ARTR,Control,8,3,3.7,3,L,14-Oct-17,3,,
+424,BARE,HECO,Feedback,8,3,3.7,3,L,14-Oct-17,1,,
+425,BARE,HECO,Exclusion,8,3,3.7,3,L,14-Oct-17,1,,
+426,BARE,HECO,Control,8,3,3.7,3,L,14-Oct-17,1,,
+427,BARE,PSSP,Feedback,8,3,3.7,3,L,15-Oct-17,1,,
+428,BARE,PSSP,Exclusion,8,3,3.7,3,L,15-Oct-17,1,,
+429,BARE,PSSP,Control,8,3,3.7,3,L,15-Oct-17,1,,
+430,BARE,POSE,Feedback,8,3,3.7,3,L,13-Oct-17,1,,
+431,BARE,POSE,Exclusion,8,3,3.7,3,L,13-Oct-17,1,5.9,
+432,BARE,POSE,Control,8,3,3.7,3,L,13-Oct-17,1,,
+433,POSE,PSSP,Feedback,8,3,5.7,3,R,15-Oct-17,1,,patch of 3 plants
+434,POSE,PSSP,Exclusion,8,3,5.7,3,R,15-Oct-17,1,,
+435,POSE,PSSP,Control,8,3,5.7,3,R,15-Oct-17,1,,
+436,POSE,POSE,Feedback,8,3,5.7,3,R,13-Oct-17,1,,
+437,POSE,POSE,Exclusion,8,3,5.7,3,R,13-Oct-17,1,,
+438,POSE,POSE,Control,8,3,5.7,3,R,13-Oct-17,1,7.7,
+439,HECO,ARTR,Feedback,8,3,7.4,1.5,R,14-Oct-17,3,,patch
+440,HECO,ARTR,Exclusion,8,3,7.4,1.5,R,14-Oct-17,3,,
+441,HECO,ARTR,Control,8,3,7.4,1.5,R,14-Oct-17,3,,
+442,HECO,HECO,Feedback,8,3,7.4,1.5,R,14-Oct-17,1,,
+443,HECO,HECO,Exclusion,8,3,7.4,1.5,R,10-Nov-17,1,,Original seedling dried out
+444,HECO,HECO,Control,8,3,7.4,1.5,R,14-Oct-17,1,,
+445,HECO,PSSP,Feedback,8,3,7.4,1.5,R,15-Oct-17,1,,
+446,HECO,PSSP,Exclusion,8,3,7.4,1.5,R,15-Oct-17,1,,
+447,HECO,PSSP,Control,8,3,7.4,1.5,R,15-Oct-17,1,,
+448,HECO,POSE,Feedback,8,3,7.4,1.5,R,13-Oct-17,1,7.4,
+449,HECO,POSE,Exclusion,8,3,7.4,1.5,R,13-Oct-17,1,,
+450,HECO,POSE,Control,8,3,7.4,1.5,R,13-Oct-17,1,,
+451,PSSP,ARTR,Feedback,8,3,7.7,2.5,R,14-Oct-17,3,,patch of 3 plants
+452,PSSP,ARTR,Exclusion,8,3,7.7,2.5,R,14-Oct-17,3,,
+453,PSSP,ARTR,Control,8,3,7.7,2.5,R,14-Oct-17,3,,
+454,PSSP,HECO,Feedback,8,3,7.7,2,R,14-Oct-17,1,,
+455,PSSP,HECO,Exclusion,8,3,7.7,2,R,14-Oct-17,1,,
+456,PSSP,HECO,Control,8,3,7.7,2,R,14-Oct-17,1,6.2,
+457,ARTR,ARTR,Feedback,8,3,9.5,0,L,14-Oct-17,3,,
+458,ARTR,ARTR,Exclusion,8,3,9.5,0,L,10-Nov-17,3,,All seedlings eaten and replaced
+459,ARTR,ARTR,Control,8,3,9.5,0,L,14-Oct-17,3,,
+460,ARTR,HECO,Feedback,8,3,9.5,0,L,14-Oct-17,1,,
+461,ARTR,HECO,Exclusion,8,3,9.5,0,L,14-Oct-17,1,,
+462,ARTR,HECO,Control,8,3,9.5,0,L,14-Oct-17,1,8.4,
+463,ARTR,PSSP,Feedback,8,3,9.5,0,L,15-Oct-17,1,,
+464,ARTR,PSSP,Exclusion,8,3,9.5,0,L,15-Oct-17,1,,
+465,ARTR,PSSP,Control,8,3,9.5,0,L,15-Oct-17,1,,
+466,ARTR,POSE,Feedback,8,3,9.5,0,L,13-Oct-17,1,,
+467,ARTR,POSE,Exclusion,8,3,9.5,0,L,13-Oct-17,1,,
+468,ARTR,POSE,Control,8,3,9.5,0,L,13-Oct-17,1,,
+469,POSE,ARTR,Feedback,8,3,10,2,L,14-Oct-17,3,4.4,patch of 2
+470,POSE,ARTR,Exclusion,8,3,10,2,L,14-Oct-17,3,,
+471,POSE,ARTR,Control,8,3,10,2,L,14-Oct-17,3,,
+472,POSE,HECO,Feedback,8,3,10,2,L,14-Oct-17,1,,
+473,POSE,HECO,Exclusion,8,3,10,2,L,14-Oct-17,1,,
+474,POSE,HECO,Control,8,3,10,2,L,14-Oct-17,1,,
+475,PSSP,PSSP,Feedback,8,3,11.3,0,L,15-Oct-17,1,,patch of 2
+476,PSSP,PSSP,Exclusion,8,3,11.3,0,L,15-Oct-17,1,,
+477,PSSP,PSSP,Control,8,3,11.3,0,L,15-Oct-17,1,,
+478,PSSP,POSE,Feedback,8,3,11.3,0,L,30-Oct-17,1,,"replace after grasshopper, replaced again when still eaten despite cage"
+479,PSSP,POSE,Exclusion,8,3,11.3,0,L,14-Oct-17,1,0.8,
+480,PSSP,POSE,Control,8,3,11.3,0,L,26-Oct-17,1,,replace after grasshopper
+481,POSE,POSE,Feedback,9,3,15,4,R,13-Oct-17,1,,
+482,POSE,POSE,Exclusion,9,3,15,4,R,15-Oct-17,0,,replace after grasshopper
+483,POSE,POSE,Control,9,3,15,4,R,15-Oct-17,0,5.1,replace after grasshopper
+484,HECO,POSE,Feedback,9,3,17.5,5,R,15-Oct-17,0,,watch out for other plants; replace after grasshopper
+485,HECO,POSE,Exclusion,9,3,17.5,5,R,13-Oct-17,1,9.1,
+486,HECO,POSE,Control,9,3,17.5,5,R,13-Oct-17,1,,
+487,PSSP,PSSP,Feedback,9,3,18,0.5,L,15-Oct-17,1,,
+488,PSSP,PSSP,Exclusion,9,3,18,0.5,L,15-Oct-17,1,,
+489,PSSP,PSSP,Control,9,3,18,0.5,L,15-Oct-17,1,7.5,
+490,PSSP,POSE,Feedback,9,3,18,0.5,L,13-Oct-17,1,,
+491,PSSP,POSE,Exclusion,9,3,18,0.5,L,13-Oct-17,1,,
+492,PSSP,POSE,Control,9,3,18,0.5,L,13-Oct-17,1,,
+493,PSSP,ARTR,Feedback,9,3,19.1,2,R,14-Oct-17,3,,
+494,PSSP,ARTR,Exclusion,9,3,19.1,2,R,14-Oct-17,3,10.1,
+495,PSSP,ARTR,Control,9,3,19.1,2,R,14-Oct-17,3,,
+496,PSSP,HECO,Feedback,9,3,19.1,2,R,14-Oct-17,1,,
+497,PSSP,HECO,Exclusion,9,3,19.1,2,R,14-Oct-17,1,6.7,
+498,PSSP,HECO,Control,9,3,19.1,2,R,14-Oct-17,1,,
+499,POSE,HECO,Feedback,9,3,19.1,1,L,14-Oct-17,1,,
+500,POSE,HECO,Exclusion,9,3,19.1,1,L,14-Oct-17,1,,only 1 leaf but looks good 171015
+501,POSE,HECO,Control,9,3,19.1,1,L,14-Oct-17,1,,
+502,POSE,PSSP,Feedback,9,3,19.1,1,L,15-Oct-17,1,4.1,
+503,POSE,PSSP,Exclusion,9,3,19.1,1,L,15-Oct-17,1,,
+504,POSE,PSSP,Control,9,3,19.1,1,L,15-Oct-17,1,,
+505,BARE,PSSP,Feedback,9,3,19.1,1.5,R,15-Oct-17,1,5.9,
+506,BARE,PSSP,Exclusion,9,3,19.1,1.5,R,15-Oct-17,1,,
+507,BARE,PSSP,Control,9,3,19.1,1.5,R,15-Oct-17,1,,
+508,BARE,POSE,Feedback,9,3,19.1,1.5,R,13-Oct-17,1,,
+509,BARE,POSE,Exclusion,9,3,19.1,1.5,R,13-Oct-17,1,,
+510,BARE,POSE,Control,9,3,19.1,1.5,R,13-Oct-17,1,,
+511,HECO,PSSP,Feedback,9,3,19.9,0.5,L,15-Oct-17,1,,
+512,HECO,PSSP,Exclusion,9,3,19.9,0.5,L,15-Oct-17,1,5,
+513,HECO,PSSP,Control,9,3,19.9,0.5,L,15-Oct-17,1,,
+514,POSE,ARTR,Feedback,9,3,20.2,0.5,L,14-Oct-17,3,,
+515,POSE,ARTR,Exclusion,9,3,20.2,0.5,L,14-Oct-17,3,,
+516,POSE,ARTR,Control,9,3,20.2,0.5,L,14-Oct-17,3,8,
+517,HECO,HECO,Feedback,9,3,20.7,0.5,R,14-Oct-17,1,5.5,
+518,HECO,HECO,Exclusion,9,3,20.7,0.5,R,14-Oct-17,1,,
+519,HECO,HECO,Control,9,3,20.7,0.5,R,14-Oct-17,1,,
+520,HECO,ARTR,Feedback,9,3,21.1,0.5,L,14-Oct-17,3,4.2,
+521,HECO,ARTR,Exclusion,9,3,21.1,0.5,L,14-Oct-17,3,,
+522,HECO,ARTR,Control,9,3,21.1,0.5,L,14-Oct-17,3,,
+523,BARE,ARTR,Feedback,9,3,21.9,3,R,14-Oct-17,3,,
+524,BARE,ARTR,Exclusion,9,3,21.9,3,R,14-Oct-17,3,,
+525,BARE,ARTR,Control,9,3,21.9,3,R,14-Oct-17,3,,
+526,BARE,HECO,Feedback,9,3,21.9,3,R,14-Oct-17,1,,
+527,BARE,HECO,Exclusion,9,3,21.9,3,R,14-Oct-17,1,1.5,
+528,BARE,HECO,Control,9,3,21.9,3,R,14-Oct-17,1,,
+529,ARTR,ARTR,Feedback,9,3,22.4,0,L,14-Oct-17,3,4.3,
+530,ARTR,ARTR,Exclusion,9,3,22.4,0,L,14-Oct-17,3,,
+531,ARTR,ARTR,Control,9,3,22.4,0,L,14-Oct-17,3,,
+532,ARTR,HECO,Feedback,9,3,22.4,0,L,14-Oct-17,1,,
+533,ARTR,HECO,Exclusion,9,3,22.4,0,L,14-Oct-17,1,,
+534,ARTR,HECO,Control,9,3,22.4,0,L,14-Oct-17,1,,
+535,ARTR,PSSP,Feedback,9,3,22.4,0,L,15-Oct-17,1,,
+536,ARTR,PSSP,Exclusion,9,3,22.4,0,L,15-Oct-17,1,,additional plant 28 Oct 2017
+537,ARTR,PSSP,Control,9,3,22.4,0,L,15-Oct-17,1,,
+538,ARTR,POSE,Feedback,9,3,22.4,0,L,13-Oct-17,1,,
+539,ARTR,POSE,Exclusion,9,3,22.4,0,L,13-Oct-17,1,,on other side of sagebrush
+540,ARTR,POSE,Control,9,3,22.4,0,L,13-Oct-17,1,,on other side of sagebrush
+541,PSSP,PSSP,Feedback,10,3,25,1,R,15-Oct-17,1,,on other side of sagebrush
+542,PSSP,PSSP,Exclusion,10,3,25,1,R,15-Oct-17,1,,
+543,PSSP,PSSP,Control,10,3,25,1,R,15-Oct-17,1,4.4,
+544,PSSP,POSE,Feedback,10,3,25,1,R,14-Oct-17,1,,
+545,PSSP,POSE,Exclusion,10,3,25,1,R,14-Oct-17,1,,
+546,PSSP,POSE,Control,10,3,25,1,R,14-Oct-17,1,,
+547,POSE,POSE,Feedback,10,3,28.5,5,L,14-Oct-17,1,7.9,
+548,POSE,POSE,Exclusion,10,3,28.5,5,L,14-Oct-17,1,,
+549,POSE,POSE,Control,10,3,28.5,5,L,14-Oct-17,1,,
+550,BARE,ARTR,Feedback,10,3,29,5,L,14-Oct-17,3,,additional plant 28 Oct 2017
+551,BARE,ARTR,Exclusion,10,3,29,5,L,14-Oct-17,3,,
+552,BARE,ARTR,Control,10,3,29,5,L,14-Oct-17,3,,
+553,BARE,HECO,Feedback,10,3,29,5,L,14-Oct-17,1,,
+554,BARE,HECO,Exclusion,10,3,29,5,L,14-Oct-17,1,,
+555,BARE,HECO,Control,10,3,29,5,L,14-Oct-17,1,,
+556,BARE,PSSP,Feedback,10,3,29,5,L,15-Oct-17,1,,
+557,BARE,PSSP,Exclusion,10,3,29,5,L,15-Oct-17,1,,
+558,BARE,PSSP,Control,10,3,29,5,L,15-Oct-17,1,6.3,
+559,BARE,POSE,Feedback,10,3,29,5,L,14-Oct-17,1,,
+560,BARE,POSE,Exclusion,10,3,29,5,L,14-Oct-17,1,,
+561,BARE,POSE,Control,10,3,29,5,L,14-Oct-17,1,,
+562,ARTR,ARTR,Feedback,10,3,30,1.5,L,14-Oct-17,3,,
+563,ARTR,ARTR,Exclusion,10,3,30,1.5,L,14-Oct-17,3,,
+564,ARTR,ARTR,Control,10,3,30,1.5,L,14-Oct-17,3,,
+565,ARTR,HECO,Feedback,10,3,30,1.5,L,14-Oct-17,1,,
+566,ARTR,HECO,Exclusion,10,3,30,1.5,L,14-Oct-17,1,,
+567,ARTR,HECO,Control,10,3,30,1.5,L,14-Oct-17,1,0.5,
+568,ARTR,PSSP,Feedback,10,3,30,1.5,L,15-Oct-17,1,,
+569,ARTR,PSSP,Exclusion,10,3,30,1.5,L,15-Oct-17,1,,
+570,ARTR,PSSP,Control,10,3,30,1.5,L,15-Oct-17,1,,
+571,ARTR,POSE,Feedback,10,3,30,1.5,L,14-Oct-17,1,,
+572,ARTR,POSE,Exclusion,10,3,30,1.5,L,26-Oct-17,1,,2 leaves left but good 171015; replace after grasshopper 171026
+573,ARTR,POSE,Control,10,3,30,1.5,L,14-Oct-17,1,,
+574,POSE,HECO,Feedback,10,3,32,6,L,14-Oct-17,1,,
+575,POSE,HECO,Exclusion,10,3,32,6,L,14-Oct-17,1,,
+576,POSE,HECO,Control,10,3,32,6,L,14-Oct-17,1,8.8,
+577,PSSP,ARTR,Feedback,10,3,32.4,7,L,14-Oct-17,3,,
+578,PSSP,ARTR,Exclusion,10,3,32.4,7,L,14-Oct-17,3,,
+579,PSSP,ARTR,Control,10,3,32.4,7,L,14-Oct-17,3,5.2,
+580,PSSP,HECO,Feedback,10,3,32.4,7,L,14-Oct-17,1,,
+581,PSSP,HECO,Exclusion,10,3,32.4,7,L,14-Oct-17,1,,
+582,PSSP,HECO,Control,10,3,32.4,7,L,14-Oct-17,1,,
+583,POSE,ARTR,Feedback,10,3,33,3,L,14-Oct-17,3,,
+584,POSE,ARTR,Exclusion,10,3,33,3,L,14-Oct-17,3,8.8,
+585,POSE,ARTR,Control,10,3,33,3,L,14-Oct-17,3,,
+586,HECO,ARTR,Feedback,10,3,34.7,1.5,L,14-Oct-17,3,,
+587,HECO,ARTR,Exclusion,10,3,34.7,1.5,L,14-Oct-17,3,5.2,
+588,HECO,ARTR,Control,10,3,34.7,1.5,L,14-Oct-17,3,,
+589,HECO,HECO,Feedback,10,3,36.6,5,L,14-Oct-17,1,,patch
+590,HECO,HECO,Exclusion,10,3,36.6,5,L,14-Oct-17,1,,
+591,HECO,HECO,Control,10,3,36.6,5,L,14-Oct-17,1,3.9,
+592,HECO,PSSP,Feedback,10,3,36.6,5,L,15-Oct-17,1,,
+593,HECO,PSSP,Exclusion,10,3,36.6,5,L,15-Oct-17,1,,
+594,HECO,PSSP,Control,10,3,36.6,5,L,15-Oct-17,1,,
+595,HECO,POSE,Feedback,10,3,36.6,5,L,14-Oct-17,1,,
+596,HECO,POSE,Exclusion,10,3,36.6,5,L,14-Oct-17,1,3.1,
+597,HECO,POSE,Control,10,3,36.6,5,L,14-Oct-17,1,,
+598,POSE,PSSP,Feedback,10,3,36.7,2.5,L,15-Oct-17,1,,
+599,POSE,PSSP,Exclusion,10,3,36.7,2.5,L,15-Oct-17,1,,
+600,POSE,PSSP,Control,10,3,36.7,2.5,L,15-Oct-17,1,10.4,
