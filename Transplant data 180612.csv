@@ -449,7 +449,7 @@ newID,DonorSpp,Transplant,Treatment,Rep,Transect,Position,Offset,Side,Transplant
 448,HECO,POSE,Feedback,8,3,7.4,1.5,R,13-Oct-17,1,7.4,1,,,,10,7,2,,,,,,pulled 1 dicot 180514
 449,HECO,POSE,Exclusion,8,3,7.4,1.5,R,13-Oct-17,1,,1,,,,4.7,20,0,,,,,,
 450,HECO,POSE,Control,8,3,7.4,1.5,R,13-Oct-17,1,,1,,,,4.8,4,1,,,,,,pulled 2 dicot 180514
-451,PSSP,ARTR,Feedback,8,3,7.7,2.5,R,14-Oct-17,3,,2,3,,,3.2,,5,,,,2.99,Jan-36,patch of 3 plants
+451,PSSP,ARTR,Feedback,8,3,7.7,2.5,R,14-Oct-17,3,,2,3,,,3.2,,5,,,,2.99,1.36,patch of 3 plants
 452,PSSP,ARTR,Exclusion,8,3,7.7,2.5,R,14-Oct-17,3,,2,2,14.9,,2.9,,3,,,,2.98,2.02,
 453,PSSP,ARTR,Control,8,3,7.7,2.5,R,14-Oct-17,3,,3,1,,,2.3,,3,,,,1.42,1.28,pulled 1 dicot 180514
 454,PSSP,HECO,Feedback,8,3,7.7,2,R,14-Oct-17,1,,1,,,,7.5,3,0,,14.7,,,,pulled 1 dicot 180514
