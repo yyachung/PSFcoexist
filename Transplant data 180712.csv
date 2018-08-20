@@ -1,0 +1,601 @@
+newID,DonorSpp,Transplant,Treatment,Rep,Transect,Position,Offset,Side,Transplant date,Surv171015,VWC171110,Surv180418,Germ180418,VWC180418,Surv180514,Height180514,Tillers180514,Germ180514,Repro180514,VWC180531,Germ180531,CanopyL180606,CanopyW180606,Length180709,Width180709,Height180709,Germ180709,Repro180709,Surv180709,Harvested,Notes
+1,POSE,ARTR,Feedback,1,1,4,4,R,10-Oct-17,3,0.7,1,,,,2.2,,0,,,,0.98,0.79,1.04,1.15,2.9,,,,,extra plant added 171030; unknown germinants (not sure if ARTR) 180418
+2,POSE,ARTR,Exclusion,1,1,4,4,R,10-Oct-17,4,,4,,10.4,,3.2,,1,,15.8,,1.56,1.36,1.5,1.15,3.6,,,,,unknown germinants (not sure if ARTR) 180418; pulled 1 dicot weed
+3,POSE,ARTR,Control,1,1,4,4,R,10-Oct-17,3,,2,,,,3,,6,,,,2.19,1.79,2.22,1.81,3.8,,,,,unknown germinants (not sure if ARTR) 180418
+4,POSE,HECO,Feedback,1,1,4.6,4,R,10-Oct-17,1,7.9,1,,,,7,2,1,,13.8,,,,0.31,0.11,19.3,,,,,"pulled 1 dicot, 1 grass weed 180514"
+5,POSE,HECO,Exclusion,1,1,4.6,4,R,15-Oct-17,0,,1,,,,5.3,3,0,,,,,,0.31,0.32,17.7,,,,,replace after grasshopper
+6,POSE,HECO,Control,1,1,4.6,4,R,15-Oct-17,0,,1,,,,5.5,1,0,,,,,,0.04,0.04,11.7,,,,,replace after grasshopper
+7,POSE,PSSP,Feedback,1,1,4.6,3,R,10-Oct-17,1,5.9,1,,,,5.9,3,1,,,2,,,0.5,0.2,15.1,,,,,
+8,POSE,PSSP,Exclusion,1,1,4.6,3,R,10-Oct-17,1,,1,,,,12.1,2,0,,,,,,0.52,0.25,28.5,,,,,"additional plant 28 Oct 2017; pulled extra transplant (11.5 height, 1 tiller, shoot only) 180514"
+9,POSE,PSSP,Control,1,1,4.6,3,R,10-Oct-17,1,,1,,,,8.6,1,3,,10.5,2,,,0.04,0.05,17.1,,,,,pulled 1 dicot 180514
+10,HECO,POSE,Feedback,1,1,5.4,0,,13-Oct-17,1,,1,,,,3.4,13,2,,,,,,0.73,0.58,3.9,,,0,,Not caged
+11,HECO,POSE,Exclusion,1,1,5.4,0,,13-Oct-17,1,4.8,1,,,,6.2,17,0,,14.1,,,,0.98,0.88,6.3,,,0,,Not caged
+12,HECO,POSE,Control,1,1,5.4,0,,13-Oct-17,1,,1,,,,3.5,4,3,,,1,,,0.22,0.36,4.1,,,0,,Not caged
+13,POSE,POSE,Feedback,1,1,6,2.5,L,13-Oct-17,1,7.6,1,3,,,5.1,4,1,,12.5,,,,0.65,0.4,5.4,,,,,Not caged
+14,POSE,POSE,Exclusion,1,1,6,2.5,L,13-Oct-17,1,,1,5,,,6.8,10,0,,,,,,0.67,0.94,6.6,,,,,Not caged; pulled 1 dicot 180514
+15,POSE,POSE,Control,1,1,6,2.5,L,13-Oct-17,1,,1,,,,3.2,4,6,,,1,,,0.82,0.82,2.9,,,0,,Not caged
+16,HECO,ARTR,Feedback,1,1,7.7,0.5,R,10-Oct-17,3,,3,,,,3,,1,,,1,2.34,1.75,0.89,0.85,4.3,,,,,extra plant added 171030; pulled 1 grass 180514; pulled 1 grass 180531
+17,HECO,ARTR,Exclusion,1,1,7.7,0.5,R,10-Oct-17,3,2.6,0,,20.1,,2.7,,0,,10,,2.52,2.01,1.86,1.14,3.8,,,,,extra plant added 171030; pulled 1 dicot 180514
+18,HECO,ARTR,Control,1,1,7.7,0.5,R,10-Oct-17,3,,3,,,,2.2,,3,,,,1.21,0.94,1.33,0.73,2.4,,,,,
+19,PSSP,ARTR,Feedback,1,1,7.7,1,R,13-Oct-17,3,2.1,3,5,19.7,,3.9,,2,,,,2.71,2.99,2,1.51,4.7,,,,,
+20,PSSP,ARTR,Exclusion,1,1,7.7,1,R,13-Oct-17,3,,3,5,,,5.2,,6,,,,3.59,3.45,2.35,2.11,7.2,,,,,pulled 1 grass 180514
+21,PSSP,ARTR,Control,1,1,7.7,1,R,13-Oct-17,3,,0,3,,0,,,4,,12.8,,,,,,,,,,,pulled 1 dicot left 1 unknown seedling 180514; pulled 2 dicots 180531
+22,HECO,HECO,Feedback,1,1,8.5,2,R,10-Oct-17,1,,1,,,,6.5,2,1,,,,,,0.3,0.25,6.8,,,,,2 donor plants; pulled 2 dicots
+23,HECO,HECO,Exclusion,1,1,8.5,2,R,10-Oct-17,1,,1,,,,7.9,3,0,,,,,,0.75,0.35,6.9,,,,,
+24,HECO,HECO,Control,1,1,8.5,2,R,10-Oct-17,1,9.4,1,,,,3.8,1,0,,13,,,,0.15,0.13,5.7,,,,,
+25,HECO,PSSP,Feedback,1,1,8.5,2,R,10-Oct-17,1,,1,,,,13.8,2,0,,,,,,0.63,0.39,25.4,,,,,"additional plant 28 Oct 2017; pulled extra transplant (14.5 height, 1 tiller, +root) 180514"
+26,HECO,PSSP,Exclusion,1,1,8.5,2,R,10-Oct-17,1,,1,,,,18.4,3,0,,,,,,0.92,0.39,30.3,,,,,
+27,HECO,PSSP,Control,1,1,8.5,2,R,10-Oct-17,1,,1,3,,,9,2,4,,,,,,0.17,0.21,15.3,,,,,
+28,BARE,ARTR,Feedback,1,1,8.6,3.5,L,10-Oct-17,4,,1,1,,,2.4,,1,,,,2.65,1.8,2.15,1.14,3.5,,,,,pulled remaining extra transplant 180514
+29,BARE,ARTR,Exclusion,1,1,8.6,3.5,L,10-Oct-17,3,,2,1,,,3.5,,3,,,,6.31,3.05,6.68,2.82,6.7,,,,,Seedling germinants all really big almost as tall as transplant 180514
+30,BARE,ARTR,Control,1,1,8.6,3.5,L,10-Oct-17,3,,3,1,22.6,,2.3,,2,,,,1.92,1.56,1.5,1.08,2.9,,,,,pulled 1 grass 180514
+31,BARE,HECO,Feedback,1,1,8.6,3.5,L,10-Oct-17,1,,1,,,,6.3,1,0,,,,,,0.2,0.11,11.7,,,,,pulled 1 ARTR 180514
+32,BARE,HECO,Exclusion,1,1,8.6,3.5,L,10-Oct-17,1,,1,,,,7.7,3,0,,16,,,,0.76,0.47,15.1,,,,,pulled 1 big dicot 180514
+33,BARE,HECO,Control,1,1,8.6,3.5,L,10-Oct-17,1,,1,,,,3.3,3,0,,,,,,0.58,0.43,7.3,,,,,
+34,BARE,PSSP,Feedback,1,1,8.6,3.5,L,10-Oct-17,1,,2,,,,15.5,1,0,,,,,,0.07,0.12,22.5,,,,,"additional plant 28 Oct 2017; pulled extra transplant (8.2 height, 2 tiller, some root) 180514"
+35,BARE,PSSP,Exclusion,1,1,8.6,3.5,L,10-Oct-17,1,,2,,,,13.4,2,0,,,,,,0.04,0.07,22.8,,,,,"additional plant 28 Oct 2017; pulled extra transplant (12.8 height, 1 tiller, shoot only) 180514"
+36,BARE,PSSP,Control,1,1,8.6,3.5,L,10-Oct-17,1,9.3,1,,,,5.5,2,0,,,,,,0.18,0.07,7.4,,,,,"additional plant 28 Oct 2017; pulled extra transplant (3 height, 2 tiller, some root) 180514"
+37,BARE,POSE,Feedback,1,1,8.6,3.5,L,13-Oct-17,1,1.3,1,1,,,5.3,8,1,,,,,,0.77,0.25,5.3,,,0,,Not caged
+38,BARE,POSE,Exclusion,1,1,8.6,3.5,L,13-Oct-17,1,,1,,,,5,21,1,,,,,,1.4,1.11,5.1,,,0,,Not caged
+39,BARE,POSE,Control,1,1,8.6,3.5,L,13-Oct-17,1,,1,,,,2.7,8,1,,,,,,0.69,0.82,5.1,,,0,,Not caged
+40,ARTR,ARTR,Feedback,1,1,9.5,0.5,L,10-Oct-17,3,,3,6,,,3.3,,5,,,,2.78,2.16,3.04,1.96,5.4,,,,,all new germ seedlings big and healthy 180514
+41,ARTR,ARTR,Exclusion,1,1,9.5,0.5,L,10-Oct-17,3,,3,8,19.3,,5,,11,,,,2.57,2.5,1.54,1.36,6.1,,,0,Shoot180709,"forest of seedlings definitely all ARTR 180514; transplant drying out 180606; aboveground collected, reconstructed height 180709"
+42,ARTR,ARTR,Control,1,1,9.5,0.5,L,10-Oct-17,3,,2,1,,,3,,2,,,1,2.26,1.51,1.51,0.36,3.7,,,,,pulled 1 dicot 2 grass 180514
+43,ARTR,HECO,Feedback,1,1,9.5,0.5,L,10-Oct-17,1,,1,,,,10,2,0,,,,,,0.63,0.37,28.1,,,,,pulled 1 dicot 180514
+44,ARTR,HECO,Exclusion,1,1,9.5,0.5,L,10-Oct-17,1,,1,,,,10.1,2,0,,,,,,0.86,0.39,24.2,,,,,pulled 3 ARTR 180514
+45,ARTR,HECO,Control,1,1,9.5,0.5,L,10-Oct-17,1,,1,,,,4.8,2,0,,,,,,0.25,0.06,6.8,,,,,pulled 3 ARTR 1 dicot 180514
+46,ARTR,PSSP,Feedback,1,1,9.5,0.5,L,10-Oct-17,1,,1,,,,14,3,2,,,,,,0.29,0.28,37.7,,1,,,"Height is flowering stalk, no vegetative tillers 180709"
+47,ARTR,PSSP,Exclusion,1,1,9.5,0.5,L,10-Oct-17,1,,2,,,,21.3,4,1,,,,,,0.64,0.31,30.8,,,,,"additional plant 28 Oct 2017; pulled extra transplant (9.2 height, 4 tiller, shoot only) 180514"
+48,ARTR,PSSP,Control,1,1,9.5,0.5,L,10-Oct-17,1,,1,,,,13.4,2,1,,14.3,,,,0.04,0.05,22.5,,,,,
+49,ARTR,POSE,Feedback,1,1,9.5,0.5,L,13-Oct-17,1,,1,,,,5.2,10,0,,15,,,,0.44,0.67,1.3,,,,,Not caged; pulled 7 ARTR 180514
+50,ARTR,POSE,Exclusion,1,1,9.5,0.5,L,13-Oct-17,1,,1,,,,7,14,0,,,,,,0.92,1.02,6.3,,,,,"Not caged; pulled 1 dicot 1 ARTR, fungus 180514"
+51,ARTR,POSE,Control,1,1,9.5,0.5,L,13-Oct-17,1,,1,,,,3.2,5,0,,,,,,0.57,0.52,3.8,,,,,Not caged; pulled 2 dicot 180514
+52,PSSP,HECO,Feedback,1,1,10,1,R,10-Oct-17,1,,1,1,,,6,4,1,,,,,,0.41,0.27,9.9,,,,,pulled 1 dicot 180514
+53,PSSP,HECO,Exclusion,1,1,10,1,R,15-Oct-17,0,,1,,,,9.5,4,0,,,,,,0.5,0.64,16.5,,,,,replace after grasshopper; pulled 2 ARTR 180514
+54,PSSP,HECO,Control,1,1,10,1,R,10-Oct-17,1,,1,,,,4.9,1,0,,,,,,0.11,0.09,7.3,,,,,pulled big weed 180418; pulled 3 dicot 180514
+55,PSSP,PSSP,Feedback,1,1,10,1,R,10-Oct-17,1,8.2,1,,,,15.8,4,1,,13.9,,,,0.79,0.08,23,,1,,,pulled 1 ARTR 180514; flowering stalk 31.4cm tall 180709
+56,PSSP,PSSP,Exclusion,1,1,10,1,R,15-Oct-17,0,,1,,,,15.7,5,0,,,,,,0.7,0.5,2.4,,,,,pulled 2 ARTR 180514
+57,PSSP,PSSP,Control,1,1,10,1,R,10-Oct-17,1,,1,,,,8.3,3,1,,,,,,0.45,0.18,13.9,,,,,pulled 1 ARTR 180514
+58,PSSP,POSE,Feedback,1,1,10,1,R,13-Oct-17,1,,1,1,,,8.1,5,4,,,,,,0.48,0.47,8.9,,,0,,
+59,PSSP,POSE,Exclusion,1,1,10,1,R,13-Oct-17,1,,1,1,,,8.5,8,3,,,,,,1.02,0.51,7.8,,,0,,
+60,PSSP,POSE,Control,1,1,10,1,R,13-Oct-17,1,,1,2,,,4.7,3,3,,,,,,0.33,0.06,5.9,,,0,,pulled 1 dicot 180514
+61,POSE,ARTR,Feedback,2,1,15,1,L,10-Oct-17,3,,1,3,,,2,,2,,,,1.61,1.37,1.31,0.92,2.1,,,,,pulled 1 grass 1 dicot 180514
+62,POSE,ARTR,Exclusion,2,1,15,1,L,10-Oct-17,3,9.4,2,1,15.7,0,,,2,,14.1,,,,,,,,,,,
+63,POSE,ARTR,Control,2,1,15,1,L,10-Oct-17,3,,0,1,,0,,,1,,,,,,,,,,,,,pulled 1 grass 180514
+64,POSE,HECO,Feedback,2,1,16.7,4,L,10-Oct-17,1,5.1,1,,,,6.9,3,0,,13.2,,,,0.26,0.23,12.8,,,,,
+65,POSE,HECO,Exclusion,2,1,16.7,4,L,10-Oct-17,1,,1,,,,7.7,4,0,,,,,,0.63,0.24,16.9,,,,,
+66,POSE,HECO,Control,2,1,16.7,4,L,10-Oct-17,1,,1,,,,5.5,2,0,,,,,,0.14,0.08,8.7,,,,,pulled 1 dicot 180531
+67,HECO,ARTR,Feedback,2,1,17.2,4,L,10-Oct-17,2,,0,6,,0,,,5,,,,,,,,,,,,,patch of 4 plants; 2 extra seedlings added 171030; pulled 1 dicot 180514
+68,HECO,ARTR,Exclusion,2,1,17.2,4,L,10-Oct-17,3,,0,2,15.3,,1,,1,,,,,,,,,,,,,additional plant 28 Oct 2017; transplant barely alive 180514; transplant dead 180606
+69,HECO,ARTR,Control,2,1,17.2,4,L,10-Oct-17,3,,2,2,,,1.7,,2,,13.1,1,1.74,1.13,1.35,0.76,2.1,,,,,patch of 4 plants; 2 extra seedlings added 171232; pulled 1 dicot 182214; pulled 1 grass 180514
+70,HECO,HECO,Feedback,2,1,17.2,4,L,10-Oct-17,1,,1,,,,6.9,3,1,,,,,,0.35,0.17,15.7,,,,,pulled 1 ARTR 180514
+71,HECO,HECO,Exclusion,2,1,17.2,4,L,18-Oct-17,1,5.4,1,,,,9,2,0,,13.3,,,,0.31,0.24,23.5,,,,,replace after grasshopper
+72,HECO,HECO,Control,2,1,17.2,4,L,10-Oct-17,1,,1,,,,4,1,0,,,,,,0.08,0.05,6.5,,,,,
+73,HECO,PSSP,Feedback,2,1,17.2,4,L,18-Oct-17,1,,1,,,,5.8,2,1,,,,,,0.37,0.18,8.7,,,,,replace after grasshopper
+74,HECO,PSSP,Exclusion,2,1,17.2,4,L,10-Oct-17,1,,1,,,,12.4,1,0,,14.2,,,,0.74,0.34,22.8,,,,,
+75,HECO,PSSP,Control,2,1,17.2,4,L,10-Oct-17,1,4.6,1,,,,5.3,1,1,,,,,,0.08,0.05,4.1,,,0,Shoot180709,additional plant 28 Oct 2017; pulled extra transplant (5.1 height 2 tiller) 180514
+76,HECO,POSE,Feedback,2,1,17.2,4,L,15-Oct-17,0,,1,,,,5.2,7,1,,,,,,0.83,0.25,5.1,,,,,replace after grasshopper
+77,HECO,POSE,Exclusion,2,1,17.2,4,L,15-Oct-17,0,3.6,1,,,,6.7,14,0,,11.3,,,,0.76,0.86,6.5,,,,,replace after grasshopper
+78,HECO,POSE,Control,2,1,17.2,4,L,13-Oct-17,1,,1,,,,3.9,4,1,,,,,,0.23,0.2,3.5,,,0,,
+79,BARE,ARTR,Feedback,2,1,17.4,0,,10-Oct-17,4,,1,2,12,,1.7,,2,,,,1.52,1.22,1.75,1.44,2.5,,,,,
+80,BARE,ARTR,Exclusion,2,1,17.4,0,,10-Oct-17,3,,3,2,,,1.9,,2,,,,0.82,0.83,1.14,1.14,1.1,,,,,
+81,BARE,ARTR,Control,2,1,17.4,0,,10-Oct-17,3,,2,,,0,,,0,,,,,,,,,,,,,
+82,BARE,HECO,Feedback,2,1,17.4,0,,10-Oct-17,1,,1,,,,8.4,2,1,,,,,,0.53,0.24,17.6,,,,,
+83,BARE,HECO,Exclusion,2,1,17.4,0,,10-Oct-17,1,,1,,,0,,,0,,,,,,,,,,,,,
+84,BARE,HECO,Control,2,1,17.4,0,,10-Oct-17,1,,1,,,,4.5,1,0,,,,,,0.23,0.24,5.9,,,,,
+85,BARE,PSSP,Feedback,2,1,17.4,0,,10-Oct-17,1,10.3,2,,,,15,3,0,,13.7,,,,0.95,0.22,13.7,,1,,,additional plant 28 Oct 2017; pulled extra tranplant (10 height 1 tiller shoot only) 180514; flowering 180606; flowering stalk 32.4cm height 180709
+86,BARE,PSSP,Exclusion,2,1,17.4,0,,10-Oct-17,1,,1,,,,15.1,3,0,,,,,,0.46,0.27,12.1,,,,,
+87,BARE,PSSP,Control,2,1,17.4,0,,10-Oct-17,1,,1,,,,6.6,2,0,,,,,,0.22,0.26,11.2,,,,,additional plant 28 Oct 2017; pulled extra transplant (4.5 height 1 tiller shoot only) 180514
+88,BARE,POSE,Feedback,2,1,17.4,0,,13-Oct-17,1,,1,,,,5.4,4,2,,,,,,0.38,0.37,6.2,,,0,,
+89,BARE,POSE,Exclusion,2,1,17.4,0,,13-Oct-17,1,,1,,,,5,6,0,,,,,,1.06,1,4.9,,1,0,,flowering stalk 18cm height 180709
+90,BARE,POSE,Control,2,1,17.4,0,,13-Oct-17,1,,1,,,,4.5,4,0,,,,,,0.33,0.91,4.4,,,0,,
+91,ARTR,ARTR,Feedback,2,1,19,1.5,R,10-Oct-17,3,,3,5,,,2.1,,4,,,,1.59,1.32,1.35,1.14,2.7,,,,,
+92,ARTR,ARTR,Exclusion,2,1,19,1.5,R,10-Oct-17,2,,1,2,,,1.8,,2,,9.8,,2.27,1.15,1.52,1.47,3.3,,,,,
+93,ARTR,ARTR,Control,2,1,19,1.5,R,10-Oct-17,3,3.7,2,2,13.6,,2.1,,1,,,,1.68,1.61,1.43,1.36,2.7,,,,,
+94,ARTR,HECO,Feedback,2,1,19,1.5,R,10-Oct-17,1,,1,,,,6,1,0,,,,,,0.07,0.03,14,,,,,
+95,ARTR,HECO,Exclusion,2,1,19,1.5,R,10-Oct-17,1,,1,,,,9.2,3,1,,,,,,0.3,0.02,25.2,,,,,pulled 1 dicot 180514
+96,ARTR,HECO,Control,2,1,19,1.5,R,10-Oct-17,1,,1,,,,5.8,2,0,,,,,,0.1,0.07,9.8,,,,,
+97,ARTR,PSSP,Feedback,2,1,19,1.5,R,10-Oct-17,1,,1,,,,16.1,3,2,,14.8,,,,0.08,0.07,26.6,,,,,pulled 1 dicot 180514
+98,ARTR,PSSP,Exclusion,2,1,19,1.5,R,10-Oct-17,1,,1,,,,17.9,3,0,,,,,,0.23,0.12,35.6,,,,,
+99,ARTR,PSSP,Control,2,1,19,1.5,R,10-Oct-17,1,,1,,,,19,1,4,,,,,,0.05,0.06,34.9,,,,,
+100,ARTR,POSE,Feedback,2,1,19,1.5,R,13-Oct-17,1,9.7,1,,,,7,4,1,,14.9,,,,0.77,0.3,6.9,,,,,fungus 180514
+101,ARTR,POSE,Exclusion,2,1,19,1.5,R,13-Oct-17,1,,1,,,,7.4,8,1,,,,,,0.66,0.89,7.8,,,,,pulled 1 dicot 180514
+102,ARTR,POSE,Control,2,1,19,1.5,R,13-Oct-17,1,,1,,,,6.2,3,1,,,,,,0.62,0.49,6.5,,,0,,fungus 180514
+103,POSE,PSSP,Feedback,2,1,19,3,R,10-Oct-17,1,9.2,1,,,,7.2,4,0,,,,,,0.73,0.62,16.5,,,,,
+104,POSE,PSSP,Exclusion,2,1,19,3,R,10-Oct-17,1,,1,,,,4.8,2,1,,13.9,,,,0.44,0.25,16.2,,,,,
+105,POSE,PSSP,Control,2,1,19,3,R,10-Oct-17,1,,1,,,,7.6,3,0,,,,,,0.4,0.19,14.3,,,,,
+106,PSSP,ARTR,Feedback,2,1,19.6,5,R,10-Oct-17,3,,0,2,,0,,,3,,13.4,,,,,,,,,,,patch of 3 plants
+107,PSSP,ARTR,Exclusion,2,1,19.6,5,R,15-Oct-17,3,,3,4,14.5,,5.1,,0,,,,6.9,5.46,7.26,5.12,9,,,,,3 buried and small plants replaced 171015
+108,PSSP,ARTR,Control,2,1,19.6,5,R,10-Oct-17,3,,1,1,,,1.1,,2,,,,0.97,0.81,1.39,1.11,1.3,,,,,pulled 1 dicot 180514; pulled 1 grass 180531
+109,PSSP,HECO,Feedback,2,1,19.6,5,R,10-Oct-17,1,,1,,,,2.5,1,0,,,,,,0.04,0.03,2.9,,,0,Shoot180709,not sure if measured/collected dead plant is transplant 180709
+110,PSSP,HECO,Exclusion,2,1,19.6,5,R,10-Oct-17,1,,1,,,,9.4,3,1,,,,,,0.67,0.31,23.4,,,,,
+111,PSSP,HECO,Control,2,1,19.6,5,R,10-Oct-17,1,,1,,,,5.5,2,1,,,,,,0.21,0.11,9,,,,,pulled 2 dicot 180514
+112,PSSP,PSSP,Feedback,2,1,19.6,5,R,10-Oct-17,1,9,1,,,,18,3,1,,,,,,0.62,0.32,27.1,,,,,
+113,PSSP,PSSP,Exclusion,2,1,19.6,5,R,15-Oct-17,0,,1,,,,17.1,4,1,,,,,,0.55,0.08,24.2,,,,,replace after grasshopper; pulled 1 dicot 180514
+114,PSSP,PSSP,Control,2,1,19.6,5,R,10-Oct-17,1,,1,,,,14.2,2,0,,,,,,0.06,0.04,19.4,,,,,pulled 1 ARTR 180514
+115,PSSP,POSE,Feedback,2,1,19.6,5,R,13-Oct-17,1,2.3,1,,,,6.5,7,1,,,,,,1.04,0.36,7.4,,,,,
+116,PSSP,POSE,Exclusion,2,1,19.6,5,R,13-Oct-17,1,,1,,,,9.3,12,0,,14.4,,,,1.21,1.16,8.1,,,0,,"fungus, pull 1 ARTR 180514"
+117,PSSP,POSE,Control,2,1,19.6,5,R,13-Oct-17,1,,1,,,,5.5,5,2,,,,,,0.78,0.17,5.4,,,,,pulled 3 ARTR 180514; covered in spider web 180709
+118,POSE,POSE,Feedback,2,1,21,0.5,R,13-Oct-17,1,6,1,1,,,5.4,9,1,,14.5,,,,0.71,0.46,5,,,0,,
+119,POSE,POSE,Exclusion,2,1,21,0.5,R,13-Oct-17,1,,1,2,,,6.5,11,2,,,,,,1.11,0.4,6.1,,,,,fungus (also on donor plant) 180514
+120,POSE,POSE,Control,2,1,21,0.5,R,13-Oct-17,1,,1,,,,7.1,6,1,,,,,,0.58,0.57,7.4,,,0,,fungus (also on donor plant) 180514
+121,HECO,POSE,Feedback,3,1,24.4,0.5,L,13-Oct-17,1,,1,,,,4.9,10,2,,,,,,0.56,0.41,5.1,,1,,,Flowering stalk height 34cm 180709
+122,HECO,POSE,Exclusion,3,1,24.4,0.5,L,13-Oct-17,1,4.8,1,1,,,8.2,11,2,1,14,,,,1.33,0.52,7.8,,,,,has flowering stalk (13 height) 180514
+123,HECO,POSE,Control,3,1,24.4,0.5,L,13-Oct-17,1,,1,,,,4.9,5,1,,,,,,0.54,0.35,4.5,,,,,
+124,HECO,ARTR,Feedback,3,1,25.2,1.5,L,10-Oct-17,3,,2,2,15.6,,2.7,,1,,,,2.55,2.15,2.55,2.08,3.1,,,,,pulled large grass seedling 180418; pulled 1 dicot 1 grass 180514
+125,HECO,ARTR,Exclusion,3,1,25.2,1.5,L,10-Oct-17,3,4,3,4,,,4.4,,3,,,,4.34,3.16,4.34,3.33,5.7,,,,,pulled 1 dicot 180514
+126,HECO,ARTR,Control,3,1,25.2,1.5,L,10-Oct-17,2,,1,1,,,1.4,,0,,,,0.9,0.7,0.74,0.78,1.3,,,,,pulled large grass seedling 180418; pulled 1 dicot 1 grass 180514
+127,HECO,HECO,Feedback,3,1,25.2,1.5,L,10-Oct-17,1,,1,1,,,7.9,1,0,,16.7,,,,0.11,0.06,17.1,,,,,pulled 1 dicot 1 grass 180514
+128,HECO,HECO,Exclusion,3,1,25.2,1.5,L,10-Oct-17,1,,1,,,,9.6,3,0,,,,,,0.74,0.25,17.2,,,,,
+129,HECO,HECO,Control,3,1,25.2,1.5,L,10-Oct-17,1,,1,,,,6.5,2,1,,,,,,0.13,0.31,13.4,,,,,pulled 1 dicot 180531
+130,HECO,PSSP,Feedback,3,1,26.4,1.5,L,10-Oct-17,1,,1,,,,14.2,2,0,,,,,,0.11,0.08,22.1,,,,,
+131,HECO,PSSP,Exclusion,3,1,26.4,1.5,L,10-Oct-17,1,0.4,1,,,,7.5,1,0,,14.5,,,,0.04,0.12,16.5,,,,,additional plant 28 Oct 2017; replaced again 171030; one big alive transplant and one dead 180418
+132,HECO,PSSP,Control,3,1,26.4,1.5,L,10-Oct-17,1,,1,,,,7.8,3,0,,,,,,0.04,0.05,15.6,,,,,
+133,PSSP,PSSP,Feedback,3,1,29,1.5,R,10-Oct-17,1,,1,,,,2.4,1,1,,,,,,0.02,0.02,15.4,,,,,2 plants; transplant doesn't look great 180418; pulled 1 ARTR 180514
+134,PSSP,PSSP,Exclusion,3,1,29,1.5,R,10-Oct-17,1,,1,,,,21,4,1,,,,,,0.93,0.11,31.3,,,,,pulled 1 ARTR 180514
+135,PSSP,PSSP,Control,3,1,29,1.5,R,10-Oct-17,1,,1,,,,11.1,1,0,,,,,,0.07,0.01,21.8,,,,,
+136,PSSP,POSE,Feedback,3,1,29,1.5,R,13-Oct-17,1,,1,,,,4.6,13,1,1,,,,,0.78,0.73,5.9,,,,,flower stalk (12.5 height) 180514; seeds gone on flowering stalk 18.1cm height 180709
+137,PSSP,POSE,Exclusion,3,1,29,1.5,R,13-Oct-17,1,,1,1,,,9.7,11,1,,17,,,,1.06,0.43,9.4,,,,,
+138,PSSP,POSE,Control,3,1,29,1.5,R,13-Oct-17,1,8.6,1,,,,2.5,4,0,,,,,,0.55,0.1,2.4,,,,,
+139,POSE,HECO,Feedback,3,1,30.6,1.5,R,10-Oct-17,1,,1,,,,7.8,3,0,,,,,,0.16,0.21,15.9,,,,,2 plants; pulled 3 dicot 2 ARTR; pulled 1 dicot 180531
+140,POSE,HECO,Exclusion,3,1,30.6,1.5,R,10-Oct-17,1,,1,,,,9.9,3,1,,,,,,0.65,0.28,20.9,,,,,
+141,POSE,HECO,Control,3,1,30.6,1.5,R,10-Oct-17,1,10.8,1,,,,6.2,3,0,,,,,,0.12,0.13,7.6,,,,,pulled 1 ARTR 180514
+142,POSE,PSSP,Feedback,3,1,30.6,1.5,R,10-Oct-17,1,,1,,,,11.4,3,0,,13.9,,,,0.61,0.23,15,,,,,pulled 1 ARTR 180514
+143,POSE,PSSP,Exclusion,3,1,30.6,1.5,R,10-Oct-17,1,,1,,,,14.9,3,1,,,,,,0.56,0.1,27.2,,,,,additional plant 28 Oct 2017; one big alive transplant and one dead 180418
+144,POSE,PSSP,Control,3,1,30.6,1.5,R,10-Oct-17,1,,1,,,,12.5,2,1,,,,,,0.01,0.08,18.9,,,,,pulled 3 dicot 180514
+145,POSE,ARTR,Feedback,3,1,31.6,2,L,10-Oct-17,3,,2,2,,,2.8,,3,,,,1.75,1.57,1.08,1.16,3.2,,,,,
+146,POSE,ARTR,Exclusion,3,1,31.6,2,L,10-Oct-17,3,6.7,3,4,14.3,,3.4,,4,,11.9,,2.49,2.32,0.72,1.35,3.5,,,0,,
+147,POSE,ARTR,Control,3,1,31.6,2,L,10-Oct-17,3,,2,2,,,1.7,,1,,,,0.49,0.56,,,,,,,,
+148,BARE,ARTR,Feedback,3,1,31.6,3,L,10-Oct-17,3,,1,1,,,2.2,,5,,,1,1.07,0.96,0.65,0.81,1.5,,,,,
+149,BARE,ARTR,Exclusion,3,1,31.6,3,L,10-Oct-17,3,,2,3,16.7,,2.9,,2,,,,2.89,2.85,1.5,1.56,6.1,,,,,
+150,BARE,ARTR,Control,3,1,31.6,3,L,10-Oct-17,3,,3,2,,,1.5,,2,,,,1.15,2.47,0.51,0.71,1.1,,,,,
+151,BARE,HECO,Feedback,3,1,31.6,3,L,10-Oct-17,1,,1,,,,5.7,3,0,,,,,,0.46,0.47,11.5,,,,,
+152,BARE,HECO,Exclusion,3,1,31.6,3,L,10-Oct-17,1,,1,,,,9.8,5,1,,,,,,0.78,1,17.8,,,,,
+153,BARE,HECO,Control,3,1,31.6,3,L,10-Oct-17,1,,1,,,,7.1,2,0,,,,,,0.3,0.48,12.2,,,,,
+154,BARE,PSSP,Feedback,3,1,31.6,3,L,10-Oct-17,1,,1,,,,16.6,3,2,,,,,,0.66,0.38,24.2,,,,,pulled 1 ARTR 180514
+155,BARE,PSSP,Exclusion,3,1,31.6,3,L,10-Oct-17,1,7.3,1,,,,10.2,3,0,,17.5,,,,0.52,0.25,21.6,,,,,
+156,BARE,PSSP,Control,3,1,31.6,3,L,10-Oct-17,1,,1,,,,12.5,3,2,,,,,,0.64,0.36,18.7,,,,,
+157,BARE,POSE,Feedback,3,1,31.6,3,L,26-Oct-17,1,,1,,,,5.9,5,2,,,,,,0.7,0.65,6.1,,,,,replace after grasshopper
+158,BARE,POSE,Exclusion,3,1,31.6,3,L,13-Oct-17,1,,1,,,,5.3,17,0,,,,,,0.93,1.02,4.2,,,,,
+159,BARE,POSE,Control,3,1,31.6,3,L,26-Oct-17,1,,1,,,,4.2,6,0,,,,,,0.55,0.93,4.4,,,0,,replace after grasshopper
+160,ARTR,ARTR,Feedback,3,1,33.6,0,,10-Oct-17,3,,2,1,,,1.8,,1,,,,2.46,2.11,2.75,2.06,4.2,,,,,in between 2 sagebrush
+161,ARTR,ARTR,Exclusion,3,1,33.6,0,,10-Oct-17,3,6.8,0,2,20.3,0,,,1,,,,,,,,,,,,,
+162,ARTR,ARTR,Control,3,1,33.6,0,,10-Oct-17,3,,2,4,,,0.8,,5,,,,0.79,0.64,0.53,0.47,1.2,,,,,
+163,ARTR,HECO,Feedback,3,1,33.6,0,,10-Oct-17,1,,1,,,,4,2,0,,,,,,0.07,0.06,5.4,,,,,
+164,ARTR,HECO,Exclusion,3,1,33.6,0,,10-Oct-17,1,,1,,,,8.4,2,0,,13.5,,,,0.35,0.15,29.8,,,,,
+165,ARTR,HECO,Control,3,1,33.6,0,,10-Oct-17,1,,1,,,,5.5,1,0,,,,,,0.1,0.25,11.6,,,,,
+166,ARTR,PSSP,Feedback,3,1,33.6,0,,18-Oct-17,1,,1,,,,18.7,1,1,,,,,,0.3,0.22,28.4,,,,,replace after grasshopper; pulled 1 dicot 2 ARTR 180514
+167,ARTR,PSSP,Exclusion,3,1,33.6,0,,10-Oct-17,1,,1,,,,19.1,4,0,,,,,,1,0.38,25.1,,,,,
+168,ARTR,PSSP,Control,3,1,33.6,0,,18-Oct-17,1,,1,,,,18.5,1,0,,,,,,0.06,0.1,26.1,,,,,replace after grasshopper
+169,ARTR,POSE,Feedback,3,1,33.6,0,,13-Oct-17,1,,1,,,,5,8,,,,,,,1.36,0.46,5.4,,,,,Missed adding seed sticks to this 180418
+170,ARTR,POSE,Exclusion,3,1,33.6,0,,26-Oct-17,1,,1,,,,9.6,8,,,12.3,,,,0.85,0.63,7.4,,,,,replace after grasshopper; Missed adding seed sticks to this 180418; fungus 180514
+171,ARTR,POSE,Control,3,1,33.6,0,,26-Oct-17,1,,1,,,,3.1,4,,,,,,,0.54,0.28,3.1,,,0,,replace after grasshopper; Missed adding seed sticks to this 180418
+172,PSSP,ARTR,Feedback,3,1,33.6,4,R,10-Oct-17,3,,2,,15.9,,1.4,,0,,,,0.84,0.98,,,,,,,,2 plants THIS ONE IS CLEARLY CONTROL; nothing in cylinder 180709
+173,PSSP,ARTR,Exclusion,3,1,33.6,4,R,10-Oct-17,3,,0,2,,0,,,0,,12.3,,,,,,,,,,,
+174,PSSP,ARTR,Control,3,1,33.6,4,R,10-Oct-17,3,,1,3,,,1.4,,2,,,,2.62,2.34,2.28,2.45,3.3,,,,,
+175,PSSP,HECO,Feedback,3,1,33.6,4,R,10-Oct-17,1,,1,,,,12.1,3,0,,,,,,0.64,0.41,16.9,,,,,
+176,PSSP,HECO,Exclusion,3,1,33.6,4,R,10-Oct-17,1,8,1,,,,7.8,3,0,,,,,,1.04,0.73,16.9,,,,,
+177,PSSP,HECO,Control,3,1,33.6,4,R,10-Oct-17,1,,1,1,,,6.4,2,1,,14.2,,,,0.5,0.13,6.3,,,,,
+178,POSE,POSE,Feedback,3,1,35.4,1,L,13-Oct-17,1,,1,,,,8,3,0,,,,,,0.22,0.57,8.5,,,,,pulled 2 dicot 180514
+179,POSE,POSE,Exclusion,3,1,35.4,1,L,13-Oct-17,1,,1,,,,0.8,3,0,,12,,,,0.31,0.54,7.5,2,,0,,Transplant green but chewed to the stump (was caged) 180418
+180,POSE,POSE,Control,3,1,35.4,1,L,13-Oct-17,1,6.8,1,3,,,2.8,8,4,,,,,,0.5,0.62,2.4,,,0,,
+181,PSSP,PSSP,Feedback,4,2,6,4,L,10-Oct-17,1,,1,,,,11.7,2,3,,,,,,0.11,0.1,21.5,,,,,2 donor plants; pulled 1 dicot 180514
+182,PSSP,PSSP,Exclusion,4,2,6,4,L,10-Oct-17,1,8.9,1,,,,21.1,3,3,,10,,,,0.89,0.59,29.2,,,,,spittle bug spit on transplant 180514
+183,PSSP,PSSP,Control,4,2,6,4,L,10-Oct-17,1,,1,,,,10.4,3,2,,,1,,,0.17,0.29,15.8,,,,,pulled 7 dicot 2 grass 180514
+184,PSSP,POSE,Feedback,4,2,6,4,L,13-Oct-17,1,,1,,,,5.8,5,1,,,,,,0.75,0.89,6.8,,,0,,
+185,PSSP,POSE,Exclusion,4,2,6,4,L,13-Oct-17,1,,1,,,,8.8,17,3,,13.9,,,,1.03,0.84,8.2,,,0,,
+186,PSSP,POSE,Control,4,2,6,4,L,13-Oct-17,1,,1,,,,7,4,0,,,,,,0.8,0.21,7.8,,,0,,pulled 2 dicot 180514
+187,HECO,POSE,Feedback,4,2,7.3,5,L,13-Oct-17,1,,1,1,,,4,3,1,,,1,,,0.76,0.18,4.1,,,,,THIS ONE IS CLEARLY CONTROL; pulled 4 dicot 180514; pulled 1 dicot 180531
+188,HECO,POSE,Exclusion,4,2,7.3,5,L,26-Oct-17,0,,1,2,,,8.6,12,3,,16.1,,,,1.41,0.72,10.5,,,,,"replace after grasshopper (once 10/15 and again 10/26); I think this one is exclusion, fungus 1801514"
+189,HECO,POSE,Control,4,2,7.3,5,L,13-Oct-17,1,4.4,1,,,,8.1,4,2,,,,,,0.97,0.4,10.2,,,0,,oulled 1 dicot 180514
+190,HECO,ARTR,Feedback,4,2,7.9,4,L,10-Oct-17,3,,3,4,,,2.3,,5,,,,1.96,1.5,1.92,1.04,3.6,,,,,additional plant 28 Oct 2017
+191,HECO,ARTR,Exclusion,4,2,7.9,4,L,10-Oct-17,3,4.4,2,3,21.1,,1.7,,5,,14.2,,1.57,1.45,1.15,1,3,,,,,pulled 1 dicot 180514
+192,HECO,ARTR,Control,4,2,7.9,4,L,10-Oct-17,3,,2,3,,,2,,2,,,,1.19,0.88,0.88,0.89,2.2,,,,,pulled 1 dicot 180514
+193,HECO,HECO,Feedback,4,2,7.9,4,L,10-Oct-17,1,,1,,,,4.8,2,0,,,,,,0.62,0.46,11.2,1,,,,
+194,HECO,HECO,Exclusion,4,2,7.9,4,L,10-Oct-17,1,,1,,,,8.2,2,0,,,,,,0.51,0.28,15.1,,,,,
+195,HECO,HECO,Control,4,2,7.9,4,L,10-Oct-17,1,,1,,,,4.1,2,0,,,,,,0.13,0.16,6.1,,,,,pulled gigantic grass couldn't get the roots and 1 dicot 180514; pulled gigantic grass couldn't get the roots AGAIN and 1 dicot 180531; same again with the grass weed 180709
+196,ARTR,ARTR,Feedback,4,2,8.2,1,L,10-Oct-17,3,,2,2,,,2.2,,4,,,,1.66,0.69,1.19,1.3,2.2,,,,,pulled large grass seedling 180418; pulled 3 grass 180514; pull 1 grass 180606
+197,ARTR,ARTR,Exclusion,4,2,8.2,1,L,10-Oct-17,3,,3,4,22.6,,4.9,,4,,9.8,,3.31,2.9,2.49,2.09,5.3,,,,,pulled 2 dicot 180514
+198,ARTR,ARTR,Control,4,2,8.2,1,L,10-Oct-17,3,,2,2,,,2,,2,,,,1.41,1.07,1.18,0.89,2,,,,,pulled 1 grass and 1 extra 180514
+199,ARTR,HECO,Feedback,4,2,8.2,1,L,10-Oct-17,1,,1,,,,9,1,0,,,,,,0.33,0.15,19.4,,,,,pulled 2 dicot 180514
+200,ARTR,HECO,Exclusion,4,2,8.2,1,L,10-Oct-17,1,,1,,,,10.4,2,0,,,,,,0.72,0.68,21.1,,,,,
+201,ARTR,HECO,Control,4,2,8.2,1,L,10-Oct-17,1,,1,,,,5.8,1,0,,,,,,0.04,0.03,11.4,1,,,,pulled large monocot weed 180418
+202,ARTR,PSSP,Feedback,4,2,8.2,1,L,10-Oct-17,1,12.9,1,,,,19.2,3,1,,12.3,,,,0.59,0.12,15.4,,1,,,pulled 2 dicot 1 ARTR 180514; flowering stalk 25.5cm height
+203,ARTR,PSSP,Exclusion,4,2,8.2,1,L,10-Oct-17,1,,1,,,,32.6,2,1,,,,,,0.33,0.23,34.6,,,,,
+204,ARTR,PSSP,Control,4,2,8.2,1,L,10-Oct-17,1,,1,,,,17,1,1,,,,,,0.09,0.11,24.1,,,,,pulled 2 grass 180514
+205,ARTR,POSE,Feedback,4,2,8.2,1,L,13-Oct-17,1,5.9,1,2,,,8.2,5,5,,,,,,1.09,0.32,8.3,,,,,fungus 180514
+206,ARTR,POSE,Exclusion,4,2,8.2,1,L,13-Oct-17,1,,1,,,,15.1,5,2,,11.2,,,,0.67,0.72,14.6,,,,,fungus 180514
+207,ARTR,POSE,Control,4,2,8.2,1,L,13-Oct-17,1,,1,,,,4.6,4,2,,,,,,0.29,0.27,5.5,,,,,"pulled 2 dicot 1 ARTR, no fungus 180514"
+208,HECO,PSSP,Feedback,4,2,9.5,4,L,10-Oct-17,1,,2,,,,15.1,1,3,,,,,,0.28,0.17,22.8,,,,,"additional plant 28 Oct 2017; pulled 2 dicot, 1 extra (11.8 height 1 tiller shoot only) 180514"
+209,HECO,PSSP,Exclusion,4,2,9.5,4,L,10-Oct-17,1,,1,,,,12.3,3,3,,16.1,,,,0.82,0.7,2.8,,,,,
+210,HECO,PSSP,Control,4,2,9.5,4,L,10-Oct-17,1,5.5,2,,,,11.6,2,1,,,,,,0.09,0.2,16.6,,,,,additional plant 28 Oct 2017; pulled 1 grass and extra transplant (8.7 height 1 tiller shoot)
+211,POSE,ARTR,Feedback,4,2,9.5,1,R,10-Oct-17,3,,2,,19.4,,2.2,,1,,15.6,,2.17,1.42,1.79,1.48,2.8,,,,,
+212,POSE,ARTR,Exclusion,4,2,9.5,1,R,10-Oct-17,3,8.7,1,3,,,2.6,,3,,,,2.68,1.86,1.43,1.62,3.8,,,,,
+213,POSE,ARTR,Control,4,2,9.5,1,R,10-Oct-17,3,,2,3,,,1.2,,5,,,,1.05,0.76,0.79,0.56,1.1,,,,,pulled 1 dicot 180514
+214,POSE,HECO,Feedback,4,2,9.5,1,R,10-Oct-17,1,,1,,,,4.8,2,0,,,,,,0.41,0.17,10.5,,,,,pulled 4 dicot 1 grass 180514
+215,POSE,HECO,Exclusion,4,2,9.5,1,R,10-Oct-17,1,,1,,,,2.5,1,0,,,,,,0.55,0.43,8,,,,,transplant almost dead 180514
+216,POSE,HECO,Control,4,2,9.5,1,R,10-Oct-17,1,,1,,,,5.9,2,0,,,,,,0.5,0.18,8.2,,,,,pulled 1 dicot 180514
+217,BARE,ARTR,Feedback,4,2,9.5,0,,10-Oct-17,3,,3,4,,,3.2,,4,,,,1.75,1.38,1.79,1.6,2.7,,,,,and adjacent areas
+218,BARE,ARTR,Exclusion,4,2,9.5,0,,10-Oct-17,3,7.9,3,,20.3,,4,,1,,15.3,,3.88,3.41,2.58,2.77,6.6,,,,,
+219,BARE,ARTR,Control,4,2,9.5,0,,10-Oct-17,3,,2,,,,1.6,,0,,,,1.62,1.32,1.52,1.33,2,,,,,
+220,BARE,HECO,Feedback,4,2,9.5,0,,10-Oct-17,1,,1,,,,6,3,0,,,,,,0.46,0.22,9.4,,,,,pulled 2 dicot 180514
+221,BARE,HECO,Exclusion,4,2,9.5,0,,10-Oct-17,1,,1,,,,6.1,4,0,,,,,,0.87,0.84,10.6,,,,,
+222,BARE,HECO,Control,4,2,9.5,0,,10-Oct-17,1,,1,,,,7.3,1,0,,,,,,0.09,0.05,3.8,,,0,,tranplant dying 180418; looks dead 180514
+223,BARE,PSSP,Feedback,4,2,9.5,0,,10-Oct-17,1,,1,,,,12.4,2,1,,,,,,0.23,0.47,16.2,1,,,,
+224,BARE,PSSP,Exclusion,4,2,9.5,0,,10-Oct-17,1,,1,,,,12,3,0,,,,,,0.87,0.55,15.3,,,,,additional plant 28 Oct 2017; pull extra (11.4 height 1 tiller shoot only)
+225,BARE,PSSP,Control,4,2,9.5,0,,10-Oct-17,1,,1,,,,9,2,0,,,,,,0.17,0.12,14.7,,,,,
+226,BARE,POSE,Feedback,4,2,9.5,0,,13-Oct-17,1,,1,,,,6.3,4,0,,,,,,0.55,0.71,6.1,,,,,
+227,BARE,POSE,Exclusion,4,2,9.5,0,,13-Oct-17,1,,1,,,,4.2,15,2,,,,,,0.79,1.33,4.9,,,,,
+228,BARE,POSE,Control,4,2,9.5,0,,13-Oct-17,1,,1,,,,3.7,4,0,,,,,,0.61,0.28,4,,,0,,pulled 1 dicot 180514
+229,POSE,PSSP,Feedback,4,2,10.2,1,L,10-Oct-17,1,,1,,,,11.3,4,2,,,,,,0.55,0.1,17.4,,,,,small patch; pulled 1 dicot 180514
+230,POSE,PSSP,Exclusion,4,2,10.2,1,L,10-Oct-17,1,3.8,1,,,,17.4,4,0,,,1,,,0.84,0.32,22.4,,,,,
+231,POSE,PSSP,Control,4,2,10.2,1,L,10-Oct-17,1,,1,,,,6.8,3,1,,13.5,,,,0.73,0.6,12.3,,,,,pulled 1 dicot 180514
+232,POSE,POSE,Feedback,4,2,10.2,1,L,13-Oct-17,1,,1,2,,,6.8,4,4,,,,,,1.06,0.31,7.8,,,,,
+233,POSE,POSE,Exclusion,4,2,10.2,1,L,13-Oct-17,1,,1,,,,6.7,14,4,,,,,,0.98,1.02,6.4,,,,,fungus 180514
+234,POSE,POSE,Control,4,2,10.2,1,L,13-Oct-17,1,,1,1,,,3.3,4,3,,,,,,0.46,0.28,2.8,,,0,,pulled 1 dicot 180514
+235,PSSP,ARTR,Feedback,4,2,10.9,2,R,12-Oct-17,3,,2,5,,,2.6,,3,,,,1.03,2.09,1.89,1.82,3.1,,,,,pulled 2 dicot 180514
+236,PSSP,ARTR,Exclusion,4,2,10.9,2,R,12-Oct-17,3,3.8,2,3,17.2,,4.1,,4,,13,,3.56,2.88,1.97,2.21,3.9,,,,,
+237,PSSP,ARTR,Control,4,2,10.9,2,R,12-Oct-17,3,,2,1,,,1.7,,1,,,,1.56,1.4,1.14,1.41,1.5,,,,,pulled extra 0.8 height 180514
+238,PSSP,HECO,Feedback,4,2,13,0.8,R,10-Oct-17,1,,1,,,,8.3,1,1,,,,,,0.3,0.15,16.2,,,,,pulled 3 dicot 180514
+239,PSSP,HECO,Exclusion,4,2,13,0.8,R,10-Oct-17,1,3.3,1,,,,8.4,4,2,,14.5,,,,0.74,0.26,17.3,,,,,
+240,PSSP,HECO,Control,4,2,13,0.8,R,10-Oct-17,1,,1,,,,4.7,1,0,,,,,,0.13,0.23,6.4,,,,,
+241,HECO,ARTR,Feedback,5,2,17.8,0,,13-Oct-17,3,,1,1,,,2.4,,2,,,,2.67,2.4,2.25,2.48,4,,,,,pulled 1 grass 180514
+242,HECO,ARTR,Exclusion,5,2,17.8,0,,13-Oct-17,3,,2,,,,2.5,,0,,,,2.98,2.38,2.85,1.66,4.5,,,,,
+243,HECO,ARTR,Control,5,2,17.8,0,,13-Oct-17,3,7.7,0,1,14.5,0,,,1,,15,,,,,,,,,,,
+244,HECO,HECO,Feedback,5,2,17.8,0,,10-Oct-17,1,,1,,,,6.5,1,0,,,,,,0.38,0.26,19,,,,,pulled 2 dicot 180514
+245,HECO,HECO,Exclusion,5,2,17.8,0,,10-Oct-17,1,,1,,,,9.2,1,0,,,,,,0.36,0.22,22.1,,,,,
+246,HECO,HECO,Control,5,2,17.8,0,,10-Oct-17,1,,1,,,,6.1,3,1,,,,,,0.21,0.29,7.9,,,,,
+247,HECO,PSSP,Feedback,5,2,17.8,0,,10-Oct-17,1,,1,1,,,14.4,4,1,,,,,,0.62,0.43,16.4,,,,,plant 0.5 away L
+248,HECO,PSSP,Exclusion,5,2,17.8,0,,10-Oct-17,1,,1,,,,12.6,2,3,,,,,,0.51,0.34,20,,,,,
+249,HECO,PSSP,Control,5,2,17.8,0,,10-Oct-17,1,,2,,,,8.4,4,1,,12.2,,,,0.41,0.66,16.2,,,,,additional plant 28 Oct 2017; pulled extra (8.8 height 1 tiller and root) 180514
+250,PSSP,PSSP,Feedback,5,2,18.3,3,L,10-Oct-17,1,,1,,,,12.6,1,3,,13.3,,,,0.2,0.11,18.2,,,,,additional plant 28 Oct 2017; pulled extra (9.2 height 1 tiller shoot only) and 1 dicot 180514
+251,PSSP,PSSP,Exclusion,5,2,18.3,3,L,10-Oct-17,1,3.4,2,,,,12.1,4,0,,,,,,0.95,0.52,21.4,,,,,additional plant 28 Oct 2017; pulled extra (3.1 height 1 tiller and root) 180514
+252,PSSP,PSSP,Control,5,2,18.3,3,L,15-Oct-17,1,,2,,,,4.6,1,1,,,,,,0.12,0.09,3.8,,,,,only on small leaf leaft replaced 171015; additional plant 28 Oct 2017
+253,PSSP,POSE,Feedback,5,2,18.3,3,L,13-Oct-17,1,,1,,,,4.5,12,1,,,,,,1.01,0.98,6.4,,,,,
+254,PSSP,POSE,Exclusion,5,2,18.3,3,L,13-Oct-17,1,,1,,,,5.7,13,0,,,,,,0.81,1.34,7.4,,,,,
+255,PSSP,POSE,Control,5,2,18.3,3,L,13-Oct-17,1,,1,,,,8.3,7,1,,,,,,0.74,0.35,5.6,,1,,,pulled 1 dicot 180514; flowering stalk 32.8cm height
+256,POSE,ARTR,Feedback,5,2,18.3,2,L,12-Oct-17,3,,2,3,,,2.2,,3,,,,1.36,1.35,1.79,1.6,3,,,,,pulled 2 grass 180531
+257,POSE,ARTR,Exclusion,5,2,18.3,2,L,12-Oct-17,3,,1,3,12.2,0,,,2,,16.3,,,,,,,,,,,pulled 1 dicot 180514
+258,POSE,ARTR,Control,5,2,18.3,2,L,12-Oct-17,3,5.9,1,7,,,1.5,,3,,,,0.92,0.71,0.65,0.6,1.7,,,,,pulled 3 dicot 2 grass 180514
+259,PSSP,ARTR,Feedback,5,2,18.5,0,L,12-Oct-17,3,,3,5,,,2.1,,7,,,,1.89,1.4,2.15,1.86,3.5,,,,,pulled 2 dicot 180514; pull 1 dicot 180531
+260,PSSP,ARTR,Exclusion,5,2,18.5,0,L,12-Oct-17,3,6.5,2,4,14.8,,2.3,,6,,,,1.91,1.4,0.95,0.2,3.8,,,,,
+261,PSSP,ARTR,Control,5,2,18.5,0,L,12-Oct-17,3,,2,,,,2.2,,0,,,,1.14,0.79,1.21,0.99,2.6,,,,,pulled 1 grass 1 dicot 180514
+262,PSSP,HECO,Feedback,5,2,18.5,0,L,10-Oct-17,1,,1,,,,6.3,2,1,,11.8,,,,0.38,0.19,14.9,,,,,pulled 2 dicot 180514
+263,PSSP,HECO,Exclusion,5,2,18.5,0,L,10-Oct-17,1,,1,,,,3.7,1,0,,,,,,0.21,0.18,15.5,,,,,pulled 1 dicot 180514
+264,PSSP,HECO,Control,5,2,18.5,0,L,10-Oct-17,1,,1,,,,4.7,1,0,,,,,,0.19,0.15,10.1,,,,,
+265,POSE,HECO,Feedback,5,2,18.5,3,L,10-Oct-17,1,,1,,,,6.3,3,0,,,,,,0.19,0.16,15,,,,,pulled 1 grass 180514
+266,POSE,HECO,Exclusion,5,2,18.5,3,L,10-Oct-17,1,,1,,,,3.5,2,0,,,,,,0.37,0.3,16.7,,,,,
+267,POSE,HECO,Control,5,2,18.5,3,L,10-Oct-17,1,5,1,,,,4,2,0,,14.7,,,,0.31,0.18,8,,,,,
+268,POSE,PSSP,Feedback,5,2,18.5,1.5,L,10-Oct-17,1,,1,,,,8.4,2,2,,,1,,,0.57,0.15,16.8,,,,,
+269,POSE,PSSP,Exclusion,5,2,18.5,1.5,L,10-Oct-17,1,5,1,,,,10.9,1,0,,13.2,,,,0.54,0.17,22.1,,,,,
+270,POSE,PSSP,Control,5,2,18.5,1.5,L,10-Oct-17,1,,1,,,,11.3,1,0,,,,,,0.08,0.12,17,,,,,additional plant 28 Oct 2017; pulled extra (10.4 height 1 tiller) 180514
+271,HECO,POSE,Feedback,5,2,19.3,3,R,18-Oct-17,1,,1,,,,5.8,8,1,1,,,,,1.04,0.74,5.2,,1,0,,replace after grasshopper; flower stalk (11cm) 180514; flower stalk 27.5cm 180709
+272,HECO,POSE,Exclusion,5,2,19.3,3,R,18-Oct-17,1,1.7,1,,,,7.7,10,0,,,,,,1.7,1.14,7.7,,,,,replace after grasshopper
+273,HECO,POSE,Control,5,2,19.3,3,R,26-Oct-17,1,,1,,,,7.2,4,1,,,,,,0.41,0.31,8.4,,,,,replace after grasshopper; pulled 1 dicot
+274,POSE,POSE,Feedback,5,2,20,0.5,L,13-Oct-17,1,,1,2,,,6.2,8,4,,,,,,0.71,0.51,6.1,,,0,,fungus 180514
+275,POSE,POSE,Exclusion,5,2,20,0.5,L,13-Oct-17,1,2.5,1,,,,8.4,9,0,,,,,,0.74,0.36,10.2,,,,,fungus 180514
+276,POSE,POSE,Control,5,2,20,0.5,L,13-Oct-17,1,,1,,,,3.4,5,0,,14.1,,,,0.56,0.21,3.6,,,,,fungus 180514
+277,BARE,ARTR,Feedback,5,2,20.8,1.5,L,13-Oct-17,3,,3,4,,,2.1,,4,,,,1.75,1.65,1.59,1.34,3,,,,,pulled 1 dicot 180514
+278,BARE,ARTR,Exclusion,5,2,20.8,1.5,L,13-Oct-17,3,,1,1,,,2.5,,1,,,1,1.9,1.51,1.87,1.44,3.4,,,,,
+279,BARE,ARTR,Control,5,2,20.8,1.5,L,13-Oct-17,3,,0,,14.3,0,,,0,,,,,,,,,,,,,
+280,BARE,HECO,Feedback,5,2,20.8,1.5,L,10-Oct-17,1,5.6,1,,,,7.3,3,0,,,,,,0.22,0.17,11.4,,,,,
+281,BARE,HECO,Exclusion,5,2,20.8,1.5,L,10-Oct-17,1,,0,,,0,,,0,,13.4,,,,,,,,,,,
+282,BARE,HECO,Control,5,2,20.8,1.5,L,10-Oct-17,1,,1,,,,5.1,2,0,,,,,,0.2,0.3,7.4,,,,,pulled 1 grass 180514
+283,BARE,PSSP,Feedback,5,2,20.8,1.5,L,10-Oct-17,1,,1,,,,9.1,2,1,,,,,,0.09,0.26,15.3,,,,,
+284,BARE,PSSP,Exclusion,5,2,20.8,1.5,L,18-Oct-17,1,,1,,,,7.3,4,0,,,,,,1.02,0.63,13.8,,,,,color looked bad replaced 171018
+285,BARE,PSSP,Control,5,2,20.8,1.5,L,10-Oct-17,1,,1,,,,8.8,1,1,,,,,,0.12,0.06,13.4,,,,,
+286,BARE,POSE,Feedback,5,2,20.8,1.5,L,13-Oct-17,1,,1,,,,5,9,0,,,,,,1.09,0.67,5.3,,,,,
+287,BARE,POSE,Exclusion,5,2,20.8,1.5,L,26-Oct-17,1,,1,,,,5.2,14,0,,,,,,1.32,1.41,6.5,,,,,replace after grasshopper; fungus 180514
+288,BARE,POSE,Control,5,2,20.8,1.5,L,26-Oct-17,1,,1,,,,3.6,3,2,,,,,,0.19,0.37,4.3,,,,,replace after grasshopper
+289,ARTR,ARTR,Feedback,5,2,22,1,R,13-Oct-17,3,,3,5,,,2.9,,6,,,,2.95,2.26,2.2,2.11,4.4,,,,,"pulled 2 dicot, 1 extra (0.3 height), 1 grass 180514"
+290,ARTR,ARTR,Exclusion,5,2,22,1,R,13-Oct-17,3,,0,2,17.3,,0.7,,2,,15,,2.11,2.13,2.1,1.51,2.7,,,,,
+291,ARTR,ARTR,Control,5,2,22,1,R,13-Oct-17,3,,0,1,,0,,,0,,,,,,,,,,,,,pulled 1 grass 180514
+292,ARTR,HECO,Feedback,5,2,22,1,R,10-Oct-17,1,,1,,,,7.3,3,2,,,,,,0.1,0.27,12.5,,,,,pulled 3 ARTR 1 grass 180514; pulled 2 ARTR 180531
+293,ARTR,HECO,Exclusion,5,2,22,1,R,15-Oct-17,0,,1,,,,5.2,1,0,,,,,,0.12,0.09,17.5,,,,,replace after grasshopper; pulled 1 dicot 180514
+294,ARTR,HECO,Control,5,2,22,1,R,10-Oct-17,1,,1,,,0,,,1,,,2,,,,,,,,,,"pulled 1 dicot 180514; pulled 1 dicot, transplant dying 180531"
+295,ARTR,PSSP,Feedback,5,2,22,1,R,10-Oct-17,1,,1,,,,14.5,2,0,,,,,,0.13,0.08,29.8,,,,,
+296,ARTR,PSSP,Exclusion,5,2,22,1,R,10-Oct-17,1,,2,,,,20.5,4,0,,,,,,0.42,0.47,31.1,,,,,additional plant 28 Oct 2017; pulled extra (4.3 height 2 tiller shoot only) 180514
+297,ARTR,PSSP,Control,5,2,22,1,R,10-Oct-17,1,,3,,,,15.4,4,2,,,,,,0.16,0.62,28.1,,,,,additional plant 28 Oct 2017; pulled extra (14.3 height 1 tiller shoot only) 4 ARTR 180514
+298,ARTR,POSE,Feedback,5,2,22,1,R,26-Oct-17,1,,1,,,,7.5,4,4,,13.2,,,,0.65,0.36,17.8,,,0,,replace after grasshopper (two times); pulled 3 dicot 180514
+299,ARTR,POSE,Exclusion,5,2,22,1,R,26-Oct-17,1,,1,,,,12.1,7,1,,,,,,1.03,0.45,12.8,,,,,replace after grasshopper (two times)
+300,ARTR,POSE,Control,5,2,22,1,R,26-Oct-17,1,,1,,,,5.7,4,0,,,,,,0.73,0.33,6.6,,,,,"replace after grasshopper (two times); pulled 1 grass 1 dicot, fungus 180514"
+301,POSE,PSSP,Feedback,6,2,26,0,L,15-Oct-17,1,,1,,,,15.1,3,1,,14.7,1,,,0.17,0.71,23.2,,,,,group of 3
+302,POSE,PSSP,Exclusion,6,2,26,0,L,15-Oct-17,1,,1,,,,17.6,3,0,,,,,,0.71,0.52,23.9,,,,,
+303,POSE,PSSP,Control,6,2,26,0,L,15-Oct-17,1,3.4,1,,,,14.5,1,0,,,,,,0.14,0.07,16.7,,,,,
+304,POSE,POSE,Feedback,6,2,26,0,L,18-Oct-17,1,,1,,,,5.2,12,0,,,,,,0.48,0.53,4.9,,,0,,replace after grasshopper; pulled 1 ARTR 1 dicot 180514
+305,POSE,POSE,Exclusion,6,2,26,0,L,18-Oct-17,1,,1,,,,6.6,13,1,,,,,,1,0.78,7.5,,,,,replace after grasshopper; pulled 1 ARTR fungus 180514
+306,POSE,POSE,Control,6,2,26,0,L,13-Oct-17,1,,1,,,,3.4,4,1,,,,,,0.37,0.6,3.5,,,,,pulled 3 dioct 180514
+307,HECO,PSSP,Feedback,6,2,26.7,4,R,14-Oct-17,1,,1,,,,13.4,4,0,,,,,,0.43,0.5,20.5,,,,,group of 3
+308,HECO,PSSP,Exclusion,6,2,26.7,4,R,14-Oct-17,1,,1,,,,13.3,6,3,,,,,,1.06,0.49,19.2,,,,,
+309,HECO,PSSP,Control,6,2,26.7,4,R,14-Oct-17,1,,1,,,,11.5,3,0,,,,,,0.18,n ,17.4,,,,,pulled 1 dicot 180514
+310,HECO,POSE,Feedback,6,2,26.7,4,R,13-Oct-17,1,,1,,,,4.2,6,0,,,,,,0.65,0.98,4.6,,,0,,not caged; pulled 1 dicot 180514
+311,HECO,POSE,Exclusion,6,2,26.7,4,R,13-Oct-17,1,,1,,,,5.6,24,0,,,,,,0.79,1.18,5.7,,,,,no caged; fungus 180514
+312,HECO,POSE,Control,6,2,26.7,4,R,13-Oct-17,1,,1,,,,5.3,5,1,,,,,,0.59,0.27,4.8,,,,,not caged
+313,PSSP,ARTR,Feedback,6,2,26.7,1.5,R,14-Oct-17,3,,3,2,20.6,,2.9,,2,,,,2.37,2.42,2.11,2.59,3.6,,,,,group of 4; pull 1 grass 180514
+314,PSSP,ARTR,Exclusion,6,2,26.7,1.5,R,14-Oct-17,3,,3,4,,,6.9,,5,,,,3.71,3.48,3.38,3.31,10.3,,,,,
+315,PSSP,ARTR,Control,6,2,26.7,1.5,R,14-Oct-17,3,,2,1,,,2.1,,3,,,,1.8,1.82,1.5,1.77,3.7,,,,,pulled 1 grass 180514
+316,PSSP,HECO,Feedback,6,2,26.7,1.5,R,14-Oct-17,1,,1,,,,9.2,3,0,,,,,,0.57,0.53,13.5,,,,,pulled 2 dicot 2 ARTR 180514
+317,PSSP,HECO,Exclusion,6,2,26.7,1.5,R,14-Oct-17,1,,1,,,,4.6,6,0,,,,,,0.89,0.49,17.8,,,,,pulled 1 dicot 180514
+318,PSSP,HECO,Control,6,2,26.7,1.5,R,14-Oct-17,1,,1,,,,5.7,5,0,,,,,,0.7,0.42,10.4,,,,,pulled 1 grass 180514
+319,PSSP,PSSP,Feedback,6,2,26.7,1.5,R,15-Oct-17,1,,1,,,,11.2,3,4,,,,,,0.53,0.3,16.3,,,,,pulled 1 dicot 180514
+320,PSSP,PSSP,Exclusion,6,2,26.7,1.5,R,15-Oct-17,1,,1,,,,20.7,5,1,,,,,,0.94,0.41,23.5,,,,,
+321,PSSP,PSSP,Control,6,2,26.7,1.5,R,15-Oct-17,1,,1,,,,14.4,1,0,,13.8,,,,0.06,0.09,24.6,,,,,
+322,PSSP,POSE,Feedback,6,2,26.7,1.5,R,13-Oct-17,1,,1,1,,,6.2,9,4,,,,,,0.67,0.85,6.6,,,,,
+323,PSSP,POSE,Exclusion,6,2,26.7,1.5,R,26-Oct-17,1,,1,1,,,10.5,9,3,,,,,,0.81,0.35,11.6,,,0,,"replace after grasshopper; transplant chewed almost to stump (caged) 180418; pulled 1 dicot, fungus 180514"
+324,PSSP,POSE,Control,6,2,26.7,1.5,R,26-Oct-17,1,,1,1,,,4.4,5,2,,,,,,0.41,0.62,5.3,,,0,,replace after grasshopper; fungus 180514
+325,HECO,ARTR,Feedback,6,2,27.6,0.5,R,14-Oct-17,3,,0,3,13.6,0,,,2,,,,,,,,,,,,,pulled 1 dicot 180514; pulled 1 grass 180531
+326,HECO,ARTR,Exclusion,6,2,27.6,0.5,R,14-Oct-17,3,,0,,,0,,,0,,,,,,,,,,,,,
+327,HECO,ARTR,Control,6,2,27.6,0.5,R,14-Oct-17,3,,0,1,,0,,,1,,15.7,,,,,,,,,,,pulled 2 dicot 180514
+328,ARTR,ARTR,Feedback,6,2,28.2,3,L,14-Oct-17,3,6.9,0,,,0,,,0,,,,,,,,,,,,,
+329,ARTR,ARTR,Exclusion,6,2,28.2,3,L,14-Oct-17,3,,1,1,15.2,,3.2,,2,,,,4.37,4.43,4.39,3.7,6.9,,,,,
+330,ARTR,ARTR,Control,6,2,28.2,3,L,14-Oct-17,3,,1,1,,0,,,0,,,,,,,,,,,,,transplant barely alive 180418; pulled 1 dicot 180514; pulled 1 grass 1 dicot 180531
+331,ARTR,HECO,Feedback,6,2,28.2,3,L,14-Oct-17,0,,0,,,0,,,0,,,,,,0.04,0.05,3.1,,,0,Shoot180709,replace after grasshopper; pulled 1 dicot 180514
+332,ARTR,HECO,Exclusion,6,2,28.2,3,L,14-Oct-17,1,,0,,,0,,,0,,13.2,,,,0.18,0.19,1.5,1,,0,Shoot180709,Could not pull root for big germinant 180709
+333,ARTR,HECO,Control,6,2,28.2,3,L,15-Oct-17,0,,1,,,,5.2,1,0,,,,,,0.09,0.08,13,,,,,replace after grasshopper; pulled 1 dicot 180514
+334,ARTR,PSSP,Feedback,6,2,28.2,3,L,15-Oct-17,0,6.7,1,,,,19.1,3,0,,,,,,0.71,0.22,35.5,,,,,replace after grasshopper
+335,ARTR,PSSP,Exclusion,6,2,28.2,3,L,15-Oct-17,0,,1,,,,18.2,3,1,,,,,,0.47,0.16,35.7,,,,,replace after grasshopper
+336,ARTR,PSSP,Control,6,2,28.2,3,L,15-Oct-17,0,,1,,,,14.6,3,3,,,,,,0.14,0.12,23.7,,,,,replace after grasshopper
+337,ARTR,POSE,Feedback,6,2,28.2,3,L,18-Oct-17,1,,1,,,,9,7,2,,,,,,0.93,0.76,12.9,,,,,replace after grasshopper; fungus 180514; pulled 2 dicot 180531
+338,ARTR,POSE,Exclusion,6,2,28.2,3,L,18-Oct-17,0,,1,,,,12.2,7,2,,,,,,1.33,0.85,14.2,,,0,,replace after grasshopper; fungus 180514
+339,ARTR,POSE,Control,6,2,28.2,3,L,26-Oct-17,1,,1,,,,10.2,4,7,,14.3,,,,0.09,0.81,11.1,,,,,"replace after grasshopper (two times); fungus, pulled 1 dicot 180514"
+340,HECO,HECO,Feedback,6,2,28.6,1.5,L,14-Oct-17,1,1.5,0,,,0,,,0,,16,,,,0.27,0.17,,,,0,,almost nothing left abovegrounf could not measure height 180907
+341,HECO,HECO,Exclusion,6,2,28.6,1.5,L,14-Oct-17,1,,1,,,,8.1,2,0,,,,,,0.61,0.35,21.7,,,,,pulled 1 dicot 180514
+342,HECO,HECO,Control,6,2,28.6,1.5,L,14-Oct-17,1,,1,,,,4.8,2,0,,,,,,0.29,0.34,8.8,,,,,pulled 1 dicot 180514
+343,BARE,ARTR,Feedback,6,2,29,2,L,14-Oct-17,3,,0,,,,,,,,,,,,,,,,,,,"Disturbed...tubes exposed, transplants and seeds missing 180418"
+344,BARE,ARTR,Exclusion,6,2,29,2,L,14-Oct-17,3,,0,,,,,,,,,,,,,,,,,,,"Disturbed...tubes exposed, transplants and seeds missing 180418"
+345,BARE,ARTR,Control,6,2,29,2,L,14-Oct-17,3,,0,,,,,,,,,,,,,,,,,,,"Disturbed...tubes exposed, transplants and seeds missing 180418"
+346,BARE,HECO,Feedback,6,2,29,2,L,15-Oct-17,0,,0,,,0,,,,,,,,,,,,,,,,"replace after grasshopper; Disturbed...tubes exposed, tags, transplants and seeds missing 180418"
+347,BARE,HECO,Exclusion,6,2,29,2,L,15-Oct-17,0,3.7,0,,15.5,,7.5,1,0,,,,,,0.51,0.3,15.1,,,,,"replace after grasshopper; Disturbed...tubes exposed, transplant dead 180418"
+348,BARE,HECO,Control,6,2,29,2,L,14-Oct-17,1,,0,,,,,,,,,,,,,,,,,,,"Disturbed…PVC knocked away, transplant missing 180418"
+349,BARE,PSSP,Feedback,6,2,29,2,L,15-Oct-17,1,,1,,,,7.6,2,0,,,1,,,0.61,0.62,14.2,,,,,Disturbed…signs of soil disturbance inside tube 180418
+350,BARE,PSSP,Exclusion,6,2,29,2,L,15-Oct-17,1,,1,,,,16.9,4,1,,,,,,1.13,0.59,27.7,,,,,Disturbed…signs of soil disturbance inside tube 180418; pulled 2 ARTR 180514
+351,BARE,PSSP,Control,6,2,29,2,L,18-Oct-17,1,,0,,,,2.5,2,0,,,,,,0.06,0.21,5.5,,,,,"replace after grasshopper; Disturbed…PVC knocked away, transplant missing 180418; transplant very ""wizened"" but 2 new shoots 180514"
+352,BARE,POSE,Feedback,6,2,29,2,L,26-Oct-17,1,,1,,,,6.3,5,1,,12.1,,,,0.62,0.86,6.7,,,0,,replace after grasshopper; pulled 1 dicot 180514
+353,BARE,POSE,Exclusion,6,2,29,2,L,26-Oct-17,1,,1,,,,5.7,13,1,,,,,,1.3,0.71,6.2,,,,,2 leaves left but good 171015; replace after grasshopper 171026
+354,BARE,POSE,Control,6,2,29,2,L,13-Oct-17,1,,1,,,,2.8,6,0,,,,,,0.49,0.63,2.1,,,,,Disturbed…plant intact but seed sticks missing 180418; pulled 1 dicot 180514
+355,POSE,ARTR,Feedback,6,2,30.9,0,L,14-Oct-17,3,,2,4,,,3.4,,3,,,,2.1,1.89,1.1,1.31,3.8,,,,,group of 3; pulled 1 dicot 3 grasses 180514
+356,POSE,ARTR,Exclusion,6,2,30.9,0,L,14-Oct-17,3,,2,4,12.7,,4.9,,2,,11.4,,2.78,2.22,1.91,1.71,5.8,,,,,
+357,POSE,ARTR,Control,6,2,30.9,0,L,14-Oct-17,3,,3,2,,,1.5,,0,,,,1.16,1.5,0.94,0.99,1.8,,,,,
+358,POSE,HECO,Feedback,6,2,30.9,0,L,14-Oct-17,0,6.1,1,,,,3.9,2,0,,,,,,1.27,0.31,15.8,,,,,"replace after grasshopper; pulled 2 dicots 180514; kind of looks like 2 different plants (""bigger plant"" measurements: 0.32W, 0.33L, 15.8H)"
+359,POSE,HECO,Exclusion,6,2,30.9,0,L,14-Oct-17,0,,1,,,,9.6,3,0,,,,,,0.41,0.56,19.2,,,,,replace after grasshopper
+360,POSE,HECO,Control,6,2,30.9,0,L,14-Oct-17,0,,1,,,,5.9,3,0,,,,,,0.4,0.09,10.5,,,,,replace after grasshopper; pulled 1 dicot 1 grass 180514
+361,ARTR,ARTR,Feedback,7,2,34,2,R,14-Oct-17,3,,1,,,,2.4,,0,,,,1.63,1.3,1.46,1.45,3.1,,,,,
+362,ARTR,ARTR,Exclusion,7,2,34,2,R,14-Oct-17,3,,1,,,0,,,1,,,,,,,,,,,,,
+363,ARTR,ARTR,Control,7,2,34,2,R,14-Oct-17,3,,0,2,16.8,0,,,2,,,,,,,,,,,,,pulled 1 dicot 180514
+364,ARTR,HECO,Feedback,7,2,34,2,R,18-Oct-17,1,,1,,,,8.3,4,1,,,,,,0.38,0.17,16.6,,,,,replace after grasshopper; pulled 1 dicot 180514
+365,ARTR,HECO,Exclusion,7,2,34,2,R,18-Oct-17,1,,1,,,,10.7,3,1,,,,,,0.3,0.34,18.6,,,,,replace after grasshopper; pulled 1 ARTR 180514
+366,ARTR,HECO,Control,7,2,34,2,R,18-Oct-17,1,,1,,,,4.7,1,3,,11.5,,,,0.1,0.14,9.9,,,,,replace after grasshopper; pulled 1 dicot 180514
+367,ARTR,PSSP,Feedback,7,2,34,2,R,18-Oct-17,1,1.4,1,,,,28.9,1,1,,,,,,0.17,0.2,35.8,,,,,replace after grasshopper; pulled 1 ARTR 180514
+368,ARTR,PSSP,Exclusion,7,2,34,2,R,18-Oct-17,1,,1,,,,20.2,1,1,,,,,,0.28,0.16,22.5,,,,,replace after grasshopper
+369,ARTR,PSSP,Control,7,2,34,2,R,18-Oct-17,1,,1,,,,23.2,1,3,,,,,,0.08,0.04,29.4,,,,,replace after grasshopper
+370,ARTR,POSE,Feedback,7,2,34,2,R,26-Oct-17,1,,1,,,,8.8,6,2,,,,,,0.42,0.64,8.5,,,0,,replace after grasshopper (two times)
+371,ARTR,POSE,Exclusion,7,2,34,2,R,26-Oct-17,1,,1,,,,8.9,5,2,,,,,,1.03,1.39,9.8,,,0,,replace after grasshopper (two times)
+372,ARTR,POSE,Control,7,2,34,2,R,26-Oct-17,1,,1,,,,4.3,4,0,,10.5,,,,0.44,0.46,4.9,,,0,,replace after grasshopper (two times); pulled 4 dicot 180514
+373,HECO,ARTR,Feedback,7,2,36,1,R,14-Oct-17,3,,3,1,,,3.6,,1,,11.8,,2.32,2.1,1.77,1.3,4.5,,,,,
+374,HECO,ARTR,Exclusion,7,2,36,1,R,14-Oct-17,3,6.1,1,2,16.9,0,,,1,,,,,,,,,,,,,
+375,HECO,ARTR,Control,7,2,36,1,R,14-Oct-17,3,,2,1,,,2.4,,2,,,,1.75,1.64,1.6,1.34,2.1,,,,,pulled 1 extra transplant (1.9 height) 180514; pulled 1 dicot
+376,POSE,ARTR,Feedback,7,2,36.5,3,R,14-Oct-17,3,,0,3,,,1.7,,3,,,,1.37,1.14,0.69,1.42,2.5,,,,,
+377,POSE,ARTR,Exclusion,7,2,36.5,3,R,14-Oct-17,3,8.6,1,2,13.5,0,,,2,,,,,,,,,,,,,
+378,POSE,ARTR,Control,7,2,36.5,3,R,14-Oct-17,3,,0,1,,,2.3,,1,,12.7,,0.66,0.39,0.3,0.14,2.4,,,,,
+379,POSE,HECO,Feedback,7,2,36.5,3,R,14-Oct-17,1,,1,,,,5.6,2,0,,,,,,0.12,0.21,9.5,,,,,
+380,POSE,HECO,Exclusion,7,2,36.5,3,R,18-Oct-17,1,,1,,,,3.2,2,0,,,,,,0.64,0.47,10,,,,,replace after grasshopper
+381,POSE,HECO,Control,7,2,36.5,3,R,14-Oct-17,1,,1,,,,5.6,2,0,,,,,,0.29,0.14,7.4,,,,,
+382,POSE,POSE,Feedback,7,2,37,3.5,R,13-Oct-17,1,8.2,1,,,,2.9,9,3,,,,,,0.91,0.48,3.6,,,,,pulled 1 dicot 1 ARTR 180514
+383,POSE,POSE,Exclusion,7,2,37,3.5,R,13-Oct-17,1,,1,,,,6.6,10,0,,,,,,1.01,0.68,8.5,,,0,,
+384,POSE,POSE,Control,7,2,37,3.5,R,13-Oct-17,1,,1,,,,2.8,5,0,,14.7,,,,0.47,0.23,2.8,,,0,,pulled 1 dicot 180514
+385,POSE,PSSP,Feedback,7,2,38,3,R,15-Oct-17,1,,1,,,,17.7,2,0,,,,,,0.71,0.22,23.8,,,,,pulled 1 dicot 180514
+386,POSE,PSSP,Exclusion,7,2,38,3,R,15-Oct-17,1,,1,,,,16.6,4,1,,11.9,,,,0.6,0.4,24.5,,,,,pulled 1 dicot 180514
+387,POSE,PSSP,Control,7,2,38,3,R,15-Oct-17,1,,1,,,,12.5,2,0,,,,,,0.1,0.12,14.9,,,,,pulled 1 dicot 180514
+388,BARE,ARTR,Feedback,7,2,38.8,4,R,14-Oct-17,3,,1,1,15.4,,1.5,,1,,,,1.61,1.67,1.28,1.43,3.1,,,,,
+389,BARE,ARTR,Exclusion,7,2,38.8,4,R,14-Oct-17,3,,3,3,,,3.3,,1,,,,2.04,2.89,2.84,2.75,5.9,,,,,
+390,BARE,ARTR,Control,7,2,38.8,4,R,14-Oct-17,3,,0,1,,0,,,1,,,,,,,,,,,,,
+391,BARE,HECO,Feedback,7,2,38.8,4,R,14-Oct-17,1,,1,,,,6.6,2,0,,,,,,0.55,0.79,14,,,,,
+392,BARE,HECO,Exclusion,7,2,38.8,4,R,14-Oct-17,1,,1,,,0,,,0,,,,,,,,,,,,,
+393,BARE,HECO,Control,7,2,38.8,4,R,14-Oct-17,1,,1,,,,4.5,3,0,,16.1,,,,0.36,0.19,0.65,,,,,
+394,BARE,PSSP,Feedback,7,2,38.8,4,R,15-Oct-17,1,,1,,,,16.1,2,0,,,,,,0.11,0.14,23.5,,,,,
+395,BARE,PSSP,Exclusion,7,2,38.8,4,R,15-Oct-17,1,,1,,,,14.2,4,0,,,,,,0.78,0.41,20.7,,,,,
+396,BARE,PSSP,Control,7,2,38.8,4,R,15-Oct-17,1,9,1,,,,9.4,2,0,,,,,,0.14,0.08,13.4,,,,,pulled 1 dicot 180531
+397,BARE,POSE,Feedback,7,2,38.8,4,R,13-Oct-17,1,,1,,,,4.6,9,2,,,,,,0.94,0.43,4.5,,,0,,
+398,BARE,POSE,Exclusion,7,2,38.8,4,R,13-Oct-17,1,,1,1,,,5.1,16,1,,,,,,1.08,1,5.7,,,0,,
+399,BARE,POSE,Control,7,2,38.8,4,R,13-Oct-17,1,,1,,,,3.2,10,0,,,,,,0.77,0.93,3.3,,1,0,,flowering stalk 15.2cm height 180709
+400,HECO,HECO,Feedback,7,2,39,0,R,15-Oct-17,0,,1,,,,7.2,5,1,,,1,,,0.6,0.68,13.2,,,,,replace after grasshopper; looks like 2 transplants 180531
+401,HECO,HECO,Exclusion,7,2,39,0,R,15-Oct-17,0,3.4,1,,,,13.1,2,0,,14.8,,,,0.81,0.36,23.1,,,,,replace after grasshopper
+402,HECO,HECO,Control,7,2,39,0,R,15-Oct-17,0,,1,,,,2.8,1,2,,,,,,0.04,0.08,3.2,,,0,,replace after grasshopper; pulled 2 dicot 1 grass 180514
+403,HECO,PSSP,Feedback,7,2,39.5,2,R,14-Oct-17,1,,1,,,,20.5,1,0,,,1,,,0.09,0.09,24.1,,,,,2 plants; pulled 1 dicot 1 ARTR 180514
+404,HECO,PSSP,Exclusion,7,2,39.5,2,R,14-Oct-17,1,4.4,1,,,,17.1,2,1,,,,,,0.6,0.42,22.8,,,,,pulled 1 ARTR 180514
+405,HECO,PSSP,Control,7,2,39.5,2,R,14-Oct-17,1,,1,,,,9.4,3,0,,,,,,0.62,0.24,11.4,,1,,,pulled 2 dicot 180514; flowering stalk 22.5cm height 180709
+406,HECO,POSE,Feedback,7,2,39.5,2,R,13-Oct-17,1,,1,,,,7.1,5,0,,13.3,,,,0.76,0.33,7.8,,,0,,fungus 180514
+407,HECO,POSE,Exclusion,7,2,39.5,2,R,13-Oct-17,1,,1,,,,8.5,5,3,,,,,,0.73,0.99,7.6,,,,,chewed not quite to stump (<1cm; caged) 180418
+408,HECO,POSE,Control,7,2,39.5,2,R,13-Oct-17,1,,1,,,,5.3,5,1,1,,,,,0.55,0.34,5.5,,1,0,,"pulled 2 dicot, starting to make flower stalk (8 height) 180514; flowering stalk 26.2cm height 180709"
+409,PSSP,ARTR,Feedback,7,2,40.7,2,R,14-Oct-17,3,,3,1,,,4.8,,2,,,,3.18,3.08,4.23,2.16,5.8,,,,,2 plants; pulled 2 dicot 180514
+410,PSSP,ARTR,Exclusion,7,2,40.7,2,R,14-Oct-17,3,,3,1,14,,4.8,,1,,,,3.15,2.79,2.28,2.41,6.1,,,,,transplant branching out 180514
+411,PSSP,ARTR,Control,7,2,40.7,2,R,14-Oct-17,3,,1,1,,,2.7,,2,,,,1.89,1.82,2.03,2.09,3.4,,,,,
+412,PSSP,HECO,Feedback,7,2,40.7,2,R,14-Oct-17,1,4.3,1,,,,6.8,3,1,,11.1,,,,0.37,0.48,17,,,,,
+413,PSSP,HECO,Exclusion,7,2,40.7,2,R,14-Oct-17,1,,1,,,,8.2,2,0,,,,,,0.94,0.48,15.6,,,,,
+414,PSSP,HECO,Control,7,2,40.7,2,R,14-Oct-17,1,,1,,,,4.6,2,0,,,,,,0.55,0.32,8.5,,,,,
+415,PSSP,PSSP,Feedback,7,2,40.7,3,R,15-Oct-17,1,3.7,1,,,,8,2,0,,,,,,0.53,0.22,11.7,,,,,pulled 1 dicot 180514; pulled 3 dicot 180531
+416,PSSP,PSSP,Exclusion,7,2,40.7,3,R,15-Oct-17,1,,1,,,,18.8,1,0,,,,,,0.68,0.21,27.5,,,,,
+417,PSSP,PSSP,Control,7,2,40.7,3,R,15-Oct-17,1,,1,,,,9.7,2,0,,,,,,0.36,0.08,12.3,,,,,
+418,PSSP,POSE,Feedback,7,2,40.7,3,R,13-Oct-17,1,,1,,,,5.6,10,1,,,,,,0.81,0.76,7,,,,,pulled 1 dicot 180514
+419,PSSP,POSE,Exclusion,7,2,40.7,3,R,13-Oct-17,1,,1,2,,,6.6,13,5,,,,,,0.83,1.17,6.8,,,,,pulled 1 dicot 180514
+420,PSSP,POSE,Control,7,2,40.7,3,R,13-Oct-17,1,,1,,,,3.6,7,1,,14.1,,,,0.7,0.26,4.1,,,0,,"pulled 1 dicot, fungus 180514"
+421,BARE,ARTR,Feedback,8,3,3.7,3,L,14-Oct-17,3,,1,2,16.1,,2.6,,2,,,,2.46,3.5,2.08,1.9,4.8,,,,,
+422,BARE,ARTR,Exclusion,8,3,3.7,3,L,14-Oct-17,3,,3,3,,,2.6,,3,,,,3.07,2.29,1.72,2.03,4.7,,,,,
+423,BARE,ARTR,Control,8,3,3.7,3,L,14-Oct-17,3,,2,2,,,2.1,,3,,,,1.05,0.67,0.34,0.48,9.8,,,,,pulled 2 dicot 1 grass 180514
+424,BARE,HECO,Feedback,8,3,3.7,3,L,14-Oct-17,1,,1,,,,7.7,4,0,,,,,,1.07,0.17,16,,,,,pulled 2 ARTR 180514
+425,BARE,HECO,Exclusion,8,3,3.7,3,L,14-Oct-17,1,,1,,,,4.6,2,1,,,,,,0.76,0.59,14.6,,,,,pulled 2 ARTR 180514
+426,BARE,HECO,Control,8,3,3.7,3,L,14-Oct-17,1,,1,,,,6.2,3,0,,,,,,0.59,0.18,8.6,,,,,
+427,BARE,PSSP,Feedback,8,3,3.7,3,L,15-Oct-17,1,,1,,,,14.5,3,1,,13.4,,,,0.6,0.11,20.1,,,,,
+428,BARE,PSSP,Exclusion,8,3,3.7,3,L,15-Oct-17,1,,1,,,,14.7,5,0,,,,,,1.14,0.73,18.9,,,,,
+429,BARE,PSSP,Control,8,3,3.7,3,L,15-Oct-17,1,,1,,,,11.6,1,0,,,,,,0.2,0.16,17.9,,,,,
+430,BARE,POSE,Feedback,8,3,3.7,3,L,13-Oct-17,1,,1,,,,5.5,7,1,,,,,,0.72,0.51,5.4,,,0,,fungus 180514
+431,BARE,POSE,Exclusion,8,3,3.7,3,L,13-Oct-17,1,5.9,1,,,,8.6,8,0,,,,,,1.29,0.78,8.3,,,,,
+432,BARE,POSE,Control,8,3,3.7,3,L,13-Oct-17,1,,1,,,,3.4,3,0,,,,,,0.38,0.25,3.8,,,,,
+433,POSE,PSSP,Feedback,8,3,5.7,3,R,15-Oct-17,1,,1,,,,15.2,2,1,,,,,,0.1,0.15,21.9,,,,,patch of 3 plants; pulled 2 dicot 180514
+434,POSE,PSSP,Exclusion,8,3,5.7,3,R,15-Oct-17,1,,1,,,,16.9,4,0,,,,,,0.47,0.73,21.8,,,,,
+435,POSE,PSSP,Control,8,3,5.7,3,R,15-Oct-17,1,,1,,,,6.1,3,1,,15,,,,0.08,0.1,9.9,,,,,pulled 1 dicot 1 grass 180514
+436,POSE,POSE,Feedback,8,3,5.7,3,R,13-Oct-17,1,,1,,,,6.4,11,1,,,,,,1.18,0.45,6.2,,,,,
+437,POSE,POSE,Exclusion,8,3,5.7,3,R,13-Oct-17,1,,1,,,,8.1,17,0,,,,,,0.76,1.11,8.43,,,,,fungus 180514
+438,POSE,POSE,Control,8,3,5.7,3,R,13-Oct-17,1,7.7,1,,,,5.4,5,0,,,,,,0.46,0.41,6,,,,,
+439,HECO,ARTR,Feedback,8,3,7.4,1.5,R,14-Oct-17,3,,3,4,,,2.6,,3,,,,1.36,0.74,1.71,0.75,4.9,,,,,patch; pulled 1 grass 180514
+440,HECO,ARTR,Exclusion,8,3,7.4,1.5,R,14-Oct-17,3,,3,4,13.9,0,,,0,,,,,,,,,,,,,
+441,HECO,ARTR,Control,8,3,7.4,1.5,R,14-Oct-17,3,,2,3,,,2.2,,0,,,,1.16,0.71,0.92,0.68,2.1,,,,,
+442,HECO,HECO,Feedback,8,3,7.4,1.5,R,14-Oct-17,1,,1,,,,9.7,3,0,,,,,,0.57,0.49,16.3,,,,,
+443,HECO,HECO,Exclusion,8,3,7.4,1.5,R,10-Nov-17,1,,1,,,0,,,2,,,,,,,,,,,,,Original seedling dried out; pulled 1 dicot 180514
+444,HECO,HECO,Control,8,3,7.4,1.5,R,14-Oct-17,1,,1,,,,4.3,3,1,,,,,,0.43,0.15,6.2,,,,,
+445,HECO,PSSP,Feedback,8,3,7.4,1.5,R,15-Oct-17,1,,1,,,,17.1,1,1,,,,,,0.41,0.14,18.4,,,,,pulled 1 ARTR 180514
+446,HECO,PSSP,Exclusion,8,3,7.4,1.5,R,15-Oct-17,1,,1,,,,20.8,2,1,,13.1,,,,0.45,0.12,24.8,,,,,
+447,HECO,PSSP,Control,8,3,7.4,1.5,R,15-Oct-17,1,,1,,,,16.3,1,1,,,,,,0.09,0.08,12.9,,,,,pulled 1 dicot 1 grass 180514
+448,HECO,POSE,Feedback,8,3,7.4,1.5,R,13-Oct-17,1,7.4,1,,,,10,7,2,,,,,,0.87,0.5,8.3,,,0,,pulled 1 dicot 180514
+449,HECO,POSE,Exclusion,8,3,7.4,1.5,R,13-Oct-17,1,,1,,,,4.7,20,0,,,,,,1.32,0.7,4.3,,,,,
+450,HECO,POSE,Control,8,3,7.4,1.5,R,13-Oct-17,1,,1,,,,4.8,4,1,,,,,,0.45,0.24,4.7,,,,,pulled 2 dicot 180514
+451,PSSP,ARTR,Feedback,8,3,7.7,2.5,R,14-Oct-17,3,,2,3,,,3.2,,5,,,,2.99,1.36,1.84,1.89,6.2,,,,,patch of 3 plants
+452,PSSP,ARTR,Exclusion,8,3,7.7,2.5,R,14-Oct-17,3,,2,2,14.9,,2.9,,3,,,,2.98,2.02,3,2.73,5.7,,,,,
+453,PSSP,ARTR,Control,8,3,7.7,2.5,R,14-Oct-17,3,,3,1,,,2.3,,3,,,,1.42,1.28,1.12,1.1,2.5,,,,,pulled 1 dicot 180514
+454,PSSP,HECO,Feedback,8,3,7.7,2,R,14-Oct-17,1,,1,,,,7.5,3,0,,14.7,,,,0.46,0.22,18.5,,,,,pulled 1 dicot 180514
+455,PSSP,HECO,Exclusion,8,3,7.7,2,R,14-Oct-17,1,,1,,,0,,,0,,,,,,0.16,0.14,2.1,,,,Shoot180709,transplant almost dead 180418
+456,PSSP,HECO,Control,8,3,7.7,2,R,14-Oct-17,1,6.2,1,,,,5.2,2,0,,,,,,0.24,0.28,7.8,,,,,
+457,ARTR,ARTR,Feedback,8,3,9.5,0,L,14-Oct-17,3,,2,2,,,2.7,,3,,,,,,3.04,1.54,4.5,,,,,pulled 1 dicot 180514
+458,ARTR,ARTR,Exclusion,8,3,9.5,0,L,10-Nov-17,3,,0,1,,0,,,2,,,,,,,,,,,,,All seedlings eaten and replaced; pulled 1 dicot 180514
+459,ARTR,ARTR,Control,8,3,9.5,0,L,14-Oct-17,3,,1,1,16.4,,1.8,,3,,,,3.97,2.18,2.37,1.89,3.2,,,,,
+460,ARTR,HECO,Feedback,8,3,9.5,0,L,14-Oct-17,1,,1,,,,4.6,2,3,,15.7,,2.66,1.35,0.17,0.32,14.7,1,,,,pulled 4 dicot 180514
+461,ARTR,HECO,Exclusion,8,3,9.5,0,L,14-Oct-17,1,,1,,,,2.1,1,2,,,,,,0.11,0.04,3.8,,,0,,transplant almost dead 180418; pulled 2 dicot 180514
+462,ARTR,HECO,Control,8,3,9.5,0,L,14-Oct-17,1,8.4,1,,,,5.5,1,0,,,,,,0.16,0.23,8.7,,,,,
+463,ARTR,PSSP,Feedback,8,3,9.5,0,L,15-Oct-17,1,,1,,,,21.3,1,1,,,,,,0.13,0.13,36.5,,,,,pulled 3 ARTR 180514
+464,ARTR,PSSP,Exclusion,8,3,9.5,0,L,15-Oct-17,1,,1,,,,28.3,1,2,,,,,,0.55,0.28,32.7,,,,,pulled 2 ARTR 1 dicot 180514
+465,ARTR,PSSP,Control,8,3,9.5,0,L,15-Oct-17,1,,1,,,,15.9,2,1,,,,,,0.07,0.09,23.2,,,,,pulled 1 ARTR 180514
+466,ARTR,POSE,Feedback,8,3,9.5,0,L,13-Oct-17,1,,1,,,,10,8,2,,,,,,0.9,0.61,12.3,,,,,"pulled 1 dicot, fungus 180514"
+467,ARTR,POSE,Exclusion,8,3,9.5,0,L,13-Oct-17,1,,1,,,,10.1,7,3,,,,,,0.71,0.37,14.8,,,,,"pulled 1 dicot, fungus, signs of herbivory 180514"
+468,ARTR,POSE,Control,8,3,9.5,0,L,13-Oct-17,1,,1,,,,8.9,4,4,,12.7,,,,0.74,0.12,9.4,,,,,pulled 3 ARTR 180514
+469,POSE,ARTR,Feedback,8,3,10,2,L,14-Oct-17,3,4.4,2,,16.9,,2.8,,1,,,,2.78,2.46,1.05,1,12.1,,,,,patch of 2; pulled 1 grass 1 extra transplant (0.5 height) 180514
+470,POSE,ARTR,Exclusion,8,3,10,2,L,14-Oct-17,3,,2,4,,,4.1,,6,,12.5,,2.46,2.47,2.95,1.83,4.4,,,,,pulled 1 grass 180514
+471,POSE,ARTR,Control,8,3,10,2,L,14-Oct-17,3,,1,11,,,1.6,,1,,,,0.75,0.76,0.67,0.95,1.7,,,,,pulled 1 grass 1 extra 180514
+472,POSE,HECO,Feedback,8,3,10,2,L,14-Oct-17,1,,1,,,,8.4,2,1,,,,,,0.44,0.3,17.5,,,,,pulled 1 ARTR 2 grass 180514
+473,POSE,HECO,Exclusion,8,3,10,2,L,14-Oct-17,1,,1,,,,9.36,3,2,,,,,,0.28,0.25,21.3,,,,,
+474,POSE,HECO,Control,8,3,10,2,L,14-Oct-17,1,,1,,,,4.8,2,0,,,,,,0.19,0.2,6.8,,,,,pulled 2 ARTR 180514
+475,PSSP,PSSP,Feedback,8,3,11.3,0,L,15-Oct-17,1,,1,,,,19.2,3,2,,,,,,0.48,0.14,28.6,,,,,patch of 2; pulled 2 dicot 2 ARTR 180514
+476,PSSP,PSSP,Exclusion,8,3,11.3,0,L,15-Oct-17,1,,1,,,,19.4,1,3,,,,,,0.25,0.18,33.2,,,,,pulled 1 dicot 180514
+477,PSSP,PSSP,Control,8,3,11.3,0,L,15-Oct-17,1,,1,,,,8.7,1,1,,,,,,0.09,0.05,11.9,,,,,pulled 1 ARTR 2 grass 180514
+478,PSSP,POSE,Feedback,8,3,11.3,0,L,30-Oct-17,1,,1,,,,10.6,7,3,,,,,,1.4,0.66,11.2,,,0,,"replace after grasshopper, replaced again when still eaten despite cage; fungus 180514"
+479,PSSP,POSE,Exclusion,8,3,11.3,0,L,14-Oct-17,1,0.8,1,2,,,6.8,14,4,,10.6,,,,1.39,0.83,7.1,,,,,
+480,PSSP,POSE,Control,8,3,11.3,0,L,26-Oct-17,1,,1,2,,,3.8,9,3,,,,,,1.07,0.31,3.6,,,0,,replace after grasshopper; pulled 1 grass 180514
+481,POSE,POSE,Feedback,9,3,15,4,R,13-Oct-17,1,,1,,,,6.1,5,1,,,,,,0.85,0.34,7.3,,,,,"pulled 1 dicot, fungus 180514"
+482,POSE,POSE,Exclusion,9,3,15,4,R,15-Oct-17,0,,1,,,,6.7,13,1,,14.1,,,,1.33,0.57,6.8,,,,,replace after grasshopper
+483,POSE,POSE,Control,9,3,15,4,R,15-Oct-17,0,5.1,1,,,,4.5,3,3,,,,,,0.36,0.11,5.1,,,,,replace after grasshopper; caterpiller 180514
+484,HECO,POSE,Feedback,9,3,17.5,5,R,15-Oct-17,0,,1,,,,12.9,4,2,,15.6,,,,0.61,0.36,17.5,,,,,"watch out for other plants; replace after grasshopper; pulled 1 dicot , fungus 180514"
+485,HECO,POSE,Exclusion,9,3,17.5,5,R,13-Oct-17,1,9.1,1,,,,8,10,2,,,,,,0.92,0.68,8.7,,,,,
+486,HECO,POSE,Control,9,3,17.5,5,R,13-Oct-17,1,,1,,,,7.3,3,1,,,,,,0.35,0.38,8.4,,,,,"pulled 1 dicot, fungus 180514"
+487,PSSP,PSSP,Feedback,9,3,18,0.5,L,15-Oct-17,1,,1,,,,24.5,1,2,,,,,,0.22,0.22,34.9,,,,,pulled 1 dicot 180514
+488,PSSP,PSSP,Exclusion,9,3,18,0.5,L,15-Oct-17,1,,1,,,,16.9,3,0,,,,,,0.31,0.37,24,,,,,
+489,PSSP,PSSP,Control,9,3,18,0.5,L,15-Oct-17,1,7.5,1,,,,12,1,3,,,,,,0.13,0.21,14.7,,,,,
+490,PSSP,POSE,Feedback,9,3,18,0.5,L,13-Oct-17,1,,1,,,,4.8,10,5,,,,,,0.36,0.44,5.1,,,,,
+491,PSSP,POSE,Exclusion,9,3,18,0.5,L,13-Oct-17,1,,1,,,,9.9,22,2,,13.7,,,,0.92,0.81,10.1,,,0,,
+492,PSSP,POSE,Control,9,3,18,0.5,L,13-Oct-17,1,,1,,,,4.9,4,2,,,,,,0.25,0.16,5.2,,,0,,fungus 180514
+493,PSSP,ARTR,Feedback,9,3,19.1,2,R,14-Oct-17,3,,2,2,17,,2.2,,2,,,,1.57,1.47,1.12,0.88,3.2,,,,,
+494,PSSP,ARTR,Exclusion,9,3,19.1,2,R,14-Oct-17,3,10.1,0,2,,0,,,2,,,,,,,,,,,,,
+495,PSSP,ARTR,Control,9,3,19.1,2,R,14-Oct-17,3,,2,1,,,1.6,,2,,14.9,,0.7,0.74,0.45,0.46,1.6,,,,,
+496,PSSP,HECO,Feedback,9,3,19.1,2,R,14-Oct-17,1,,1,,,,7.2,3,1,,,,,,0.39,0.21,20,,,,,pull 1 grass 180514
+497,PSSP,HECO,Exclusion,9,3,19.1,2,R,14-Oct-17,1,6.7,1,,,,6.3,4,0,,,,,,0.62,0.24,19,,,,,
+498,PSSP,HECO,Control,9,3,19.1,2,R,14-Oct-17,1,,1,,,,4.1,3,0,,,,,,0.24,0.09,9.8,,,,,
+499,POSE,HECO,Feedback,9,3,19.1,1,L,14-Oct-17,1,,1,,,,5.9,3,1,,,,,,0.19,0.14,15.4,,,,,pull 1 dicot 1 grass 180514
+500,POSE,HECO,Exclusion,9,3,19.1,1,L,14-Oct-17,1,,1,,,,6.3,3,0,,,,,,0.61,0.44,17.5,,,0,,only 1 leaf but looks good 171015
+501,POSE,HECO,Control,9,3,19.1,1,L,14-Oct-17,1,,1,,,,5.8,3,2,,14.2,,,,0.26,0.24,11.9,,,,,pull 3 grass
+502,POSE,PSSP,Feedback,9,3,19.1,1,L,15-Oct-17,1,4.1,1,,,,18.2,2,0,,,,,,0.59,0.12,26.5,,,,,pull 2 grass
+503,POSE,PSSP,Exclusion,9,3,19.1,1,L,15-Oct-17,1,,1,,,,19,3,0,,,,,,0.29,0.35,8.8,,,,,
+504,POSE,PSSP,Control,9,3,19.1,1,L,15-Oct-17,1,,1,,,,14.7,2,0,,,,,,0.16,0.24,19.9,,,,,pull 1 dicot 180514
+505,BARE,PSSP,Feedback,9,3,19.1,1.5,R,15-Oct-17,1,5.9,1,,,,15.8,1,2,,,,,,0.2,0.1,27.4,,,,,pulled 2 dicot 180514
+506,BARE,PSSP,Exclusion,9,3,19.1,1.5,R,15-Oct-17,1,,1,,,,20.9,3,1,,,,,,0.55,0.18,27.9,,,,,
+507,BARE,PSSP,Control,9,3,19.1,1.5,R,15-Oct-17,1,,1,,,,11.4,1,0,,,,,,0.18,0.1,18.3,,,,,pulled 1 dicot 180514
+508,BARE,POSE,Feedback,9,3,19.1,1.5,R,13-Oct-17,1,,1,,,,4.6,10,2,,,,,,0.84,0.45,4.6,,,0,,
+509,BARE,POSE,Exclusion,9,3,19.1,1.5,R,13-Oct-17,1,,1,,,,5.7,13,1,,,,,,0.69,0.67,5.9,,,0,,
+510,BARE,POSE,Control,9,3,19.1,1.5,R,13-Oct-17,1,,1,,,,3.9,7,0,,,,,,0.89,0.39,3.6,,,,,
+511,HECO,PSSP,Feedback,9,3,19.9,0.5,L,15-Oct-17,1,,1,,,,18,1,0,,,1,,,0.15,0.46,27.8,,,,,pulled 2cm weed 180418; pulled 1 dicot 1 grass 180514
+512,HECO,PSSP,Exclusion,9,3,19.9,0.5,L,15-Oct-17,1,5,1,,,,16.9,2,4,,,,,,0.59,0.51,23.3,,,,,
+513,HECO,PSSP,Control,9,3,19.9,0.5,L,15-Oct-17,1,,1,,,,12.9,1,2,,14.3,,,,0.1,0.05,20.2,,,,,pullde 1 dicot 180514
+514,POSE,ARTR,Feedback,9,3,20.2,0.5,L,14-Oct-17,3,,2,1,,,2.6,,1,,,,3.01,2.64,2.54,3.56,4.6,,,,,
+515,POSE,ARTR,Exclusion,9,3,20.2,0.5,L,14-Oct-17,3,,1,2,17.3,,4.5,,2,,,,4.71,4.7,4.26,4.58,6.8,,,,,
+516,POSE,ARTR,Control,9,3,20.2,0.5,L,14-Oct-17,3,8,2,,,,1.8,,1,,,,1.33,1.17,0.57,0.96,2.1,,,,,pulled 1 grass 180514
+517,HECO,HECO,Feedback,9,3,20.7,0.5,R,14-Oct-17,1,5.5,1,,,,5.1,2,0,,,,,,0.36,0.8,9,,,,,pulled 2cm weed 180418; pulled 1 dicot 1 ARTR 180514
+518,HECO,HECO,Exclusion,9,3,20.7,0.5,R,14-Oct-17,1,,1,,,,9.1,2,0,,14.2,,,,0.25,0.18,18.4,,,0,,pulled 1 dicot 180514
+519,HECO,HECO,Control,9,3,20.7,0.5,R,14-Oct-17,1,,1,,,,5.3,3,0,,,,,,0.31,0.33,15.4,,,,,
+520,HECO,ARTR,Feedback,9,3,21.1,0.5,L,14-Oct-17,3,4.2,2,6,16.9,,3.5,,7,,17.2,,2.29,1.98,1.03,1.86,4.9,,,,,pulled 2 dicot 180514
+521,HECO,ARTR,Exclusion,9,3,21.1,0.5,L,14-Oct-17,3,,1,2,,,3.5,,1,,,,3.84,4.87,3.59,3.18,7,,,,,
+522,HECO,ARTR,Control,9,3,21.1,0.5,L,14-Oct-17,3,,2,4,,,1.8,,4,,,,1.16,1.11,0.86,1.34,2.4,,,,,pulled 2 dicot 180531
+523,BARE,ARTR,Feedback,9,3,21.9,3,R,14-Oct-17,3,,0,1,,,1.4,,1,,,,1.01,0.74,0.88,0.71,1.9,,,,,
+524,BARE,ARTR,Exclusion,9,3,21.9,3,R,14-Oct-17,3,,2,,12.2,,2.3,,0,,,,3.51,3.42,2.29,2.35,4.3,,,,,
+525,BARE,ARTR,Control,9,3,21.9,3,R,14-Oct-17,3,,1,,,,1.3,,0,,,,0.26,0.59,0.49,0.48,1.3,,,,,
+526,BARE,HECO,Feedback,9,3,21.9,3,R,14-Oct-17,1,,1,,,,6,2,0,,14.7,,,,0.26,0.41,15.2,,,,,
+527,BARE,HECO,Exclusion,9,3,21.9,3,R,14-Oct-17,1,1.5,1,,,0,,,0,,,,,,0.15,0.03,1.4,,,0,,
+528,BARE,HECO,Control,9,3,21.9,3,R,14-Oct-17,1,,1,,,,6.6,2,1,,,,,,0.08,0.18,10.1,,,,,
+529,ARTR,ARTR,Feedback,9,3,22.4,0,L,14-Oct-17,3,4.3,1,1,19.2,,2.3,,0,,,,3.05,2.42,0.13,0.21,3.7,,,,,
+530,ARTR,ARTR,Exclusion,9,3,22.4,0,L,14-Oct-17,3,,0,1,,0,,,0,,,,,,,,,,,,,
+531,ARTR,ARTR,Control,9,3,22.4,0,L,14-Oct-17,3,,3,,,,2.4,,0,,,,1.15,0.85,0.74,0.73,2.2,,,,,
+532,ARTR,HECO,Feedback,9,3,22.4,0,L,14-Oct-17,1,,1,,,,5.6,2,0,,15.3,,,,0.27,0.2,14.6,,,,,pulled 4 dicot 1 ARTR 180514
+533,ARTR,HECO,Exclusion,9,3,22.4,0,L,14-Oct-17,1,,0,,,0,,,1,,,,,,,,,,,,,
+534,ARTR,HECO,Control,9,3,22.4,0,L,14-Oct-17,1,,1,,,,5.8,3,1,,,,,,0.23,0.09,10.5,,,,,pulled 2 dicot 180514
+535,ARTR,PSSP,Feedback,9,3,22.4,0,L,15-Oct-17,1,,1,,,,17.6,2,1,,,,,,0.19,0.1,26.9,,,,,pulled 3 ARTR 180514
+536,ARTR,PSSP,Exclusion,9,3,22.4,0,L,15-Oct-17,1,,2,,,,20.6,4,3,,,,,,0.18,0.96,31.6,,,,,additional plant 28 Oct 2017
+537,ARTR,PSSP,Control,9,3,22.4,0,L,15-Oct-17,1,,1,,,,16.1,1,1,,,,,,0.09,0.11,25.8,,,,,pulled 5 dicot 3 ARTR 1 grass 180514
+538,ARTR,POSE,Feedback,9,3,22.4,0,L,13-Oct-17,1,,1,,,,5,6,4,,,,,,0.85,0.3,6.2,,,0,,
+539,ARTR,POSE,Exclusion,9,3,22.4,0,L,13-Oct-17,1,,1,,,,12,13,3,1,,,,,0.67,0.64,10.6,,1,0,,"on other side of sagebrush; flower stalk (17 height), pull 1 dicot 180514; spittlebug spit 180531; flowering stalk 20.9 height, seeds gone 180709"
+540,ARTR,POSE,Control,9,3,22.4,0,L,13-Oct-17,1,,1,1,,,6.9,10,4,1,,,,,0.43,0.5,7.5,,1,,,"on other side of sagebrush; fungus, pull 1 dicot, flower stalk 12.6 height 180514; flower stalk 31.3 180709"
+541,PSSP,PSSP,Feedback,10,3,25,1,R,15-Oct-17,1,,1,,,,7.2,2,2,,,,,,0.22,0.28,26,,,,,on other side of sagebrush; pulled 3 dicot 180514; pulled 1 dicot 180531
+542,PSSP,PSSP,Exclusion,10,3,25,1,R,15-Oct-17,1,,1,,,,22.3,3,0,,,,,,0.22,0.15,18.3,,,,,
+543,PSSP,PSSP,Control,10,3,25,1,R,15-Oct-17,1,4.4,1,,,0,,,3,,12.1,,,,,,,,,,,transplant almost dead 180418;  pulled 2 dicot 180514
+544,PSSP,POSE,Feedback,10,3,25,1,R,14-Oct-17,1,,1,1,,,6.4,11,4,1,,,,,0.89,0.75,5.1,,1,,,pulled 1 dicot flower stalk 15.8 height 180514; flower stalk 9.3 180709
+545,PSSP,POSE,Exclusion,10,3,25,1,R,14-Oct-17,1,,1,,,,6.4,15,1,,,,,,0.92,1.02,7.63,,,,,
+546,PSSP,POSE,Control,10,3,25,1,R,14-Oct-17,1,,1,1,,,6,11,3,,,,,,1.13,0.68,6.3,,,,,
+547,POSE,POSE,Feedback,10,3,28.5,5,L,14-Oct-17,1,7.9,1,,,,5,10,5,1,14.9,,,,1.29,0.52,6.6,,1,,,flower stalk 8.5 height 180514; flower stalk 29 180709
+548,POSE,POSE,Exclusion,10,3,28.5,5,L,14-Oct-17,1,,1,,,,10,17,6,,,,,,1.39,1.07,13.2,,,,,fungus 180514
+549,POSE,POSE,Control,10,3,28.5,5,L,14-Oct-17,1,,1,,,,5.1,8,0,1,,,,,0.85,0.33,6.5,,1,,,pulled 2 dicot starting to flower 7cm height 180514; flower stalk 22.1 180709
+550,BARE,ARTR,Feedback,10,3,29,5,L,14-Oct-17,3,,0,3,,,0.8,,1,,,,1.29,1.42,1.59,1.4,2.9,,,,,additional plant 28 Oct 2017; pulled 1 dicot
+551,BARE,ARTR,Exclusion,10,3,29,5,L,14-Oct-17,3,,1,2,23.3,,2.8,,0,,,1,4.57,3.03,3.12,2.18,4.4,,,,,transplant barely alive 180418; pulled 1 dicot 180514
+552,BARE,ARTR,Control,10,3,29,5,L,14-Oct-17,3,,0,4,,0,,,0,,,1,,,,,,,,,,
+553,BARE,HECO,Feedback,10,3,29,5,L,14-Oct-17,1,,0,,,0,,,0,,,,,,,,,,,,,pulled 1 dicot 180514
+554,BARE,HECO,Exclusion,10,3,29,5,L,14-Oct-17,1,,0,,,0,,,0,,,,,,1.14,0.12,2.8,,,0,Shoot180709,
+555,BARE,HECO,Control,10,3,29,5,L,14-Oct-17,1,,0,,,0,,,0,,,,,,0.08,0.2,1.6,,,0,Shoot180709,
+556,BARE,PSSP,Feedback,10,3,29,5,L,15-Oct-17,1,,1,,,,8.6,2,0,,,,,,0.68,0.39,20.6,,,,,
+557,BARE,PSSP,Exclusion,10,3,29,5,L,15-Oct-17,1,,0,,,0,,,0,,,,,,,,,,,,,
+558,BARE,PSSP,Control,10,3,29,5,L,15-Oct-17,1,6.3,1,,,,8.2,3,1,,14.7,,,,0.53,0.22,15.1,,,,,
+559,BARE,POSE,Feedback,10,3,29,5,L,14-Oct-17,1,,1,,,,5.1,8,1,,,,,,0.78,0.7,5.2,,,,,pulled 1 ARTR 1 grass 1 dicot 180514
+560,BARE,POSE,Exclusion,10,3,29,5,L,14-Oct-17,1,,1,,,,6.3,19,0,,,,,,1.31,1.3,5.8,,,,,pulled 1 dicot 180514
+561,BARE,POSE,Control,10,3,29,5,L,14-Oct-17,1,,1,,,,2.8,12,0,,,,,,0.79,0.63,3.4,,,,,fungus 180514
+562,ARTR,ARTR,Feedback,10,3,30,1.5,L,14-Oct-17,3,,1,4,,,1.4,,2,,,,0.65,0.39,0.41,0.23,1.6,,,,,"pulled 2 dicot 1 grass, transplant almost dead 180514"
+563,ARTR,ARTR,Exclusion,10,3,30,1.5,L,14-Oct-17,3,,2,3,20.7,,2.8,,4,,,,3.85,2.9,1.5,1.99,4.9,,,,,pulled 1 grass 180514
+564,ARTR,ARTR,Control,10,3,30,1.5,L,14-Oct-17,3,,0,,,0,,,0,,,,,,,,,,,,,
+565,ARTR,HECO,Feedback,10,3,30,1.5,L,14-Oct-17,1,,1,,,,11.2,,0,,,,,,0.87,0.16,20.8,,,,,pulled med weed 180418; pulled 1 dicot 1 ARTR 180514
+566,ARTR,HECO,Exclusion,10,3,30,1.5,L,14-Oct-17,1,,1,,,,11.3,4,1,,,,,,0.75,0.25,18.4,,,,,pulled 1 ARTR 180514
+567,ARTR,HECO,Control,10,3,30,1.5,L,14-Oct-17,1,0.5,1,,,,7,3,0,,,,,,0.34,0.17,12.5,,,,,pulled 4 dicot 180514
+568,ARTR,PSSP,Feedback,10,3,30,1.5,L,15-Oct-17,1,,1,,,,30.5,2,3,,14.5,,,,0.3,0.15,33.6,,,,,
+569,ARTR,PSSP,Exclusion,10,3,30,1.5,L,15-Oct-17,1,,1,,,,29.6,4,0,,,,,,0.74,0.48,31.2,,,,,pulled 1 dicot 1 ARTR 180514
+570,ARTR,PSSP,Control,10,3,30,1.5,L,15-Oct-17,1,,1,,,,18,2,2,,,,,,0.11,0.18,26.8,,,,,pulled 1 dicot 1 giant grass 180514
+571,ARTR,POSE,Feedback,10,3,30,1.5,L,14-Oct-17,1,,1,,,,11.7,8,3,,,,,,1.07,0.42,9.7,,-1,,,pulled 1 dicot 1 ARTR 180514; about to reproduce stalk 21 180709
+572,ARTR,POSE,Exclusion,10,3,30,1.5,L,26-Oct-17,1,,1,,,,8.1,13,5,1,,,,,0.65,0.88,7.3,,1,0,FlwrStalk180709,2 leaves left but good 171015; replace after grasshopper 171026; flower (17.8 height) pull 5 ARTR 180514; flower stalk 35 cm0180709
+573,ARTR,POSE,Control,10,3,30,1.5,L,14-Oct-17,1,,1,,,,7,3,1,,,,,,0.89,0.34,8.3,,,,,pull 7 dicot 1 ARTR 180514
+574,POSE,HECO,Feedback,10,3,32,6,L,14-Oct-17,1,,0,,,0,,,0,,16.8,,,,0.09,0.08,4.5,,,0,Shoot180709,
+575,POSE,HECO,Exclusion,10,3,32,6,L,14-Oct-17,1,,1,,,,7.5,3,0,,,,,,0.62,0.38,23.8,,,,,
+576,POSE,HECO,Control,10,3,32,6,L,14-Oct-17,1,8.8,0,,,0,,,0,,,,,,0.1,0.13,5.2,,,0,Shoot180709,
+577,PSSP,ARTR,Feedback,10,3,32.4,7,L,14-Oct-17,3,,0,,17.8,0,,,0,,,,,,,,,,,,,
+578,PSSP,ARTR,Exclusion,10,3,32.4,7,L,14-Oct-17,3,,1,3,,,4.3,,3,,,,3.86,3.67,1.64,0.01,8.4,,,,,
+579,PSSP,ARTR,Control,10,3,32.4,7,L,14-Oct-17,3,5.2,2,2,,,1.6,,2,,17.1,,1.13,0.95,0.85,0.94,1.5,,,,,pulld 1 dicot 180514
+580,PSSP,HECO,Feedback,10,3,32.4,7,L,14-Oct-17,1,,1,,,,8.4,4,1,,,,,,0.78,0.24,19.6,,,,,pulled 1 dicot 1 ARTR 180514
+581,PSSP,HECO,Exclusion,10,3,32.4,7,L,14-Oct-17,1,,1,,,,7.4,3,0,,,,,,0.7,0.26,28.8,,,,,pulled 2 dicot 180514
+582,PSSP,HECO,Control,10,3,32.4,7,L,14-Oct-17,1,,1,,,,5.7,2,0,,,,,,0.11,0.19,13.4,,,,,pulld 1 dicot 180514
+583,POSE,ARTR,Feedback,10,3,33,3,L,14-Oct-17,3,,0,,18.3,,,,,,,,,,,,,,,,,"Disturbance…transplant and seed sticks missing, soil sunken inside cylinder 180418"
+584,POSE,ARTR,Exclusion,10,3,33,3,L,14-Oct-17,3,8.8,0,,,,,,,,14.2,,,,,,,,,,,"Disturbance…transplant and seed sticks missing, soil sunken inside cylinder 180418"
+585,POSE,ARTR,Control,10,3,33,3,L,14-Oct-17,3,,0,,,,,,,,,,,,,,,,,,,"Disturbance…transplant and seed sticks missing, soil sunken inside cylinder 180418"
+586,HECO,ARTR,Feedback,10,3,34.7,1.5,L,14-Oct-17,3,,2,4,,,4.2,,1,,,,2.65,2.46,2.1,2.03,6.3,,,,,Pulled large grass seedling 180418; pulled 1 grass 1dicot 180514; pulled 1 grass 180531
+587,HECO,ARTR,Exclusion,10,3,34.7,1.5,L,14-Oct-17,3,5.2,1,11,21.6,,6,,3,,15.8,,6.2,4.19,2.64,5.7,7.4,,,,,"No way to tell which germinants are on picks, maybe 4? 180418; pulled 7 dicot, transplant branching 180514; pulled 1 dicot 180531"
+588,HECO,ARTR,Control,10,3,34.7,1.5,L,14-Oct-17,3,,3,3,,,2.8,,3,,,,1.67,1.18,1.32,0.86,2.3,,,,,pulld 1 dicot 180514
+589,HECO,HECO,Feedback,10,3,36.6,5,L,14-Oct-17,1,,1,,,,5.3,4,1,,,,,,0.24,0.13,16.4,,,,,patch; pulled 3 dicot 180514
+590,HECO,HECO,Exclusion,10,3,36.6,5,L,14-Oct-17,1,,1,,,,11.9,4,1,,,,,,0.76,0.77,21.8,,,,,
+591,HECO,HECO,Control,10,3,36.6,5,L,14-Oct-17,1,3.9,1,,,,5,3,0,,,,,,0.3,0.21,11.5,,,,,
+592,HECO,PSSP,Feedback,10,3,36.6,5,L,15-Oct-17,1,,1,,,,13.8,3,0,,13.7,,,,0.43,0.25,21.7,,,,,pulld 1 dicot 180514
+593,HECO,PSSP,Exclusion,10,3,36.6,5,L,15-Oct-17,1,,1,,,,19.3,3,1,,,,,,0.51,0.72,31,,,,TallStalk180709,
+594,HECO,PSSP,Control,10,3,36.6,5,L,15-Oct-17,1,,1,,,,9.5,2,1,,,,,,0.52,0.92,19.2,,,,,pulled 2 dicot 180514
+595,HECO,POSE,Feedback,10,3,36.6,5,L,14-Oct-17,1,,1,,,,6.1,10,2,,,,,,0.58,0.52,6.2,,,,,pulled 2 dicot 180514
+596,HECO,POSE,Exclusion,10,3,36.6,5,L,14-Oct-17,1,3.1,1,,,,5.9,19,0,,13,,,,0.79,0.78,6.4,,,,,pulld 1 dicot 180514
+597,HECO,POSE,Control,10,3,36.6,5,L,14-Oct-17,1,,1,,,,4.6,12,0,,,,,,0.46,0.79,4.6,,,,,pulled 2 dicot 1 grass 180514
+598,POSE,PSSP,Feedback,10,3,36.7,2.5,L,15-Oct-17,1,,1,,,,13.9,1,0,,,,,,0.08,0.14,22,,,,,pulled 1 ARTR 1 grass 180514
+599,POSE,PSSP,Exclusion,10,3,36.7,2.5,L,15-Oct-17,1,,1,,,,15.8,5,1,,13.9,,,,0.41,0.51,24.3,,,,,
+600,POSE,PSSP,Control,10,3,36.7,2.5,L,15-Oct-17,1,10.4,1,,,,3.9,2,1,,,,,,0.17,0.04,8,,,,,
