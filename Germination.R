@@ -3,6 +3,7 @@ library(visreg)
 library(car)
 library(lme4)
 library(emmeans)
+library(ggpubr)
 
 #Load and subset data---------------------------------------------
 all<-read.csv("Transplant data 180712.csv")
@@ -62,6 +63,10 @@ Anova(m.ARTR)#Treatment p=0.03, donor p=0.06, interaction p=0.19
 m.ARTR.treat <- emmeans(m.ARTR, "Treatment")
 pairs(m.ARTR.treat)#control less than feedback
 plot(m.ARTR.treat, comparisons = TRUE)
+#visualize PSF...no obvious fungal-mediated feedbacks
+p.ARTR <- ggboxplot(ARTR, x = "Treatment", y = "Total",
+               color = "DonorSpp", 
+               add = "jitter", shape = "DonorSpp")
 #POSE
 m.POSE<-glm(Total~DonorSpp*Treatment,data=POSE,family=poisson())
 hist(resid(m.POSE))#pretty decent
@@ -70,6 +75,10 @@ Anova(m.POSE)#Treatment p=0.13, donor p<0.0001, interaction p=0.72
 m.POSE.donor <- emmeans(m.POSE, "DonorSpp")
 pairs(m.POSE.donor)#Low germination in bare
 plot(m.POSE.donor, comparisons = TRUE)
+#visualize PSF...no obvious fungal-mediated feedbacks
+p.POSE <- ggboxplot(POSE, x = "Treatment", y = "Total",
+                    color = "DonorSpp", 
+                    add = "jitter", shape = "DonorSpp")
 #PSSP
 m.PSSP<-glm(Total~DonorSpp*Treatment,data=PSSP,family=poisson())
 hist(resid(m.PSSP))#pretty decent
@@ -78,6 +87,10 @@ Anova(m.PSSP)#Treatment p=0.18, donor p=0.003, interaction p=0.09
 m.PSSP.donor <- emmeans(m.PSSP, "DonorSpp")
 pairs(m.PSSP.donor)#Low germination in bare
 plot(m.PSSP.donor, comparisons = TRUE)
+#visualize PSF...no obvious fungal-mediated feedbacks
+p.PSSP <- ggboxplot(PSSP, x = "Treatment", y = "Total",
+                    color = "DonorSpp", 
+                    add = "jitter", shape = "DonorSpp")
 #HECO
 m.HECO<-glm(Total~DonorSpp*Treatment,data=HECO,family=poisson())
 hist(resid(m.HECO))#not the greatest
@@ -86,3 +99,7 @@ Anova(m.HECO)#Treatment p=0.66, donor p=0.003, interaction p=0.91
 m.HECO.donor <- emmeans(m.HECO, "DonorSpp")
 pairs(m.HECO.donor)#Low germination in bare
 plot(m.HECO.donor, comparisons = TRUE)
+#visualize PSF...no obvious fungal-mediated feedbacks, very low germination overall
+p.HECO <- ggboxplot(HECO, x = "Treatment", y = "Total",
+                    color = "DonorSpp", 
+                    add = "jitter", shape = "DonorSpp")
