@@ -1,8 +1,13 @@
+############################################################
+#This code takes the raw data with corrected labels and 
+#does cleaning and processing for downstream analyses  
+##############################################################
+
 setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
 library(car)
 
 #Raw data import
-raw<-read.csv("Transplant data_labels corrected 190102.csv")
+raw<-read.csv("./data/Transplant data_labels corrected 190102.csv")
 
 #Derive values of interest---------------
 #Area
@@ -75,4 +80,4 @@ raw$Height<-raw$Height180709
 
 #OUTPUT clean data with only columns of interest-------------------
 clean<-raw[,c(1:6,10,32,36,40:45)]
-write.csv(clean,"Transplant data clean 190201.csv")
+write.csv(clean,"./data/Transplant data clean 190201.csv")
