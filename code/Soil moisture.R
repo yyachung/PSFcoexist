@@ -1,9 +1,13 @@
+################################################################
+#Code to analyze soil moisture data during the experiment
+################################################################
+
 setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
 library(visreg)
 
 #Data 180612 (still no consistent plant or spatial effects)---------------
 #Data
-all<-read.csv("Transplant data 180612.csv")
+all<-read.csv("./data/Transplant data 180612.csv")
 dat180418<-subset(all,!is.na(VWC180418))
 dat180531<-subset(all,!is.na(VWC180531))
 
@@ -33,7 +37,7 @@ summary(m2)#no relationship
 
 #Data 171107 (no spatial or plant effects)---------------
 #Data
-all<-read.csv("Transplant data 171107.csv")
+all<-read.csv("./data/Transplant data 171107.csv")
 dat<-subset(all,!is.na(VWC171110))
 
 #Prelim examination/dataviz

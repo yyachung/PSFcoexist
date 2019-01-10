@@ -1,3 +1,7 @@
+#######################################################################
+#First-pass code to look at PSF using preliminary plant size data     #
+#######################################################################
+
 setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
 library(visreg)
 library(car)
@@ -5,7 +9,7 @@ library(lme4)
 library(ggpubr)
 
 #Data
-all<-read.csv("Transplant data 180712.csv")
+all<-read.csv("./data/Transplant data 180712.csv")
 
 #Calculate area
 all$Area<-all$Length180709/2*all$Width180709/2*pi #calculate as ellipse

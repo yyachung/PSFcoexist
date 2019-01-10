@@ -1,3 +1,7 @@
+################################################################
+#Code to analyze germination data during the experiment
+################################################################
+
 setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
 library(visreg)
 library(car)
@@ -6,7 +10,7 @@ library(emmeans)
 library(ggpubr)
 
 #Load and subset data---------------------------------------------
-all<-read.csv("Transplant data 180712.csv")
+all<-read.csv("./data/Transplant data 180712.csv")
 
 #Subset germination data only
 germ<-all[,c("newID","DonorSpp","Transplant","Treatment","Germ180418","Germ180514","Germ180531","Germ180709")]

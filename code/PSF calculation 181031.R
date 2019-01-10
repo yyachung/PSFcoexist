@@ -1,3 +1,8 @@
+###########################################################
+#This calculates ln-ratio PSF, Is, and conducts associated#
+#analyses from the cleaned data                           #
+###########################################################
+
 setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
 library(visreg)
 library(car)
@@ -5,7 +10,7 @@ library(lme4)
 library(ggpubr)
 
 #Using Aboveground Biomass as a response---------------------------
-all<-read.csv("Transplant data clean 190102.csv")
+all<-read.csv("./data/Transplant data clean 190102.csv")
 ARTR<-subset(all,Transplant=="ARTR")
 POSE<-subset(all,Transplant=="POSE")
 PSSP<-subset(all,Transplant=="PSSP")
