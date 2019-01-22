@@ -6,6 +6,65 @@
 setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
 library(car)
 
+#######################Greenhouse Data 2018 Cleaning##########################
+#Raw data import
+raw<-read.csv("./data/Greenhouse data 190120.csv")
+
+#Derive values of interest---------------
+
+#Germination 
+raw$harvested_extra[is.na(raw$harvested_extra)]<-0
+#Germination should be calculated as the number of harvested extra +1 except for those that had no germination
+#Make a column for germ yes/no
+raw$germStatus[raw$g_180605==0]<-0
+raw$germStatus[raw$g_180605!=0]<-1
+#Calculate final germination
+for (i in 1:length(raw[,1])){
+  if (raw$germStatus[i]==0) raw$germ[i]<-0
+  else raw$germ[i]<-max(raw$harvested_extra[i]+1,raw$g_180605[i])
+}
+
+#Survival
+raw$newGerm[is.na(raw$newGerm)]<-0
+for (i in 1:length(raw[,1])){
+  if (raw$germStatus[i]!=0&raw$newGerm[i]!=1) raw$surv[i]<-raw$surv_180713[i]#don't count survival for new germs and no germs
+  if (raw$germStatus[i]==0) raw$surv[i]<-NA
+}
+
+#Belowground biomass
+#Examine dry-wet ratios
+dryWet<-raw$blw.dry/raw$blw.sub
+boxplot(dryWet~raw$Plant)#not super different
+hist(dryWet)
+summary.aov(lm(dryWet~raw$Plant))#sig diffs among spp for dry:wet
+#Process data
+raw$blw<-NA
+for (i in 1:length(raw[,1])){
+  if(!is.na(raw$blw.dry[i])&is.na(raw$blw.sub[i])) {
+    raw$blw[i]<-raw$blw.dry[i]
+    next
+  }
+  if (is.na(raw$blw.wet[i])&!is.na(raw$blw.sub[i])){#use sub dry for those with no full wet samples (n=2)
+    raw$blw[i]<-raw$blw.dry[i]
+    next
+  }
+  if (!is.na(raw$blw.sub[i])){
+    raw$blw[i]<-raw$blw.wet[i]*raw$blw.dry[i]/raw$blw.sub[i]
+  }
+  
+}
+
+#Calculate RMR (root mass ratio)
+raw$RMR<-raw$blw/(raw$abv+raw$blw)
+#check distribution
+hist(raw$RMR)
+
+#OUTPUT clean data with only columns of interest-------------------
+clean<-raw[,c(1:5,16,19,21,23:27)]
+write.csv(clean,"./data/Greenhouse data clean 190122.csv")
+
+
+#######################Field Data 2017/2018 Cleaning##########################
 #Raw data import
 raw<-read.csv("./data/Transplant data_labels corrected 190102.csv")
 
