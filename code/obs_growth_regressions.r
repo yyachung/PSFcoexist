@@ -13,7 +13,7 @@ focalSpp <- "PSSP"
 focalXY <- c(0,0)
 focalSize <- 1   # in cm^2
 neighborSpp <- "PSSP"
-neighborDist <- 5  # distance from focal individual's centroid to neighbor's centroid
+neighborDist <- 10  # distance from focal individual's centroid to neighbor's centroid
 neighborRadius <- 5
 annuli <- c(seq(2,20,2),seq(25,50,5),seq(60,150,10))
 speciesList <- c("ARTR","HECO","POSE","PSSP")
@@ -42,6 +42,7 @@ neighbor <- makeDiscs(focalXY[1],focalXY[2] + neighborDist,neighborRadius)
 
 # see if it worked
 plot(neighbor[[1]])
+points(focalXY[1],focalXY[2])
 lines(rings[[1]]@polygons[[1]]@Polygons[[1]]@coords,col="red")
 lines(rings[[2]]@polygons[[1]]@Polygons[[1]]@coords,col="red")
 
@@ -77,8 +78,10 @@ parms <- read.csv(paste0("../data/LongTermData/",focalSpp,"_growth.csv"))
 # calculate crowding
 W <- rep(0,length(speciesList))
 names(W) <- paste("W.",speciesList,sep="")
-doSpp <- which(speciesList==neighborSpp)
-W[doSpp] <- nbarea%*%distWts[,neighborSpp] 
+if(neighborSpp!="BARE"){
+  doSpp <- which(speciesList==neighborSpp)
+  W[doSpp] <- nbarea%*%distWts[,neighborSpp] 
+}
 
 # get interaction coefficients
 alphas <- parms[1,c("W.ARTR","W.HECO","W.POSE","W.PSSP")]
