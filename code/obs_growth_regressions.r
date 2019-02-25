@@ -13,7 +13,7 @@ focalSpp <- "PSSP"
 focalXY <- c(0,0)
 focalSize <- 1   # in cm^2
 neighborSpp <- "PSSP"
-neighborDist <- 10  # distance from focal individual's centroid to neighbor's centroid
+neighborDist <- 5  # distance from focal individual's centroid to neighbor's centroid
 neighborRadius <- 5
 annuli <- c(seq(2,20,2),seq(25,50,5),seq(60,150,10))
 speciesList <- c("ARTR","HECO","POSE","PSSP")
@@ -45,6 +45,9 @@ plot(neighbor[[1]])
 points(focalXY[1],focalXY[2])
 lines(rings[[1]]@polygons[[1]]@Polygons[[1]]@coords,col="red")
 lines(rings[[2]]@polygons[[1]]@Polygons[[1]]@coords,col="red")
+lines(rings[[3]]@polygons[[1]]@Polygons[[1]]@coords,col="red")
+lines(rings[[4]]@polygons[[1]]@Polygons[[1]]@coords,col="red")
+lines(rings[[5]]@polygons[[1]]@Polygons[[1]]@coords,col="red")
 
 # calculate overlapping areas of focal annuli and neighbor
 Nrings <- length(annuli)
