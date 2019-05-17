@@ -104,8 +104,8 @@ library(ggplot2)
 library(ggpubr)
 
 # Plot function
-f.plotNeighborEffect <- function(focalsp,neighborsp){
-  subdata <- subset(neighborFocal.dat, focal==focalsp&neighbor==neighborsp)
+f.plotNeighborEffect <- function(focalsp,neighborsp,data){
+  subdata <- subset(data, focal==focalsp&neighbor==neighborsp)
   p <- ggplot(subdata, aes(x=neighborDist, y=newSize, color=factor(neighborRadius))) +
     geom_point() +
     geom_line() +
@@ -116,4 +116,4 @@ f.plotNeighborEffect <- function(focalsp,neighborsp){
 }
 
 # Test plot function
-f.plotNeighborEffect("PSSP","POSE")
+f.plotNeighborEffect("PSSP","POSE",neighborFocal.dat)
