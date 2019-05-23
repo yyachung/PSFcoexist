@@ -9,6 +9,7 @@ library(maptools)
 library(sp)
 library(rgeos)
 library(dplyr)
+library(ggplot2)
 
 # Input vars using means from year 2 field data
 neighborDist <-  data.frame(neighbor = c("ARTR","HECO","POSE","PSSP","BARE"),
@@ -144,7 +145,6 @@ for (i in 1:4){
     obsPSF.table[(4*(i-1)+j),]<-c(focal,neighbor,quantile(lnRatio,0.25),quantile(lnRatio,0.75),sd(lnRatio),mean(lnRatio)) #focus on the range where 50% of values fall
   }
 }
-#All ranges negative values
 
 # Process field experiment control data only -------------
 all<-read.csv("../data/Transplant data clean 190102.csv")
@@ -177,16 +177,81 @@ for (k in 1:4){
   }
 }
 
+# Process field experiment feedback data only -------------
+feedback<-subset(all,Treatment=="Feedback")
+
+# Make empty dataframe
+expPSF.table.F <- cbind.data.frame(Transplant=character(),
+                                 DonorSpp=character(),
+                                 Rep=integer(),
+                                 lnRatio=double(),
+                                 stringsAsFactors=F)
+for (k in 1:4){
+  focal <- as.character(neighborFocal.dat$focal)[k]
+  
+  for (i in 1:10){
+    subdata<-feedback[which(feedback$Rep==i&feedback$Transplant==focal),]
+    home<-subdata[which(subdata$DonorSpp==focal),]
+    away<-subdata[which(subdata$DonorSpp!=focal),]
+    
+    for (j in 1:length(away[,1])){
+      Donor<-unique(away$DonorSpp)[j]
+      lnRatio<-log(home$Abv/away$Abv[away$DonorSpp==Donor])
+      expPSF.table.F<-rbind(expPSF.table.F,list(Transplant=as.character(focal),
+                                            DonorSpp=as.character(Donor),
+                                            Rep=i,
+                                            lnRatio=lnRatio),
+                          stringsAsFactors=FALSE)
+    }
+    
+  }
+}
+
+# Process field experiment exclusion data only -------------
+exclusion<-subset(all,Treatment=="Exclusion")
+
+# Make empty dataframe
+expPSF.table.E <- cbind.data.frame(Transplant=character(),
+                                   DonorSpp=character(),
+                                   Rep=integer(),
+                                   lnRatio=double(),
+                                   stringsAsFactors=F)
+for (k in 1:4){
+  focal <- as.character(neighborFocal.dat$focal)[k]
+  
+  for (i in 1:10){
+    subdata<-exclusion[which(exclusion$Rep==i&exclusion$Transplant==focal),]
+    home<-subdata[which(subdata$DonorSpp==focal),]
+    away<-subdata[which(subdata$DonorSpp!=focal),]
+    
+    for (j in 1:length(away[,1])){
+      Donor<-unique(away$DonorSpp)[j]
+      lnRatio<-log(home$Abv/away$Abv[away$DonorSpp==Donor])
+      expPSF.table.E<-rbind(expPSF.table.E,list(Transplant=as.character(focal),
+                                                DonorSpp=as.character(Donor),
+                                                Rep=i,
+                                                lnRatio=lnRatio),
+                            stringsAsFactors=FALSE)
+    }
+    
+  }
+}
+
 
 # Combine regression and field experiment PSF estimates in visualization -----------------
-library(ggpubr)
-
 #Combine experiment and observation data
 combPSF.table<-obsPSF.table
 for (i in 1:length(obsPSF.table[,1])){
   subdata<-subset(expPSF.table,Transplant==obsPSF.table$focal[i]&DonorSpp==obsPSF.table$neighbor[i])
   combPSF.table$exp.lnR.mean[i]<-mean(subdata$lnRatio,na.rm = T)
   combPSF.table$exp.lnR.sd[i]<-sd(subdata$lnRatio,na.rm = T)
+  subdataF<-subset(expPSF.table.F,Transplant==obsPSF.table$focal[i]&DonorSpp==obsPSF.table$neighbor[i])
+  combPSF.table$exp.lnR.mean.F[i]<-mean(subdataF$lnRatio,na.rm = T)
+  combPSF.table$exp.lnR.sd.F[i]<-sd(subdataF$lnRatio,na.rm = T)
+  subdataE<-subset(expPSF.table.E,Transplant==obsPSF.table$focal[i]&DonorSpp==obsPSF.table$neighbor[i])
+  combPSF.table$exp.lnR.mean.E[i]<-mean(subdataE$lnRatio,na.rm = T)
+  combPSF.table$exp.lnR.sd.E[i]<-sd(subdataE$lnRatio,na.rm = T)
+  
 }
 
 #Fix character/numeric issue s
@@ -195,15 +260,21 @@ combPSF.table$lnR.75<-as.numeric(combPSF.table$lnR.75)
 combPSF.table$lnR.sd<-as.numeric(combPSF.table$lnR.sd)
 combPSF.table$lnR.mean<-as.numeric(combPSF.table$lnR.mean)
 
+#Make data better for plotting
+plotdf<-data.frame(focal=rep(0,64),neighbor=rep(0,64),mean=rep(0,64),sd=rep(0,64),type=rep(0,64))
+plotdf$type<-rep(c("obs","exp.ctrl","exp.fdbk","exp.excl"),each=16)
+plotdf[1:16,1:4]<-combPSF.table[,c(1,2,6,5)]
+plotdf[17:32,1:4]<-combPSF.table[,c(1,2,7,8)]
+plotdf[33:48,1:4]<-combPSF.table[,c(1,2,9,10)]
+plotdf[49:64,1:4]<-combPSF.table[,c(1,2,11,12)]
 #Plot
-ggplot(data=combPSF.table)+
-  geom_point(aes(x=neighbor,y=exp.lnR.mean))+
-  geom_errorbar(mapping=aes(x=neighbor, ymin=exp.lnR.mean-exp.lnR.sd, ymax=exp.lnR.mean+exp.lnR.sd), width=0.2)+
-  geom_point(aes(x=neighbor,y=lnR.mean),col="blue")+
-  geom_errorbar(mapping=aes(x=neighbor,ymin=lnR.mean-lnR.sd,ymax=lnR.mean+lnR.sd),width=0.2,col="blue")+
+ggplot(data=plotdf)+
+  geom_point(aes(x=neighbor,y=mean,color=type),position=position_dodge(width = 0.8),size=2)+
+  geom_errorbar(mapping=aes(x=neighbor, ymin=mean-sd, ymax=mean+sd,color=type), 
+                width=0.3,position=position_dodge(width = 0.8))+
+  geom_hline(yintercept=0,linetype=2)+
   facet_wrap( ~ focal, ncol=2)+
   theme_bw()+
   ylab("ln(home/away)")+xlab("Donor/neighbor species")
 
-#Not sure why "dodge" isn't working but otherwise good.
 
