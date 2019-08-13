@@ -52,3 +52,34 @@ m1<-lm(VWC171110~DonorSpp*factor(Transect),data=dat)#plant effects
 summary(m1)#nothing
 m2<-lm(VWC171110~Position*factor(Transect),data=dat)#spatial effects
 summary(m2)#nothing
+
+# Data 190509 ------------------------------
+dat<-read.csv("./data/Soil moisture 190509.csv")
+dat$locality<-paste(dat$Transect,dat$Position,dat$Offset,dat$Side,sep=".")
+
+#Prelim examination/dataviz
+hist(dat$Moist_190509)#pretty normal
+boxplot(dat$Moist_190509~dat$Transect)#not too different
+boxplot(dat$Moist_190509~dat$DonorSpp)#HECO seems higher
+boxplot(dat$Moist_190509~dat$Transplant)#Same
+boxplot(dat$Moist_190509~dat$Treatment)#Same
+boxplot(dat$Moist_190509~dat$Rep)#reps 1 and 2 noticeably higher
+plot(dat$Position,dat$Moist_190509,pch=dat$Transect,col=dat$Transect)
+#Maybe slope pattern for transect 1, definitely microsite patterns
+boxplot(dat$Moist_190509~dat$locality)#lots of variation
+
+#Stats
+m1<-lm(Moist_190509~DonorSpp*Transplant*Treatment,data=dat)#Manipulation effects
+Anova(m1,type = 3)#No sig effects 
+
+#Include spatial random effects
+library(lme4)
+m2<-lmer(Moist_190509~DonorSpp*Transplant*Treatment
+         +(1|locality),data=dat)#spatial effects
+summary(m2)#locality accounts for >50% of total variance
+Anova(m2,type = 3)#DonorSpp p=0.06
+
+m3<-lmer(Moist_190509~DonorSpp*Transplant*Treatment
+         +(1|Rep),data=dat)#spatial effects
+summary(m3)#locality accounts for ~25% of total variance
+Anova(m3,type = 3)#DonorSpp p=0.06

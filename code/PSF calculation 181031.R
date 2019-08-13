@@ -20,6 +20,7 @@ control<-subset(all,Treatment=="Control")
 exclusion<-subset(all,Treatment=="Exclusion")#only 199 bc of the messed up label
 feedback<-subset(all,Treatment=="Feedback")#only 199 bc of the messed up label
 
+
 #ARTR Home vs. Away [no sig donor/treatment effects, a few sig neg feedbacks]-------------------
 PSF.ARTR<-data.frame(DonorSpp=character(),
                      Rep=integer(), 
@@ -237,4 +238,25 @@ Is$levels<-paste(Is$Treatment,Is$Pair,sep=".")
 m.IS<-lm(lnRatio~levels-1,data=Is)
 summary(m.IS)#Only Feedback ARTR-PSSP sig neg
 
+#Locality random effects using Abv Biomass----------------------------------------
+all<-read.csv("./data/Transplant data clean 190102.csv")
+raw<-read.csv("./data/Transplant data_labels corrected 190102.csv")
+Locality<-paste(raw$Transect,raw$Position,raw$Offset,raw$Side,sep=".")
+all$Locality<-Locality #Add locality label from the raw data
 
+#Model 
+library(lme4)
+m1<-lmer(Abv~DonorSpp*Transplant*Treatment
+         +(1|Locality),data=all)#fixed effect model rank deficient? Why?
+#Problem:trying to estimate 5*4*3 +1 params with n=10?
+length(colnames(model.matrix(m1)))#61
+#Try fix
+m2<-lmer(Abv~DonorSpp+Transplant+Treatment
+         +(1|Locality),data=all)#This is fine apparently
+length(colnames(model.matrix(m2)))#11
+summary(m2)# 95 unique localities <10% total variance
+Anova(m2,type=3)# Transplant and treatment are very significant
+
+#Try directly looking at locality as factor?
+m3<-lm(Abv~factor(Locality),data=all)
+Anova(m3,type=3)#Locality not significant

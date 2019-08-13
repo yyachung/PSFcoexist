@@ -120,9 +120,6 @@ f.plotNeighborEffect <- function(focalsp,neighborsp,data){
 f.plotNeighborEffect("PSSP","HECO",neighborFocal.dat)
 
 # Calculate ln ratios from regression data-------------------
-# First assume that no focal plants are under neighbor plant canopies
-neighborFocal.dat1<-subset(neighborFocal.dat,neighborDist>neighborRadius|neighborDist==neighborRadius)
-
 # Make empty dataframe
 obsPSF.table <- cbind.data.frame(focal=rep(0,16),
                                  neighbor=rep(0,16),

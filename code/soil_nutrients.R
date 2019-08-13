@@ -3,11 +3,130 @@
 #AC 190207
 ################################################################
 
-setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
+setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 setwd("C:/Users/yyach/Box Sync/PSFcoexist/R/PSFcoexist")
+
 library(car)
 
-#Data import and viz-----------------------------
+#Data import and viz 190725-----------------------------
+soil <- read.csv("./data/Midwest labs soil analysis 190725.csv")
+
+#Separate out data categories
+
+soil$Type<-substr(soil$Sample.ID,(nchar(as.character(soil$Sample.ID))-1),nchar(as.character(soil$Sample.ID)))
+soil$Source<-substr(soil$Sample.ID,1,4)
+
+#Visualization: LV vs. ST
+boxplot(soil$OM~soil$Type)#same
+boxplot(soil$P1~soil$Type)#same
+boxplot(soil$P2~soil$Type)#same
+boxplot(soil$K~soil$Type)#same
+boxplot(soil$Mg~soil$Type)#same
+boxplot(soil$Ca~soil$Type)#same
+boxplot(soil$pH~soil$Type)#ame
+boxplot(soil$CEC~soil$Type)#same
+boxplot(soil$Nitrate~soil$Type)#live higher
+
+#Visualization: Source
+boxplot(soil$OM~soil$Source)#HECO lower
+boxplot(soil$P1~soil$Source)#PSSP wider range
+boxplot(soil$P2~soil$Source)#same
+boxplot(soil$K~soil$Source)#same
+boxplot(soil$Mg~soil$Source)#same
+boxplot(soil$Ca~soil$Source)#same
+boxplot(soil$pH~soil$Source)#same
+boxplot(soil$CEC~soil$Source)#HECO lower
+boxplot(soil$Nitrate~soil$Source)#same
+
+#Quick stats 190725---------------------------
+#Organic Matter
+m.OM<-lm(OM~Type*Source,data=soil)
+qqPlot(m.OM$residuals)
+Anova(m.OM,type = 3)#Source sig (HECO low) p=0.004
+
+#P1
+m.P1<-lm(P1~Type*Source,data=soil)
+qqPlot(m.P1$residuals)#not good
+m.P1.log<-lm(log(P1)~Type*Source,data=soil)
+qqPlot(m.P1.log$residuals)#better
+Anova(m.P1.log,type=3)#nothing
+
+#P2
+m.P2<-lm(P2~Type*Source,data=soil)
+qqPlot(m.P2$residuals)
+Anova(m.P2,type = 3)#No diff
+
+#K
+m.K<-lm(K~Type*Source,data=soil)
+qqPlot(m.K$residuals)
+Anova(m.K,type = 3)#No diff
+
+#Mg
+m.Mg<-lm(Mg~Type*Source,data=soil)
+qqPlot(m.Mg$residuals)#weird
+m.Mg.log<-lm(log(Mg)~Type*Source,data=soil)
+qqPlot(m.Mg.log$residuals)#better
+Anova(m.Mg.log,type=3)#nothing
+
+#Ca
+m.Ca<-lm(Ca~Type*Source,data=soil)
+qqPlot(m.Ca$residuals)
+Anova(m.Ca,type = 3)#No diff
+
+#pH
+m.pH<-lm(pH~Type*Source,data=soil)
+qqPlot(m.pH$residuals)
+Anova(m.pH,type = 3)#No diff
+
+#CEC
+m.CEC<-lm(CEC~Type*Source,data=soil)
+qqPlot(m.CEC$residuals)
+Anova(m.CEC,type = 3)#Source p=0.024 (HECO low)
+
+#Nitrate
+m.N<-lm(Nitrate~Type*Source,data=soil)
+qqPlot(m.N$residuals)
+Anova(m.N,type = 3)#no diff
+
+#Paired LV-ST contrasts 190725-----------------------
+#Make ID column
+soil$Pair<-substr(soil$Sample.ID,1,6)
+table(soil$Pair)#worked as expected
+
+#Paired T tests
+
+#Organic Matter
+t.test(soil$OM[which(soil$Type=="LV")],soil$OM[which(soil$Type=="ST")],paired=T)#nothing
+
+#P1
+t.test(soil$P1[which(soil$Type=="LV")],soil$P1[which(soil$Type=="ST")],paired=T)#nothing
+
+#P2
+t.test(soil$P2[which(soil$Type=="LV")],soil$P2[which(soil$Type=="ST")],paired=T)#nothing
+
+#K
+t.test(soil$K[which(soil$Type=="LV")],soil$K[which(soil$Type=="ST")],paired=T)#nothing
+
+#Mg
+t.test(soil$Mg[which(soil$Type=="LV")],soil$Mg[which(soil$Type=="ST")],paired=T)#nothing
+
+#Ca
+t.test(soil$Ca[which(soil$Type=="LV")],soil$Ca[which(soil$Type=="ST")],paired=T)#nothing
+
+#pH
+t.test(soil$pH[which(soil$Type=="LV")],soil$pH[which(soil$Type=="ST")],paired=T)#nothing
+
+#CEC
+t.test(soil$CEC[which(soil$Type=="LV")],soil$CEC[which(soil$Type=="ST")],paired=T)#nothing
+
+#Nitrate
+t.test(soil$Nitrate[which(soil$Type=="LV")],soil$Nitrate[which(soil$Type=="ST")],paired=T)
+#nitrate higher in live soils (t = 4.9791, df = 39, p-value = 1.338e-05)
+plot(jitter(soil$Nitrate[which(soil$Type=="LV")]),jitter(soil$Nitrate[which(soil$Type=="ST")]),
+     xlab="live soil nitrate",ylab="sterile soil nitrate")
+abline(a=0,b=1)#add 1:1 line
+
+#Data import and viz 190205-----------------------------
 soil <- read.csv("./data/Midwest labs soil analysis 190205.csv")
 
 #Visualization: LV vs. ST
@@ -32,7 +151,7 @@ boxplot(soil$pH~soil$Source)#same
 boxplot(soil$CEC~soil$Source)#much higher under bulk than others
 boxplot(soil$Nitrate~soil$Source)#same except for PSSP outlier
 
-#Quick stats Live vs. Sterile soil---------------------------
+#Quick stats Live vs. Sterile soil 190205---------------------------
 #Organic Matter
 m.OM<-lm(OM~Type,data=soil)
 qqPlot(m.OM$residuals)
