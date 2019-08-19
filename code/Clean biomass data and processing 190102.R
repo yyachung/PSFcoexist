@@ -45,7 +45,7 @@ raw$Diam_donor<-raw$Dist_centroid-raw$Dist_edge
 #Output
 clean<-raw[,c("fieldID","DonorSpp","Transplant","Treatment","Transect","Rep","Position","Offset","Side",
               "Transplant.date","Dist_centroid","Dist_edge","Abv.mass","Area","Surv","Germ","Repro","Height","Diam_donor")]
-write.csv(clean,"./data/Transplant data clean 190201.csv")
+write.csv(clean,"./data/Transplant data year 2 clean 190819.csv")
 
 #######################Greenhouse Comp 2019 Cleaning##########################
 #raw data import
