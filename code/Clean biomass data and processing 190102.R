@@ -1,10 +1,82 @@
 ############################################################
 #This code takes the raw data with corrected labels and 
-#does cleaning and processing for downstream analyses  
+#does cleaning and processing for downstream analyses 
+#AC update 190818
 ##############################################################
 
-setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
+setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
+setwd("C:/Users/yyach/Box Sync/PSFcoexist/R/PSFcoexist")
 library(car)
+
+################Field data 2018/2019 cleaning###############################
+#raw data import
+raw<-read.csv("./data/Transplant data year 2_labels corrected 190819.csv")
+
+#Area
+raw$Area<-raw$Long_190620/2*raw$Short_190620/2*pi #calculate as ellipse
+
+#Survival
+raw$Surv<-raw$Surv_190630
+
+#Germination
+germ1<-apply(raw[,c("Germ_190424","Germ_190509")],1,FUN="max") #Calculate the max of the 2 first germ surveys since I didn't pull germinants after first survey
+raw$Germ<-raw$Germ_190605+germ1 #add the last census
+summary(raw$Germ) #looks great
+
+#Reproduction
+raw$Repro_190605[is.na(raw$Repro_190605)]<-0
+raw$Repro<-raw$Repro_190605+raw$Repro_190620+raw$Repro_190630
+hist(raw$Repro)#for the ones counted more than once return to just 1
+raw$Repro[raw$Repro>1]<-1
+hist(raw$Repro)
+
+#Height
+raw$Height<-rep(0,600)
+raw$Height[raw$Ruler=="Silver"]<-raw$Height_190620[raw$Ruler=="Silver"]+0.3 #account for bit at bottom of ruler
+raw$Height[raw$Ruler=="Pink"]<-raw$Height_190620[raw$Ruler=="Pink"]+0.5 #account for bit at bottom of ruler
+raw$Height[raw$Height==0]<-NA #Make sure missing values are not coded as zero
+
+#Fungus
+raw$Fungus[is.na(raw$Fungus)]<-0
+
+#Calculate diameter of donor plant
+raw$Diam_donor<-raw$Dist_centroid-raw$Dist_edge
+
+#Output
+clean<-raw[,c("fieldID","DonorSpp","Transplant","Treatment","Transect","Rep","Position","Offset","Side",
+              "Transplant.date","Dist_centroid","Dist_edge","Abv.mass","Area","Surv","Germ","Repro","Height","Diam_donor")]
+write.csv(clean,"./data/Transplant data clean 190201.csv")
+
+#######################Greenhouse Comp 2019 Cleaning##########################
+#raw data import
+raw<-read.csv("./data/Seedling comp data with harvest 190818.csv")
+
+#Calculate "max neighbors"
+N.counts<-raw[,c("N_1","N_3","N_4","N_5","N_6","N_7","N_8","N_9","N_10", #no N_2
+                 "N_11","N_12","N_13","N_14","N_15","N_16","N_17")]
+raw$N.max<-apply(N.counts,1,function(x){max(x[!is.na(x)])})
+raw$N.max[which(raw$N.max=="-Inf")]<-0
+
+#Label intra/inter/solo based on harvest neighbor data
+raw$Type<-rep(0,180)
+for (i in 1:180) {
+  if (raw$FocalNew[i]!=raw$NeighborNew[i]) {
+    raw$Type[i]<-"Inter"
+    next
+  }
+  if (raw$FocalNew[i]==raw$NeighborNew[i]) {
+    if(is.na(raw$N.all.mass[i])) raw$Type[i]<-"Solo"
+    else raw$Type[i]<-"Intra"
+  }
+}
+
+#Calculate neighbor per cap biomass
+raw$N.all.percap<-raw$N.all.mass/(raw$N.dead+raw$N.live)
+raw$N.live.percap<-raw$N.all.mass*raw$N.live/(raw$N.dead+raw$N.live)
+
+#OUTPUT clean and useful data for analyses
+clean<-raw[,c("ID","Rep","FocalNew","NeighborNew","F.H","N.live","N.dead","F.mass","N.all.mass","N.max","Type","N.all.percap","N.live.percap")]
+write.csv(clean,"./data/Greenhouse comp data clean 190818.csv")
 
 #######################Greenhouse Data 2018 Cleaning##########################
 #Raw data import
