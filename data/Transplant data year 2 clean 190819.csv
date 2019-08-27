@@ -1,4 +1,4 @@
-"","fieldID","DonorSpp","Transplant","Treatment","Transect","Rep","Position","Offset","Side","Transplant.date","Dist_centroid","Dist_edge","Abv.mass","Area","Surv","Germ","Repro","Height","Diam_donor"
+"","fieldID","DonorSpp","Transplant","Treatment","Transect","Rep","Position","Offset","Side","Transplant.date","Dist_centroid","Dist_edge","Abv","Area","Surv","Germ","Repro","Height","Diam_donor"
 "1",1,"PSSP","POSE","Feedback",1,1,3.2,2.5,"L","16-Oct-18",14,8,0.0714,0.220932503363702,1,6,0,7.7,6
 "2",2,"PSSP","POSE","Exclusion",1,1,3.2,2.5,"L","16-Oct-18",16,6,0.1234,0.303870549418473,1,8,0,6,10
 "3",3,"PSSP","POSE","Control",1,1,3.2,2.5,"L","16-Oct-18",16,6,0.005,0.10477211499722,1,4,0,3.5,10

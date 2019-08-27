@@ -2,12 +2,13 @@
 #Code to visualize all abv biomass data#
 ########################################
 
-setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
+setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 library(car)
 library(ggpubr)
 
 #Data import------------------------
-all<-read.csv("./data/Transplant data clean 190102.csv")
+#all<-read.csv("./data/Transplant data clean 190102.csv") #2018 data
+all<-read.csv("./data/Transplant data year 2 clean 190819.csv") #2019 data
 
 #Subset data by transplant species-----------
 ARTR<-subset(all,Transplant=="ARTR")
@@ -29,19 +30,19 @@ ARTR<-subset(ARTR,Treatment%in%c("Control","Exclusion","Feedback"))
 artrBARE<-ggpar(ggline(ARTR[ARTR$DonorSpp=="BARE"|ARTR$DonorSpp=="ARTR",], x = "Type", y = "Abv",  
                  add = c("mean_se"),
                  color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))#use 0.25 for 2018 data, 0.15 for 2019 data
 artrHECO<-ggpar(ggline(ARTR[ARTR$DonorSpp=="HECO"|ARTR$DonorSpp=="ARTR",], x = "Type", y = "Abv",  
                  add = c("mean_se"),
                  color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))
 artrPSSP<-ggpar(ggline(ARTR[ARTR$DonorSpp=="PSSP"|ARTR$DonorSpp=="ARTR",], x = "Type", y = "Abv",  
                  add = c("mean_se"),
                  color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))
 artrPOSE<-ggpar(ggline(ARTR[ARTR$DonorSpp=="POSE"|ARTR$DonorSpp=="ARTR",], x = "Type", y = "Abv",  
                  add = c("mean_se"),
                  color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))
 #Put plots together
 ggarrange(artrBARE , artrHECO, artrPSSP,artrPOSE, 
           labels = c("Donor = BARE", "Donor = HECO", "Donor = PSSP","Donor = POSE"),
@@ -115,19 +116,19 @@ HECO$Type <- factor(HECO$Type, levels=c("Intra", "Inter"))#Flip the order of fac
 hecoBARE<-ggpar(ggline(HECO[HECO$DonorSpp=="BARE"|HECO$DonorSpp=="HECO",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))#use 0.25 for 2018 and 0.15 for 2019
 hecoARTR<-ggpar(ggline(HECO[HECO$DonorSpp=="ARTR"|HECO$DonorSpp=="HECO",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))
 hecoPSSP<-ggpar(ggline(HECO[HECO$DonorSpp=="PSSP"|HECO$DonorSpp=="HECO",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))
 hecoPOSE<-ggpar(ggline(HECO[HECO$DonorSpp=="POSE"|HECO$DonorSpp=="HECO",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.25))
+                ylim=c(0,0.15))
 #Put plots together
 ggarrange(hecoBARE , hecoARTR, hecoPSSP,hecoPOSE, 
           labels = c("Donor = BARE", "Donor = ARTR", "Donor = PSSP","Donor = POSE"),
@@ -135,24 +136,24 @@ ggarrange(hecoBARE , hecoARTR, hecoPSSP,hecoPOSE,
           hjust=-0.7,
           ncol = 2, nrow = 2)
 
-#HECO germination visualization
+#HECO germination visualization 
 #Make each donor plot separately
 g.hecoBARE<-ggpar(ggline(HECO[HECO$DonorSpp=="BARE"|HECO$DonorSpp=="HECO",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,1))
+                ylim=c(0,6))#use 1 for 2018, 6 for 2019
 g.hecoARTR<-ggpar(ggline(HECO[HECO$DonorSpp=="ARTR"|HECO$DonorSpp=="HECO",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,1))
+                ylim=c(0,6))
 g.hecoPSSP<-ggpar(ggline(HECO[HECO$DonorSpp=="PSSP"|HECO$DonorSpp=="HECO",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,1))
+                ylim=c(0,6))
 g.hecoPOSE<-ggpar(ggline(HECO[HECO$DonorSpp=="POSE"|HECO$DonorSpp=="HECO",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,1))
+                ylim=c(0,6))
 #Put plots together
 ggarrange(g.hecoBARE ,g.hecoARTR, g.hecoPSSP,g.hecoPOSE, 
           labels = c("Donor = BARE", "Donor = ARTR", "Donor = PSSP","Donor = POSE"),
@@ -200,19 +201,19 @@ POSE$Type <- factor(POSE$Type, levels=c("Intra", "Inter"))#Flip the order of fac
 poseBARE<-ggpar(ggline(POSE[POSE$DonorSpp=="BARE"|POSE$DonorSpp=="POSE",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.4))
+                ylim=c(0,0.3))#use 0.4 in 2018 and 0.3 in 2019
 poseARTR<-ggpar(ggline(POSE[POSE$DonorSpp=="ARTR"|POSE$DonorSpp=="POSE",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.4))
+                ylim=c(0,0.3))
 posePSSP<-ggpar(ggline(POSE[POSE$DonorSpp=="PSSP"|POSE$DonorSpp=="POSE",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.4))
+                ylim=c(0,0.3))
 poseHECO<-ggpar(ggline(POSE[POSE$DonorSpp=="HECO"|POSE$DonorSpp=="POSE",], x = "Type", y = "Abv",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,0.4))
+                ylim=c(0,0.3))
 #Put plots together
 ggarrange(poseBARE , poseARTR, posePSSP,poseHECO, 
           labels = c("Donor = BARE", "Donor = ARTR", "Donor = PSSP","Donor = HECO"),
@@ -225,19 +226,19 @@ ggarrange(poseBARE , poseARTR, posePSSP,poseHECO,
 g.poseBARE<-ggpar(ggline(POSE[POSE$DonorSpp=="BARE"|POSE$DonorSpp=="POSE",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,4))
+                ylim=c(0,6))#use 4 for 2018, 6 for 2019
 g.poseARTR<-ggpar(ggline(POSE[POSE$DonorSpp=="ARTR"|POSE$DonorSpp=="POSE",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,4))
+                ylim=c(0,6))
 g.posePSSP<-ggpar(ggline(POSE[POSE$DonorSpp=="PSSP"|POSE$DonorSpp=="POSE",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,4))
+                ylim=c(0,6))
 g.poseHECO<-ggpar(ggline(POSE[POSE$DonorSpp=="HECO"|POSE$DonorSpp=="POSE",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,4))
+                ylim=c(0,6))
 #Put plots together
 ggarrange(g.poseBARE , g.poseARTR, g.posePSSP,g.poseHECO, 
           labels = c("Donor = BARE", "Donor = ARTR", "Donor = PSSP","Donor = HECO"),
@@ -245,7 +246,7 @@ ggarrange(g.poseBARE , g.poseARTR, g.posePSSP,g.poseHECO,
           hjust=-0.7,
           ncol = 2, nrow = 2)
 
-#POSE survival visualization
+#POSE survival visualization for 2018
 #Make each donor plot separately
 s.poseBARE<-ggpar(ggline(POSE[POSE$DonorSpp=="BARE"|POSE$DonorSpp=="POSE",], x = "Type", y = "Surv",  
                          add = c("mean_se"),
@@ -262,6 +263,35 @@ s.posePSSP<-ggpar(ggline(POSE[POSE$DonorSpp=="PSSP"|POSE$DonorSpp=="POSE",], x =
 s.poseHECO<-ggpar(ggline(POSE[POSE$DonorSpp=="HECO"|POSE$DonorSpp=="POSE",], x = "Type", y = "Surv",  
                          add = c("mean_se"),
                          color = "Treatment"),
+                  ylim=c(0,1.3))
+#Put plots together
+ggarrange(s.poseBARE , s.poseARTR, s.posePSSP,s.poseHECO, 
+          labels = c("Donor = BARE", "Donor = ARTR", "Donor = PSSP","Donor = HECO"),
+          common.legend = TRUE, legend = "bottom",
+          hjust=-0.7,
+          ncol = 2, nrow = 2)
+
+#POSE survival visualization for 2019
+#Make each donor plot separately
+s.poseBARE<-ggpar(ggerrorplot(POSE[POSE$DonorSpp=="BARE"|POSE$DonorSpp=="POSE",], x = "Type", y = "Surv", 
+                              desc_stat = "mean_se", 
+                              color = "Treatment", 
+                              position = position_dodge(0.3)),
+                  ylim=c(0,1.3))
+s.poseARTR<-ggpar(ggerrorplot(POSE[POSE$DonorSpp=="ARTR"|POSE$DonorSpp=="POSE",], x = "Type", y = "Surv", 
+                              desc_stat = "mean_se", 
+                              color = "Treatment", 
+                              position = position_dodge(0.3)),
+                  ylim=c(0,1.3))
+s.posePSSP<-ggpar(ggerrorplot(POSE[POSE$DonorSpp=="PSSP"|POSE$DonorSpp=="POSE",], x = "Type", y = "Surv", 
+                              desc_stat = "mean_se", 
+                              color = "Treatment", 
+                              position = position_dodge(0.3)),
+                  ylim=c(0,1.3))
+s.poseHECO<-ggpar(ggerrorplot(POSE[POSE$DonorSpp=="HECO"|POSE$DonorSpp=="POSE",], x = "Type", y = "Surv", 
+                              desc_stat = "mean_se", 
+                              color = "Treatment", 
+                              position = position_dodge(0.3)),
                   ylim=c(0,1.3))
 #Put plots together
 ggarrange(s.poseBARE , s.poseARTR, s.posePSSP,s.poseHECO, 
@@ -306,19 +336,19 @@ ggarrange(psspBARE , psspARTR, psspPOSE,psspHECO,
 g.psspBARE<-ggpar(ggline(PSSP[PSSP$DonorSpp=="BARE"|PSSP$DonorSpp=="PSSP",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,3))
+                ylim=c(0,7))#use 3 in 2018, 7 in 2019
 g.psspARTR<-ggpar(ggline(PSSP[PSSP$DonorSpp=="ARTR"|PSSP$DonorSpp=="PSSP",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,3))
+                ylim=c(0,7))
 g.psspPOSE<-ggpar(ggline(PSSP[PSSP$DonorSpp=="POSE"|PSSP$DonorSpp=="PSSP",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,3))
+                ylim=c(0,7))
 g.psspHECO<-ggpar(ggline(PSSP[PSSP$DonorSpp=="HECO"|PSSP$DonorSpp=="PSSP",], x = "Type", y = "Germ",  
                        add = c("mean_se"),
                        color = "Treatment"),
-                ylim=c(0,3))
+                ylim=c(0,7))
 #Put plots together
 ggarrange(g.psspBARE , g.psspARTR, g.psspPOSE,g.psspHECO, 
           labels = c("Donor = BARE", "Donor = ARTR", "Donor = POSE","Donor = HECO"),
@@ -371,3 +401,35 @@ germ<-ggline(allClean, x = "DonorSpp", y = "Germ",
 ggarrange(abv , surv, germ,
           common.legend = TRUE, legend = "bottom",
           ncol = 1, nrow = 3)
+
+#2019 only, use distance to donor and donor size as covariate---------------
+#Visualize everything
+ggscatter(allClean,x="Dist_centroid",y="Abv",color="Treatment",shape="DonorSpp",facet.by="Transplant")
+#Big blob no discernable patterns
+ggscatter(allClean,x="Diam_donor",y="Abv",color="Treatment",shape="DonorSpp",facet.by="Transplant")
+ggscatter(allClean,x="Dist_edge",y="Abv",color="Treatment",shape="DonorSpp",facet.by="Transplant") 
+#easier to visually compare since it gets rid of the large size of ARTRs, no strong patterns though
+
+#Separate by transplant species
+#ARTR
+ggscatter(ARTR,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(ARTR,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(ARTR,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+#maybe a negative relationship in control POSEs
+
+#HECO
+ggscatter(HECO,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+#In HECO feedback, potentially a positive trend
+ggscatter(HECO,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(HECO,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+#In HECO feedback, potentially a positive trend
+
+#POSE
+ggscatter(POSE,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(POSE,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(POSE,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+
+#PSSP
+ggscatter(PSSP,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(PSSP,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(PSSP,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
