@@ -1,5 +1,5 @@
 #This code analyzes the 2019 greenhouse competition experiment
-#AC last updated 190820
+#AC last updated 191121
 
 setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 setwd("C:/Users/yyach/Box Sync/PSFcoexist/R/PSFcoexist")
@@ -22,6 +22,8 @@ boxplot(data$F.mass~data$Type*data$FocalNew) #can tentatively tell that solo pla
 ARTR<-subset(data,FocalNew=="ARTR"&!is.na(F.mass)) #25 obs
 PSSP<-subset(data,FocalNew=="PSSP"&!is.na(F.mass)) #53 obs
 POSE<-subset(data,FocalNew=="POSE"&!is.na(F.mass)) #67 obs
+#rejoin data
+data.all<-rbind.data.frame(ARTR,PSSP,POSE)
 
 #Species-specific viz
 plot(ARTR$N.total,ARTR$F.mass,col=as.numeric(ARTR$NeighborNew)) #almost "envelope" situation, mostly neighbor spp-agnostic
@@ -32,12 +34,22 @@ plot(ARTR$N.all.mass,ARTR$F.mass,col=as.numeric(ARTR$NeighborNew)) #still envelo
 plot(PSSP$N.all.mass,PSSP$F.mass,col=as.numeric(PSSP$NeighborNew)) #also "envelope" situation, mostly neighbor spp-agnostic
 plot(POSE$N.all.mass,POSE$F.mass,col=as.numeric(POSE$NeighborNew)) #this actually doesn't even look like NDD, mostly neighbor spp-agnostic
 
+#Pretty plot
+ggplot(data.all, aes(N.total, F.mass))+
+  geom_point()+
+  xlab("Number of neighbors")+ ylab("Focal mass (mg)")+
+  facet_grid(FocalNew~NeighborNew)
+ggplot(data.all, aes(N.all.mass, F.mass))+
+  geom_point()+
+  xlab("Total neighbor mass (mg)")+ ylab("Focal mass (mg)")+
+  facet_grid(FocalNew~NeighborNew)
+
 #Log it
 plot(ARTR$N.total,log(ARTR$F.mass),col=as.numeric(ARTR$NeighborNew)) #hard to tell what's going on
 plot(PSSP$N.total,log(PSSP$F.mass),col=as.numeric(PSSP$NeighborNew)) #pretty flat
 plot(POSE$N.total,log(POSE$F.mass),col=as.numeric(POSE$NeighborNew)) #kind of linear?
 
-#Try fitting Ricker-type competition model------------------------------
+#Try fitting Ricker-type competition model (need to re-do this)------------------------------
 ARTR.lambda<-mean(ARTR$F.mass[ARTR$Type=="Solo"])#23.54286
 POSE.lambda<-mean(POSE$F.mass[POSE$Type=="Solo"])#33.4
 PSSP.lambda<-mean(PSSP$F.mass[PSSP$Type=="Solo"])#26.45
