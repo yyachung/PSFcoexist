@@ -4,6 +4,7 @@
 setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 setwd("C:/Users/yyach/Box Sync/PSFcoexist/R/PSFcoexist")
 library(car)
+library(ggplot2)
 
 #Import cleaned data, subset, and visualize-----------------------
 data<-read.csv("./data/Greenhouse comp data clean 190818.csv", row.names=1)
@@ -64,6 +65,7 @@ Ricker.fit<- data.frame(focal=rep(c("ARTR","PSSP","POSE"),3),
 #Run a big function-fitting loop
 for (i in 1:9){
   subdata<-subset(data.all,NeighborNew==Ricker.fit$neighbor[i]&FocalNew==Ricker.fit$focal[i])
+  if (Ricker.fit$neighbor[i]!=Ricker.fit$focal[i]) subdata<-rbind(subdata,subset(data.all,FocalNew==Ricker.fit$focal[i]&Type=="Solo"))
   intercept<-log(get(paste(Ricker.fit$focal[i],".lambda",sep="")))
   fit<-lm(I(log(F.mass)-intercept)~0+N.total,data=subdata)
   Ricker.fit$beta[i]<-coef(fit)
@@ -72,16 +74,14 @@ for (i in 1:9){
   Ricker.fit$adj.R[i]<-summary(fit)[["adj.r.squared"]]
 }
 #all significant negative slopes except for ARTR-ARTR and PSSP-ARTR
-#Intraspecific comp coeffs are not all bigger than interspecific comp coeffs
-ggplot(Ricker.fit,aes(focal,neighbor))+
-  geom_count()
 
 #Plot all the fits
 Ricker.fit.plot<-Ricker.fit
 colnames(Ricker.fit.plot)[1:2]<-c("FocalNew","NeighborNew")#make the facet variable the same
-ggplot(data.all, aes(N.total, log(F.mass)))+
+p<-ggplot(data.all, aes(N.total, log(F.mass)))+
   geom_point()+
-  xlab("Number of neighbors")+ ylab("Focal mass (mg)")+
-  geom_abline(data=Ricker.fit.plot, aes(intercept = intcp, slope = beta))+
+  geom_point(data=data.all[data.all$Type=="Solo",-4], aes(N.total, log(F.mass)))+ #add solo data to all plots
+  xlab("Number of neighbors")+ ylab("Ln(Focal mass)")+
+  geom_abline(data=Ricker.fit.plot, aes(intercept = intcp, slope = beta, color=beta))+
   facet_grid(FocalNew~NeighborNew)
 #Not bad!  
