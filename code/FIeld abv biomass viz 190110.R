@@ -412,24 +412,24 @@ ggscatter(allClean,x="Dist_edge",y="Abv",color="Treatment",shape="DonorSpp",face
 
 #Separate by transplant species
 #ARTR
-ggscatter(ARTR,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
-ggscatter(ARTR,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
-ggscatter(ARTR,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(ARTR,DonorSpp!="BARE"),x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(ARTR,DonorSpp!="BARE"),x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(ARTR,DonorSpp!="BARE"),x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
 #maybe a negative relationship in control POSEs
 
 #HECO
-ggscatter(HECO,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(HECO,DonorSpp!="BARE"),x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
 #In HECO feedback, potentially a positive trend
-ggscatter(HECO,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
-ggscatter(HECO,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(HECO,DonorSpp!="BARE"),x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(HECO,DonorSpp!="BARE"),x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
 #In HECO feedback, potentially a positive trend
 
 #POSE
-ggscatter(POSE,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
-ggscatter(POSE,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
-ggscatter(POSE,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(POSE,DonorSpp!="BARE"),x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(POSE,DonorSpp!="BARE"),x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(POSE,DonorSpp!="BARE"),x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
 
 #PSSP
-ggscatter(PSSP,x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
-ggscatter(PSSP,x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
-ggscatter(PSSP,x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(PSSP,DonorSpp!="BARE"),x="Dist_centroid",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(PSSP,DonorSpp!="BARE"),x="Dist_edge",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
+ggscatter(subset(PSSP,DonorSpp!="BARE"),x="Diam_donor",y="Abv",color="Treatment",facet.by="DonorSpp",scales="free")
