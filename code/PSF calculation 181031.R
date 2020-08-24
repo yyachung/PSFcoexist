@@ -10,13 +10,9 @@ library(car)
 library(lme4)
 library(ggpubr)
 
-#Using Aboveground Biomass as a response---------------------------
+#Input data---------------------------
 all2018<-read.csv("./data/Transplant data clean 190102.csv") #2018 data
 all2019<-read.csv("./data/Transplant data year 2 clean 190819.csv") #2019 data
-
-#Clean 2018 data
-all2018<-all2018[-which(all2018$Treatment==""),]
-all2018$Treatment <- factor(all2018$Treatment)#drop blank factor level
 
 #Subset data
 ARTR2018<-subset(all2018,Transplant=="ARTR")
@@ -29,56 +25,66 @@ POSE2019<-subset(all2019,Transplant=="POSE")
 PSSP2019<-subset(all2019,Transplant=="PSSP")
 HECO2019<-subset(all2019,Transplant=="HECO")
 
-# control<-subset(all,Treatment=="Control")
-# exclusion<-subset(all,Treatment=="Exclusion")#only 199 in 2018 bc of the messed up label
-# feedback<-subset(all,Treatment=="Feedback")#only 199 in 2018 bc of the messed up label
-
 #Calculate home vs. away PSF ln ratios for all species--------
 source("./code/func_PSFcalc.R")
-PSF.ARTR18<-PSFcalc(ARTR2018,"ARTR")
-PSF.HECO18<-PSFcalc(HECO2018,"HECO")
-PSF.POSE18<-PSFcalc(POSE2018,"POSE")
-PSF.PSSP18<-PSFcalc(PSSP2018,"PSSP")
-PSF.ARTR19<-PSFcalc(ARTR2019,"ARTR")
-PSF.HECO19<-PSFcalc(HECO2019,"HECO")
-PSF.POSE19<-PSFcalc(POSE2019,"POSE")
-PSF.PSSP19<-PSFcalc(PSSP2019,"PSSP")
+
+PSF.ARTR18<-PSFcalc(ARTR2018,"ARTR","Germ","Abv")
+PSF.HECO18<-PSFcalc(HECO2018,"HECO","Germ","Abv")
+PSF.POSE18<-PSFcalc(POSE2018,"POSE","Germ","Abv")
+PSF.PSSP18<-PSFcalc(PSSP2018,"PSSP","Germ","Abv")
+PSF.ARTR19<-PSFcalc(ARTR2019,"ARTR","Germ","Abv")
+PSF.HECO19<-PSFcalc(HECO2019,"HECO","Germ","Abv")
+PSF.POSE19<-PSFcalc(POSE2019,"POSE","Germ","Abv")
+PSF.PSSP19<-PSFcalc(PSSP2019,"PSSP","Germ","Abv")
 
 #Prelim viz
 par(mfrow = c(4, 2))
-hist(PSF.ARTR18$lnRatio) 
-hist(PSF.HECO18$lnRatio) 
-hist(PSF.POSE18$lnRatio)  
-hist(PSF.PSSP18$lnRatio) 
-hist(PSF.ARTR19$lnRatio) 
-hist(PSF.HECO19$lnRatio) 
-hist(PSF.POSE19$lnRatio)  
-hist(PSF.PSSP19$lnRatio) 
+hist(PSF.ARTR18$lnRatio.germ) 
+hist(PSF.HECO18$lnRatio.germ) 
+hist(PSF.POSE18$lnRatio.germ)  
+hist(PSF.PSSP18$lnRatio.germ) 
+hist(PSF.ARTR19$lnRatio.germ) 
+hist(PSF.HECO19$lnRatio.germ) 
+hist(PSF.POSE19$lnRatio.germ)  
+hist(PSF.PSSP19$lnRatio.germ) 
 dev.off()
 
 #ARTR Home vs. Away [no sig donor/treatment effects, a few sig neg feedbacks]-------------------
-#Check sample sizes
+PSF.ARTR<-rbind.data.frame(PSF.ARTR18,PSF.ARTR19)
+PSF.ARTR$Year<-rep(c(2018,2019),each=120)
+PSF.ARTR$levels<-paste(PSF.ARTR$Treatment,PSF.ARTR$DonorSpp,PSF.ARTR$Year,sep=".")
+
+#ABOVEGROUND BIOMASS
+#Check sample sizes 
 table(na.omit(PSF.ARTR18)$DonorSpp,na.omit(PSF.ARTR18)$Treatment)#range 3 to 9
 table(na.omit(PSF.ARTR19)$DonorSpp,na.omit(PSF.ARTR19)$Treatment)#range 5 to 9
 
-#Visualization
-PSF.ARTR18$levels<-paste(PSF.ARTR18$Treatment,PSF.ARTR18$DonorSpp,sep=".")
-ggerrorplot(PSF.ARTR18, x = "DonorSpp", y = "lnRatio",
-            facet.by = "Treatment")#warning for removing 56 NA values (checks out)
-#weirdly, "Control" looks like the least negative feedbacks
+#ANOVA both years together
+ARTR.m1<-lm(lnRatio.mass~Treatment*DonorSpp*factor(Year),data=PSF.ARTR)
+qqPlot(ARTR.m1)#fine
+Anova(ARTR.m1)#treatment:year p=0.08
 
-#Analysis
-hist(PSF.ARTR18$lnRatio)#fine
-#Effects of Treatment and Donor Spp
-ARTR1<-lm(lnRatio~Treatment*DonorSpp,data=PSF.ARTR18)
-qqPlot(ARTR1)#fine
-summary(ARTR1)#not sig diff from each other
-drop1(ARTR1,~.,test="F")#I'm surprised, actually
-#Differences from zero?
-#Use means parameterization to figure out difference from zero
-ARTR1m<-lm(lnRatio~levels-1,data=PSF.ARTR18)
-summary(ARTR1m)#Exclusion PSSP, Feedback HECO, and Feedback PSSP are significantly less than zero
-#None of this has been corrected for multiple comparisons, but maybe doesn't need to?
+#Significant difference from zero
+ARTR.m2<-lm(lnRatio.mass~levels-1,data=PSF.ARTR)
+summary(ARTR.m2)
+#2018: Feedback HECO, and Feedback PSSP are significantly less than zero
+#2019: Control PSSP, Exclusion PSSP are significantly less than zero
+#P<0.1: 2019 Control POSE, 2019 Exclusion BARE, 2018 Exclusion PSSP 
+
+#Visualization
+# #need to make a damn dataframe with all the annotation params
+# ann_text<-data.frame(DonorSpp=factor("HECO","PSSP","PSSP","PSSP",levels=unique(PSF.ARTR$DonorSpp)),
+#                      lmRatio.mass=c(-0.5,-0.3,-0.5,-0.2),
+#                      Treatment=factor("Feedback","Feedback","Control","Exclusion",levels=c("Control","Exclusion","Feedback")),
+#                      Year=c("2018","2018","2019","2019"),
+#                      lab=rep("*",4))
+p.mARTR<-ggerrorplot(PSF.ARTR, x = "DonorSpp", y = "lnRatio.mass",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="ARTR feedback log ratio")+
+    #  geom_text(data = ann_text,mapping = aes(x = DonorSpp, y = lnRatio.mass, label = lab))+
+       geom_hline(yintercept=0,linetype=2)
+  
 
 #Alternative analysis to take care of unbalanced design
 hist(log(ARTR2018$Abv))#well that's nice
@@ -92,75 +98,195 @@ pairs(emDonor.ARTR18)#includes too many comparisons
 summary(contrast(emDonor.ARTR18, "pairwise")[c(1:4,11:14,21:24)],adjust="mvt")
 #Feedback HECO, and Feedback PSSP are significantly less than zero
 
+#GERMINATION
+#ANOVA both years together
+ARTR.g1<-lm(lnRatio.germ~Treatment*DonorSpp*factor(Year),data=PSF.ARTR)
+qqPlot(ARTR.g1)#fine
+Anova(ARTR.g1)#nothing
+
+#Significant difference from zero
+ARTR.g2<-lm(lnRatio.germ~levels-1,data=PSF.ARTR)
+summary(ARTR.g2)#nothing
+
+#Visualization
+p.gARTR<-ggerrorplot(PSF.ARTR, x = "DonorSpp", y = "lnRatio.germ",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="ARTR feedback log ratio")+
+         geom_hline(yintercept=0,linetype=2)
+
+
 #HECO Home vs. Away [no sig effects, one pos feedback]--------
+PSF.HECO<-rbind.data.frame(PSF.HECO18,PSF.HECO19)
+PSF.HECO$Year<-rep(c(2018,2019),each=120)
+PSF.HECO$levels<-paste(PSF.HECO$Treatment,PSF.HECO$DonorSpp,PSF.HECO$Year,sep=".")
+
+#ABOVEGROUND BIOMASS
 #Check sample sizes
 table(na.omit(PSF.HECO18)$DonorSpp,na.omit(PSF.HECO18)$Treatment)#range 6 to 10
 table(na.omit(PSF.HECO19)$DonorSpp,na.omit(PSF.HECO19)$Treatment)#range 6 to 9
 
-#Visualization
-PSF.HECO19$levels<-paste(PSF.HECO19$Treatment,PSF.HECO19$DonorSpp,sep=".")
-ggerrorplot(PSF.HECO19, x = "DonorSpp", y = "lnRatio",
-            facet.by = "Treatment")
-#Woah weird. Mostly trending positive feedbacks
+#ANOVA both years together
+HECO.m1<-lm(lnRatio.mass~Treatment*DonorSpp*factor(Year),data=PSF.HECO)
+qqPlot(HECO.m1)#fine
+Anova(HECO.m1)#treatment:year p=0.10
 
-#Analysis
-hist(PSF.HECO$lnRatio)#slight poisson
-#Effects of Treatment and Donor Spp
-HECO1<-lm(lnRatio~Treatment*DonorSpp,data=PSF.HECO)
-qqPlot(HECO1)#fine
-summary(HECO1)#not sig diff from each other
-drop1(HECO1,~.,test="F")
-#Differences from zero?
-#Use means parameterization to figure out difference from zero
-HECO1m<-lm(lnRatio~levels-1,data=PSF.HECO)
-summary(HECO1m)#Only Exclusion BARE shows up as sig pos
+#Significant difference from zero
+HECO.m2<-lm(lnRatio.mass~levels-1,data=PSF.HECO)
+summary(HECO.m2)
+#2018: Exclusion BARE significantly positive
+#2019: Feedback ARTR significantly positive
+#P<0.1: 2018 Exclusion ARTR 
+
+#Visualization
+p.mHECO<-ggerrorplot(PSF.HECO, x = "DonorSpp", y = "lnRatio.mass",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="HECO feedback log ratio")+
+  geom_hline(yintercept=0,linetype=2)
+            
+
+#GERMINATION
+#ANOVA both years together
+HECO.g1<-lm(lnRatio.germ~Treatment*DonorSpp*factor(Year),data=PSF.HECO)
+qqPlot(HECO.g1)#fine
+Anova(HECO.g1)#Treatment p=0.0498 , year p=0.00967 
+#emmeans(HECO.g1,~Treatment) #exclusion lower
+#emmeans(HECO.g1,~Year) #2019 higher
+
+#Significant difference from zero
+HECO.g2<-lm(lnRatio.germ~levels-1,data=PSF.HECO)
+summary(HECO.g2)
+#2019 Control ARTR, Control BARE sig positive
+#P<0.1: 2019 Control PSSP, 2019 Feedback BARE positive
+
+#Visualization
+p.gHECO<-ggerrorplot(PSF.HECO, x = "DonorSpp", y = "lnRatio.germ",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="HECO feedback log ratio")+
+  geom_hline(yintercept=0,linetype=2)
 
 #POSE Home vs. Away [no sig effects, one neg feedback]-----------------------------
+PSF.POSE<-rbind.data.frame(PSF.POSE18,PSF.POSE19)
+PSF.POSE$Year<-rep(c(2018,2019),each=120)
+PSF.POSE$levels<-paste(PSF.POSE$Treatment,PSF.POSE$DonorSpp,PSF.POSE$Year,sep=".")
+
+#ABOVEGROUND BIOMASS
 table(na.omit(PSF.POSE18)$DonorSpp,na.omit(PSF.POSE18)$Treatment)#all 10
 table(na.omit(PSF.POSE19)$DonorSpp,na.omit(PSF.POSE19)$Treatment)#one 9 others 10
 
-#Visualization
-PSF.POSE$levels<-paste(PSF.POSE$Treatment,PSF.POSE$DonorSpp,sep=".")
-ggerrorplot(PSF.POSE, x = "DonorSpp", y = "lnRatio",
-            facet.by = "Treatment")
-#Mostly negative feedbacks
+#ANOVA both years together
+POSE.m1<-lm(lnRatio.mass~Treatment*DonorSpp*factor(Year),data=PSF.POSE)
+qqPlot(POSE.m1)#174 is a huge outlier
+Anova(POSE.m1)#nothing
+#Explore outlier issue
+PSF.POSE$lnRatio.mass[174]#6.184149 really high
+hist(PSF.POSE$lnRatio.mass)#huge outlier
+#ANOVA without outlier
+POSE.m1.1<-lm(lnRatio.mass~Treatment*DonorSpp*factor(Year),data=PSF.POSE[-174,])
+qqPlot(POSE.m1.1)#much better
+Anova(POSE.m1.1)#still nothing
 
-#Analysis
-hist(PSF.POSE$lnRatio)#fine
-#Effects of Treatment and Donor Spp
-POSE1<-lm(lnRatio~Treatment*DonorSpp,data=PSF.POSE)
-qqPlot(POSE1)#fine
-summary(POSE1)#not sig diff from each other
-drop1(POSE1,~.,test="F")
-#Differences from zero?
-#Use means parameterization to figure out difference from zero
-POSE1m<-lm(lnRatio~levels-1,data=PSF.POSE)
-summary(POSE1m)#Only Exclusion BARE shows up as sig neg
+#Significant difference from zero
+POSE.m2<-lm(lnRatio.mass~levels-1,data=PSF.POSE)
+summary(POSE.m2)
+#2019: Control PSSP significantly positive, Exclusion HECO and Feedback PSSP negative
+#P<0.1: 2019 Control BARE, 2019 Control HECO, 2019 Feedback HECO, 2018 Exclusion BARE
+#Try without outlier
+POSE.m2.1<-lm(lnRatio.mass~levels-1,data=PSF.POSE[-174,])
+summary(POSE.m2.1)
+#2018: Exclusion BARE significantly negative
+#2019:Control BARE, Control HECO, Exclusion HECO, Feedback HECO, Feedback PSSP negative
+#Taking out outlier leads to disappearance of significant positive feedback
+
+#Visualization
+p.mPOSE_out<-ggerrorplot(PSF.POSE, x = "DonorSpp", y = "lnRatio.mass",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="POSE feedback log ratio")+
+  geom_hline(yintercept=0,linetype=2)
+#positive feedback and giant error bars in PSSP Control 2019 comes from outlier
+p.mPOSE<-ggerrorplot(PSF.POSE[-174,], x = "DonorSpp", y = "lnRatio.mass",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="POSE feedback log ratio")+
+  geom_hline(yintercept=0,linetype=2)
+#Better
+
+#GERMINATION
+#ANOVA both years together
+POSE.g1<-lm(lnRatio.germ~Treatment*DonorSpp*factor(Year),data=PSF.POSE)
+qqPlot(POSE.g1)#fine
+Anova(POSE.g1)#nothing 
+
+#Significant difference from zero
+POSE.g2<-lm(lnRatio.germ~levels-1,data=PSF.POSE)
+summary(POSE.g2)
+#2018 Control BARE sig positive
+
+#Visualization
+p.gPOSE<-ggerrorplot(PSF.POSE, x = "DonorSpp", y = "lnRatio.germ",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="POSE feedback log ratio")+
+  geom_hline(yintercept=0,linetype=2)
 
 #PSSP Home vs. Away [no sig effects or feedback]-----------------------------------
+PSF.PSSP<-rbind.data.frame(PSF.PSSP18,PSF.PSSP19)
+PSF.PSSP$Year<-rep(c(2018,2019),each=120)
+PSF.PSSP$levels<-paste(PSF.PSSP$Treatment,PSF.PSSP$DonorSpp,PSF.PSSP$Year,sep=".")
+
+#ABOVEGROUND BIOMASS
 table(na.omit(PSF.PSSP18)$DonorSpp,na.omit(PSF.PSSP18)$Treatment)#9 and 10
 table(na.omit(PSF.PSSP19)$DonorSpp,na.omit(PSF.PSSP19)$Treatment)#all 10
 
+#ANOVA both years together
+PSSP.m1<-lm(lnRatio.mass~Treatment*DonorSpp*factor(Year),data=PSF.PSSP)
+qqPlot(PSSP.m1)#fine
+Anova(PSSP.m1)#treatment p=0.0005
+emmeans(PSSP.m1,~Treatment)#Exclusion positive whereas Control and Feedback negative
+
+#Significant difference from zero
+PSSP.m2<-lm(lnRatio.mass~levels-1,data=PSF.PSSP)
+summary(PSSP.m2)
+#2019: Control BARE, Control POSE, Feedback HECO significantly negative
+#P<0.1: 2018 Feedback ARTR, 2018 Feedback HECO 
+
 #Visualization
-PSF.PSSP$levels<-paste(PSF.PSSP$Treatment,PSF.PSSP$DonorSpp,sep=".")
-ggerrorplot(PSF.PSSP, x = "DonorSpp", y = "lnRatio",
-            facet.by = "Treatment")
-#weird contrast between positive feedbacks in exclusion and negative feedbacks in Feedback; 
-#Control has large SEs likely due to missing one rep (home plant died)
+p.mPSSP<-ggerrorplot(PSF.PSSP, x = "DonorSpp", y = "lnRatio.mass",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="PSSP feedback log ratio")+
+  geom_hline(yintercept=0,linetype=2)
 
-#Analysis
-hist(PSF.PSSP$lnRatio)#fine
-#Effects of Treatment and Donor Spp
-PSSP1<-lm(lnRatio~Treatment*DonorSpp,data=PSF.PSSP)
-qqPlot(PSSP1)#fine
-summary(PSSP1)#not sig diff from each other
-drop1(PSSP1,~.,test="F")
-#Differences from zero?
-#Use means parameterization to figure out difference from zero
-PSSP1m<-lm(lnRatio~levels-1,data=PSF.PSSP)
-summary(PSSP1m)#Actually no sig diffs from zero
+#GERMINATION
+#ANOVA both years together
+PSSP.g1<-lm(lnRatio.germ~Treatment*DonorSpp*factor(Year),data=PSF.PSSP)
+qqPlot(PSSP.g1)#fine
+Anova(PSSP.g1)#Treatment P=0.056 Year P=0.0001 
+#emmeans(PSSP.g1,~Treatment) #Feedback positive (driven by 2018)
+#emmeans(PSSP.g1,~Year) #2018 positive, 2019 negative
 
+#Significant difference from zero
+PSSP.g2<-lm(lnRatio.germ~levels-1,data=PSF.PSSP)
+summary(PSSP.g2)
+#2018: Control BARE, Feedback BARE, Feedback HECO, Feedback POSE sig positive
+#P<0.1: 2018 BARE exclusion pos
 
+#Visualization
+p.gPSSP<-ggerrorplot(PSF.PSSP, x = "DonorSpp", y = "lnRatio.germ",
+            facet.by = c("Year","Treatment"),
+            xlab="",
+            ylab="PSSP feedback log ratio")+
+  geom_hline(yintercept=0,linetype=2)
+
+#Combine pairwise lnRatio plots into giant multipanel plots---------------------
+panel.m<-ggarrange(p.mARTR,p.mHECO,p.mPOSE_out,p.mPSSP, ncol=1,nrow=4,align="v")
+annotate_figure(panel.m,bottom="Soil environment microsite")
+
+panel.g<-ggarrange(p.gARTR,p.gHECO,p.gPOSE,p.gPSSP, ncol=1,nrow=4,align="v")
+annotate_figure(panel.g,bottom="Soil environment microsite")
 
 #Is (only ARTR-PSSP "feedback" sig neg)-----------------------------------
 #Combine all 2018 PSF data
@@ -171,12 +297,12 @@ PSF.PSSP18$Transplant<-rep("PSSP",120)
 PSF.all18<-rbind(PSF.ARTR18,PSF.HECO18,PSF.POSE18,PSF.PSSP18)
 PSF.all18<-subset(PSF.all18,DonorSpp!="BARE")#we only care about plants
 #Make spp pair label
-PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="ARTR"&PSF.all18$DonorSpp=="POSE")]<-"ARTRPOSE"
-PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="HECO")|(PSF.all18$Transplant=="ARTR"&PSF.all18$DonorSpp=="HECO")]<-"ARTRHECO"
-PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="PSSP")|(PSF.all18$Transplant=="ARTR"&PSF.all18$DonorSpp=="PSSP")]<-"ARTRPSSP"
-PSF.all18$Pair[(PSF.all18$DonorSpp=="HECO"&PSF.all18$Transplant=="PSSP")|(PSF.all18$Transplant=="HECO"&PSF.all18$DonorSpp=="PSSP")]<-"HECOPSSP"
-PSF.all18$Pair[(PSF.all18$DonorSpp=="HECO"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="HECO"&PSF.all18$DonorSpp=="POSE")]<-"HECOPOSE"
-PSF.all18$Pair[(PSF.all18$DonorSpp=="PSSP"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="PSSP"&PSF.all18$DonorSpp=="POSE")]<-"PSSPPOSE"
+PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="ARTR"&PSF.all18$DonorSpp=="POSE")]<-"ARTR-POSE"
+PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="HECO")|(PSF.all18$Transplant=="ARTR"&PSF.all18$DonorSpp=="HECO")]<-"ARTR-HECO"
+PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="PSSP")|(PSF.all18$Transplant=="ARTR"&PSF.all18$DonorSpp=="PSSP")]<-"ARTR-PSSP"
+PSF.all18$Pair[(PSF.all18$DonorSpp=="HECO"&PSF.all18$Transplant=="PSSP")|(PSF.all18$Transplant=="HECO"&PSF.all18$DonorSpp=="PSSP")]<-"HECO-PSSP"
+PSF.all18$Pair[(PSF.all18$DonorSpp=="HECO"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="HECO"&PSF.all18$DonorSpp=="POSE")]<-"HECO-POSE"
+PSF.all18$Pair[(PSF.all18$DonorSpp=="PSSP"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="PSSP"&PSF.all18$DonorSpp=="POSE")]<-"PSSP-POSE"
 
 #Combine all 2019 PSF data
 PSF.ARTR19$Transplant<-rep("ARTR",120)
@@ -186,12 +312,12 @@ PSF.PSSP19$Transplant<-rep("PSSP",120)
 PSF.all19<-rbind(PSF.ARTR19,PSF.HECO19,PSF.POSE19,PSF.PSSP19)
 PSF.all19<-subset(PSF.all19,DonorSpp!="BARE")#we only care about plants
 #Make spp pair label
-PSF.all19$Pair[(PSF.all19$DonorSpp=="ARTR"&PSF.all19$Transplant=="POSE")|(PSF.all19$Transplant=="ARTR"&PSF.all19$DonorSpp=="POSE")]<-"ARTRPOSE"
-PSF.all19$Pair[(PSF.all19$DonorSpp=="ARTR"&PSF.all19$Transplant=="HECO")|(PSF.all19$Transplant=="ARTR"&PSF.all19$DonorSpp=="HECO")]<-"ARTRHECO"
-PSF.all19$Pair[(PSF.all19$DonorSpp=="ARTR"&PSF.all19$Transplant=="PSSP")|(PSF.all19$Transplant=="ARTR"&PSF.all19$DonorSpp=="PSSP")]<-"ARTRPSSP"
-PSF.all19$Pair[(PSF.all19$DonorSpp=="HECO"&PSF.all19$Transplant=="PSSP")|(PSF.all19$Transplant=="HECO"&PSF.all19$DonorSpp=="PSSP")]<-"HECOPSSP"
-PSF.all19$Pair[(PSF.all19$DonorSpp=="HECO"&PSF.all19$Transplant=="POSE")|(PSF.all19$Transplant=="HECO"&PSF.all19$DonorSpp=="POSE")]<-"HECOPOSE"
-PSF.all19$Pair[(PSF.all19$DonorSpp=="PSSP"&PSF.all19$Transplant=="POSE")|(PSF.all19$Transplant=="PSSP"&PSF.all19$DonorSpp=="POSE")]<-"PSSPPOSE"
+PSF.all19$Pair[(PSF.all19$DonorSpp=="ARTR"&PSF.all19$Transplant=="POSE")|(PSF.all19$Transplant=="ARTR"&PSF.all19$DonorSpp=="POSE")]<-"ARTR-POSE"
+PSF.all19$Pair[(PSF.all19$DonorSpp=="ARTR"&PSF.all19$Transplant=="HECO")|(PSF.all19$Transplant=="ARTR"&PSF.all19$DonorSpp=="HECO")]<-"ARTR-HECO"
+PSF.all19$Pair[(PSF.all19$DonorSpp=="ARTR"&PSF.all19$Transplant=="PSSP")|(PSF.all19$Transplant=="ARTR"&PSF.all19$DonorSpp=="PSSP")]<-"ARTR-PSSP"
+PSF.all19$Pair[(PSF.all19$DonorSpp=="HECO"&PSF.all19$Transplant=="PSSP")|(PSF.all19$Transplant=="HECO"&PSF.all19$DonorSpp=="PSSP")]<-"HECO-PSSP"
+PSF.all19$Pair[(PSF.all19$DonorSpp=="HECO"&PSF.all19$Transplant=="POSE")|(PSF.all19$Transplant=="HECO"&PSF.all19$DonorSpp=="POSE")]<-"HECO-POSE"
+PSF.all19$Pair[(PSF.all19$DonorSpp=="PSSP"&PSF.all19$Transplant=="POSE")|(PSF.all19$Transplant=="PSSP"&PSF.all19$DonorSpp=="POSE")]<-"PSSP-POSE"
 
 #Calculate Is for all species pairs
 source("./code/func_IScalc.R")
@@ -202,18 +328,59 @@ IS2019<-IScalc(PSF.all19)
 table(na.omit(IS2018)$Pair,na.omit(IS2018)$Treatment)#range 3 to 10
 table(na.omit(IS2019)$Pair,na.omit(IS2019)$Treatment)#range 4 to 10
 
-#Visualize
-ggerrorplot(IS2018, x = "Pair", y = "lnRatio",
-            orientation = "horizontal",
-            facet.by = "Treatment")
-ggerrorplot(IS2019, x = "Pair", y = "lnRatio",
-            orientation = "horizontal",
-            facet.by = "Treatment")
 
 #Use means parameterization to figure out difference from zero
-Is$levels<-paste(Is$Treatment,Is$Pair,sep=".")
-m.IS<-lm(lnRatio~levels-1,data=Is)
-summary(m.IS)#Only Feedback ARTR-PSSP sig neg
+IS2018$levels<-paste(IS2018$Treatment,IS2018$Pair,sep=".")
+IS2019$levels<-paste(IS2019$Treatment,IS2019$Pair,sep=".")
+
+#Biomass
+m.IS2018.m<-lm(Is.m~levels-1,data=IS2018)
+summary(m.IS2018.m)#Only Feedback ARTR-PSSP sig neg
+m.IS2019.m<-lm(Is.m~levels-1,data=IS2019)
+summary(m.IS2018.m)#Only Control ARTR-PSSP sig neg
+#Germination
+m.IS2018.g<-lm(Is.g~levels-1,data=IS2018)
+summary(m.IS2018.g)#Nothing
+m.IS2019.g<-lm(Is.g~levels-1,data=IS2019)
+summary(m.IS2018.g)#Nothing
+
+#Anova both years together 
+ISall<-rbind.data.frame(IS2018,IS2019)
+ISall$Year<-rep(c(2018,2019),each=180)
+#Biomass
+m.IS.m<-lm(Is.m~Treatment*Pair*factor(Year),data=ISall)
+qqPlot(m.IS.m)#fine
+Anova(m.IS.m)#no sig effects
+#Germ
+m.IS.g<-lm(Is.g~Treatment*Pair*factor(Year),data=ISall)
+qqPlot(m.IS.g)#fine
+Anova(m.IS.g)#no sig effects
+
+#Visualize biomass [not sure why spp pair label order changes between years]
+p.IS2018.m<-ggerrorplot(IS2018, x = "Pair", y = "Is.m",
+                        orientation = "horizontal",
+                        facet.by = "Treatment",
+                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
+  geom_hline(yintercept=0,linetype=2)
+p.IS2019.m<-ggerrorplot(IS2019, x = "Pair", y = "Is.m",
+                        orientation = "horizontal",
+                        facet.by = "Treatment",
+                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
+  geom_hline(yintercept=0,linetype=2)
+p.IS2018.g<-ggerrorplot(IS2018, x = "Pair", y = "Is.g",
+                        orientation = "horizontal",
+                        facet.by = "Treatment",
+                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
+  geom_hline(yintercept=0,linetype=2)
+p.IS2019.g<-ggerrorplot(IS2019, x = "Pair", y = "Is.g",
+                        orientation = "horizontal",
+                        facet.by = "Treatment",
+                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
+  geom_hline(yintercept=0,linetype=2)
+
+#Combine figures
+ggarrange(p.IS2018.m,p.IS2019.m,labels=c("2018","2019"),vjust=T,ncol=1)
+ggarrange(p.IS2018.g,p.IS2019.g,labels=c("2018","2019"),vjust=T,ncol=1)
 
 #Locality random effects using Abv Biomass----------------------------------------
 all<-read.csv("./data/Transplant data clean 190102.csv")
