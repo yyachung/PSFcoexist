@@ -17,6 +17,7 @@ bsDemog <- function(dat, nb, bs.var, germ.var, surv.var, growth.var){
                         massContrib.mean=rep(0,nrows),
                         massContrib.95CIlo=rep(0,nrows),
                         massContrib.95CIhi=rep(0,nrows))
+  bsVectors<-vector(mode = "list", length = nrows)
   #Bootstrap
   for (i in 1:nrows){
     subdata<-dat[which(dat[, bs.var]==estimates$treat.combo[i]),]
@@ -42,6 +43,7 @@ bsDemog <- function(dat, nb, bs.var, germ.var, surv.var, growth.var){
     estimates$mass.boot.95CIhi[i]<-quantile(mass.boot.mean.vector,probs=0.975)
     estimates$massContrib.95CIlo[i]<-quantile(massContrib.boot.mean.vector,probs=0.025)
     estimates$massContrib.95CIhi[i]<-quantile(massContrib.boot.mean.vector,probs=0.975)
+    bsVectors[[i]]<-massContrib.boot.mean.vector
   }
-  return(estimates)
+  return(list(estimates,bsVectors))
 }

@@ -14,6 +14,9 @@ library(ggpubr)
 all2018<-read.csv("./data/Transplant data clean 190102.csv") #2018 data
 all2019<-read.csv("./data/Transplant data year 2 clean 190819.csv") #2019 data
 
+#Remove biomass outlier
+all2019$Abv[which(all2019$Abv<0.0002)]<-NA
+
 #Subset data
 ARTR2018<-subset(all2018,Transplant=="ARTR")
 POSE2018<-subset(all2018,Transplant=="POSE")
@@ -174,31 +177,18 @@ PSF.POSE$levels<-paste(PSF.POSE$Treatment,PSF.POSE$DonorSpp,PSF.POSE$Year,sep=".
 
 #ABOVEGROUND BIOMASS
 table(na.omit(PSF.POSE18)$DonorSpp,na.omit(PSF.POSE18)$Treatment)#all 10
-table(na.omit(PSF.POSE19)$DonorSpp,na.omit(PSF.POSE19)$Treatment)#one 9 others 10
+table(na.omit(PSF.POSE19)$DonorSpp,na.omit(PSF.POSE19)$Treatment)#one 8 others 10
 
 #ANOVA both years together
 POSE.m1<-lm(lnRatio.mass~Treatment*DonorSpp*factor(Year),data=PSF.POSE)
-qqPlot(POSE.m1)#174 is a huge outlier
+qqPlot(POSE.m1)#fine
 Anova(POSE.m1)#nothing
-#Explore outlier issue
-PSF.POSE$lnRatio.mass[174]#6.184149 really high
-hist(PSF.POSE$lnRatio.mass)#huge outlier
-#ANOVA without outlier
-POSE.m1.1<-lm(lnRatio.mass~Treatment*DonorSpp*factor(Year),data=PSF.POSE[-174,])
-qqPlot(POSE.m1.1)#much better
-Anova(POSE.m1.1)#still nothing
 
 #Significant difference from zero
 POSE.m2<-lm(lnRatio.mass~levels-1,data=PSF.POSE)
 summary(POSE.m2)
-#2019: Control PSSP significantly positive, Exclusion HECO and Feedback PSSP negative
-#P<0.1: 2019 Control BARE, 2019 Control HECO, 2019 Feedback HECO, 2018 Exclusion BARE
-#Try without outlier
-POSE.m2.1<-lm(lnRatio.mass~levels-1,data=PSF.POSE[-174,])
-summary(POSE.m2.1)
 #2018: Exclusion BARE significantly negative
 #2019:Control BARE, Control HECO, Exclusion HECO, Feedback HECO, Feedback PSSP negative
-#Taking out outlier leads to disappearance of significant positive feedback
 
 #Visualization
 p.mPOSE_out<-ggerrorplot(PSF.POSE, x = "DonorSpp", y = "lnRatio.mass",
@@ -206,13 +196,6 @@ p.mPOSE_out<-ggerrorplot(PSF.POSE, x = "DonorSpp", y = "lnRatio.mass",
             xlab="",
             ylab="POSE feedback log ratio")+
   geom_hline(yintercept=0,linetype=2)
-#positive feedback and giant error bars in PSSP Control 2019 comes from outlier
-p.mPOSE<-ggerrorplot(PSF.POSE[-174,], x = "DonorSpp", y = "lnRatio.mass",
-            facet.by = c("Year","Treatment"),
-            xlab="",
-            ylab="POSE feedback log ratio")+
-  geom_hline(yintercept=0,linetype=2)
-#Better
 
 #GERMINATION
 #ANOVA both years together
@@ -282,19 +265,46 @@ p.gPSSP<-ggerrorplot(PSF.PSSP, x = "DonorSpp", y = "lnRatio.germ",
   geom_hline(yintercept=0,linetype=2)
 
 #Combine pairwise lnRatio plots into giant multipanel plots---------------------
-panel.m<-ggarrange(p.mARTR,p.mHECO,p.mPOSE_out,p.mPSSP, ncol=1,nrow=4,align="v")
-annotate_figure(panel.m,bottom="Soil environment microsite")
-
-panel.g<-ggarrange(p.gARTR,p.gHECO,p.gPOSE,p.gPSSP, ncol=1,nrow=4,align="v")
-annotate_figure(panel.g,bottom="Soil environment microsite")
-
-#Is (only ARTR-PSSP "feedback" sig neg)-----------------------------------
-#Combine all 2018 PSF data
+#Combine data
 PSF.ARTR18$Transplant<-rep("ARTR",120)
 PSF.HECO18$Transplant<-rep("HECO",120)
 PSF.POSE18$Transplant<-rep("POSE",120)
 PSF.PSSP18$Transplant<-rep("PSSP",120)
 PSF.all18<-rbind(PSF.ARTR18,PSF.HECO18,PSF.POSE18,PSF.PSSP18)
+PSF.ARTR19$Transplant<-rep("ARTR",120)
+PSF.HECO19$Transplant<-rep("HECO",120)
+PSF.POSE19$Transplant<-rep("POSE",120)
+PSF.PSSP19$Transplant<-rep("PSSP",120)
+PSF.all19<-rbind(PSF.ARTR19,PSF.HECO19,PSF.POSE19,PSF.PSSP19)
+PSF.all<-rbind.data.frame(PSF.all18,PSF.all19)
+PSF.all$Year<-rep(c(2018,2019),each=480)
+#Reorder factor levels
+PSF.all$Treatment <- factor(PSF.all$Treatment, levels=c("Control", "Feedback","Exclusion"))
+PSF.all$DonorSpp <- factor(PSF.all$DonorSpp, levels=c("ARTR", "BARE","HECO", "POSE","PSSP"))
+
+#Biomass PSF
+panel.m<-ggerrorplot(data=PSF.all, x="DonorSpp", y="lnRatio.mass", color="Treatment",
+                     facet.by=c("Transplant","Year"),
+                     palette=c("#E69F00", "#56B4E9", "#009E73"),
+                     xlab="Soil environment microsite",
+                     ylab="Aboveground biomass plant-soil feedback log ratio",
+                     legend="right")+
+  geom_hline(yintercept=0,linetype=2)
+panel.m
+
+#Germination PSF
+panel.g<-ggerrorplot(data=PSF.all, x="DonorSpp", y="lnRatio.germ", color="Treatment",
+                     facet.by=c("Transplant","Year"),
+                     palette=c("#E69F00", "#56B4E9", "#009E73"),
+                     xlab="Soil environment microsite",
+                     ylab="Germination plant-soil feedback log ratio",
+                     legend="right")+
+  geom_hline(yintercept=0,linetype=2)
+panel.g
+
+
+#Is (only ARTR-PSSP "feedback" sig neg)-----------------------------------
+#Data pre-processing
 PSF.all18<-subset(PSF.all18,DonorSpp!="BARE")#we only care about plants
 #Make spp pair label
 PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="ARTR"&PSF.all18$DonorSpp=="POSE")]<-"ARTR-POSE"
@@ -303,13 +313,7 @@ PSF.all18$Pair[(PSF.all18$DonorSpp=="ARTR"&PSF.all18$Transplant=="PSSP")|(PSF.al
 PSF.all18$Pair[(PSF.all18$DonorSpp=="HECO"&PSF.all18$Transplant=="PSSP")|(PSF.all18$Transplant=="HECO"&PSF.all18$DonorSpp=="PSSP")]<-"HECO-PSSP"
 PSF.all18$Pair[(PSF.all18$DonorSpp=="HECO"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="HECO"&PSF.all18$DonorSpp=="POSE")]<-"HECO-POSE"
 PSF.all18$Pair[(PSF.all18$DonorSpp=="PSSP"&PSF.all18$Transplant=="POSE")|(PSF.all18$Transplant=="PSSP"&PSF.all18$DonorSpp=="POSE")]<-"PSSP-POSE"
-
 #Combine all 2019 PSF data
-PSF.ARTR19$Transplant<-rep("ARTR",120)
-PSF.HECO19$Transplant<-rep("HECO",120)
-PSF.POSE19$Transplant<-rep("POSE",120)
-PSF.PSSP19$Transplant<-rep("PSSP",120)
-PSF.all19<-rbind(PSF.ARTR19,PSF.HECO19,PSF.POSE19,PSF.PSSP19)
 PSF.all19<-subset(PSF.all19,DonorSpp!="BARE")#we only care about plants
 #Make spp pair label
 PSF.all19$Pair[(PSF.all19$DonorSpp=="ARTR"&PSF.all19$Transplant=="POSE")|(PSF.all19$Transplant=="ARTR"&PSF.all19$DonorSpp=="POSE")]<-"ARTR-POSE"
@@ -350,37 +354,35 @@ ISall$Year<-rep(c(2018,2019),each=180)
 #Biomass
 m.IS.m<-lm(Is.m~Treatment*Pair*factor(Year),data=ISall)
 qqPlot(m.IS.m)#fine
-Anova(m.IS.m)#no sig effects
+Anova(m.IS.m)#no sig effects; Pair is 0.06
 #Germ
 m.IS.g<-lm(Is.g~Treatment*Pair*factor(Year),data=ISall)
 qqPlot(m.IS.g)#fine
 Anova(m.IS.g)#no sig effects
 
-#Visualize biomass [not sure why spp pair label order changes between years]
-p.IS2018.m<-ggerrorplot(IS2018, x = "Pair", y = "Is.m",
-                        orientation = "horizontal",
-                        facet.by = "Treatment",
-                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
-  geom_hline(yintercept=0,linetype=2)
-p.IS2019.m<-ggerrorplot(IS2019, x = "Pair", y = "Is.m",
-                        orientation = "horizontal",
-                        facet.by = "Treatment",
-                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
-  geom_hline(yintercept=0,linetype=2)
-p.IS2018.g<-ggerrorplot(IS2018, x = "Pair", y = "Is.g",
-                        orientation = "horizontal",
-                        facet.by = "Treatment",
-                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
-  geom_hline(yintercept=0,linetype=2)
-p.IS2019.g<-ggerrorplot(IS2019, x = "Pair", y = "Is.g",
-                        orientation = "horizontal",
-                        facet.by = "Treatment",
-                        xlab="Species Pair", ylab="Pairwise Interaction Strength")+
-  geom_hline(yintercept=0,linetype=2)
+#Visualize IS----------------------------- 
+ISall$Treatment<-factor(ISall$Treatment, levels=c("Control", "Feedback","Exclusion"))
 
-#Combine figures
-ggarrange(p.IS2018.m,p.IS2019.m,labels=c("2018","2019"),vjust=T,ncol=1)
-ggarrange(p.IS2018.g,p.IS2019.g,labels=c("2018","2019"),vjust=T,ncol=1)
+#Biomass
+P.IS.m<-ggerrorplot(ISall,x = "Pair", y = "Is.m",
+                    orientation = "horizontal",
+                    facet.by = "Year",
+                    color = "Treatment",
+                    palette=c("#E69F00", "#56B4E9", "#009E73"),
+                    xlab="Species Pair", ylab="Pairwise Interaction Strength")+
+  geom_hline(yintercept=0,linetype=2)
+P.IS.m
+
+#Germination
+P.IS.g<-ggerrorplot(ISall,x = "Pair", y = "Is.g",
+                    orientation = "horizontal",
+                    facet.by = "Year",
+                    color = "Treatment",
+                    palette=c("#E69F00", "#56B4E9", "#009E73"),
+                    xlab="Species Pair", ylab="Pairwise Interaction Strength")+
+  geom_hline(yintercept=0,linetype=2)
+P.IS.g
+
 
 #Locality random effects using Abv Biomass----------------------------------------
 all<-read.csv("./data/Transplant data clean 190102.csv")

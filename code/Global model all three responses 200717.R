@@ -28,18 +28,27 @@ sub2018<-all2018[,combcol]
 sub2019<-all2019[,combcol]
 #Bind datasets together
 all<-rbind.data.frame(sub2018,sub2019)
+#Remove outlier aboveground biomass
+all$Abv[which(all$Abv<0.0002)]<-NA
 
 #Aboveground biomass global model-------------------
 m.abv<-lm(log(Abv)~Treatment*DonorSpp*Transplant+factor(Year),data=all)
 qqPlot(m.abv$resid)#not perfect but scedasticity is better compared to no transformation
+summary(m.abv)
 Anova(m.abv)#Treatment p~0, DonorSpp p<0.0001, Transplant p~0, Year p~0, Donor:Transplant p=0.00375
 plotdf.abv<-summary(emmeans(m.abv,~DonorSpp|Transplant|Treatment,type = "response"))
                     
 #Germination global model-------------------
-m.germ<-glm(Germ~Treatment*DonorSpp*Transplant+factor(Year),data=all,family="poisson")
+#Calculate #failues
+summary(all$Germ)#max is 11 
+all$Germ.fail<-10-all$Germ
+all$Germ.fail[which(all$Germ.fail<0)]<-0
+#Fit binomial model
+m.germ<-glm(cbind(Germ,Germ.fail)~Treatment*DonorSpp*Transplant+factor(Year),data=all,family="binomial")
 plot(m.germ)#decent
-Anova(m.germ)#Type II Chisq test
-#Treatment, Donorspp, Transplant, Year, sig. Treatment:Transplant p=0.062
+Anova(m.germ)#Type II Chisq Analysis of Deviance test
+#Treatment, Donorspp, Transplant, Year, sig. Treatment:Transplant p=0.017
+summary(m.germ)
 plotdf.germ<-summary(emmeans(m.germ,~DonorSpp|Transplant|Treatment,type = "response"))
 
 #Survival global model-------------------
@@ -76,8 +85,10 @@ abv<-ggplot(data=plotdf.abv, aes(x=Type, y=response, color=Treatment, shape=Dono
   scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
   scale_shape_discrete(name="Microsite")+
   xlab("Soil environment")+ylab("Aboveground biomass (g)")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
   theme_bw()+
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 abv
 
 surv<-ggplot(data=plotdf.surv, aes(x=Type, y=prob, color=Treatment, shape=DonorSpp))+
@@ -86,20 +97,25 @@ surv<-ggplot(data=plotdf.surv, aes(x=Type, y=prob, color=Treatment, shape=DonorS
                   , position = position_dodge(width = 1))+  
   scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
   scale_shape_discrete(name="Microsite")+
+  ylim(0,1)+
   xlab("Soil environment")+ylab("Survival probability")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
   theme_bw()+
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 surv
 
-germ<-ggplot(data=plotdf.germ, aes(x=Type, y=rate, color=Treatment, shape=DonorSpp))+
+germ<-ggplot(data=plotdf.germ, aes(x=Type, y=prob, color=Treatment, shape=DonorSpp))+
   facet_wrap(~Transplant,nrow=1)+
-  geom_pointrange(aes(ymin=rate-SE, ymax=rate+SE)
+  geom_pointrange(aes(ymin=prob-SE, ymax=prob+SE)
                   , position = position_dodge(width = 1))+  
   scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
   scale_shape_discrete(name="Microsite")+
-  xlab("Soil environment")+ylab("Germination rate (out of 10)")+
+  xlab("Soil environment")+ylab("Germination probability")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
   theme_bw()+
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 germ
 
 ggarrange(germ, surv, abv, ncol = 1, nrow = 3, align = "v",labels = c("A", "B","C"),

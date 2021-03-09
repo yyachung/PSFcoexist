@@ -1,12 +1,13 @@
 ################################################################
 #Code to analyze soil nutrient data
-#AC 190207
+#AC 210207
 ################################################################
 
 setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 setwd("C:/Users/yyach/Box Sync/PSFcoexist/R/PSFcoexist")
 
 library(car)
+library(lme4)
 
 #Data import and viz 190725-----------------------------
 soil <- read.csv("./data/Midwest labs soil analysis 190725.csv")
@@ -15,6 +16,7 @@ soil <- read.csv("./data/Midwest labs soil analysis 190725.csv")
 
 soil$Type<-substr(soil$Sample.ID,(nchar(as.character(soil$Sample.ID))-1),nchar(as.character(soil$Sample.ID)))
 soil$Source<-substr(soil$Sample.ID,1,4)
+soil$Sample.pair<-substr(soil$Sample.ID,1,nchar(as.character(soil$Sample.ID))-3)
 
 #Visualization: LV vs. ST
 boxplot(soil$OM~soil$Type)#same
@@ -38,11 +40,18 @@ boxplot(soil$pH~soil$Source)#same
 boxplot(soil$CEC~soil$Source)#HECO lower
 boxplot(soil$Nitrate~soil$Source)#same
 
-#Quick stats 190725---------------------------
+#Quick stats 190725; mixed model update 210207---------------------------
+library(lmerTest)
+library(emmeans)
+
 #Organic Matter
 m.OM<-lm(OM~Type*Source,data=soil)
 qqPlot(m.OM$residuals)
-Anova(m.OM,type = 3)#Source sig (HECO low) p=0.004
+Anova(m.OM,type = 2)#Source sig (HECO low) 
+
+mm.OM<-lmer(OM~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.OM)
+anova(mm.OM)#Source sig (HECO low)
 
 #P1
 m.P1<-lm(P1~Type*Source,data=soil)
@@ -51,15 +60,27 @@ m.P1.log<-lm(log(P1)~Type*Source,data=soil)
 qqPlot(m.P1.log$residuals)#better
 Anova(m.P1.log,type=3)#nothing
 
+mm.P1<-lmer(log(P1)~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.P1)
+anova(mm.P1)
+
 #P2
 m.P2<-lm(P2~Type*Source,data=soil)
 qqPlot(m.P2$residuals)
 Anova(m.P2,type = 3)#No diff
 
+mm.P2<-lmer(P2~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.P2)
+anova(mm.P2)
+
 #K
 m.K<-lm(K~Type*Source,data=soil)
 qqPlot(m.K$residuals)
 Anova(m.K,type = 3)#No diff
+
+mm.K<-lmer(K~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.K)
+anova(mm.K)
 
 #Mg
 m.Mg<-lm(Mg~Type*Source,data=soil)
@@ -68,25 +89,50 @@ m.Mg.log<-lm(log(Mg)~Type*Source,data=soil)
 qqPlot(m.Mg.log$residuals)#better
 Anova(m.Mg.log,type=3)#nothing
 
+mm.Mg<-lmer(log(Mg)~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.Mg)
+anova(mm.Mg)#Type is significant (live higher)
+
 #Ca
 m.Ca<-lm(Ca~Type*Source,data=soil)
 qqPlot(m.Ca$residuals)
 Anova(m.Ca,type = 3)#No diff
+
+mm.Ca<-lmer(Ca~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.Ca)
+anova(mm.Ca)#Sig interaction between type and source
+pairs(emmeans(mm.Ca,~Type|Source))#lower in live HECO vs. ST HECO
 
 #pH
 m.pH<-lm(pH~Type*Source,data=soil)
 qqPlot(m.pH$residuals)
 Anova(m.pH,type = 3)#No diff
 
+mm.pH<-lmer(pH~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.pH)
+anova(mm.pH)#Type sig
+pairs(emmeans(mm.pH,~Type))#Live lower
+
 #CEC
 m.CEC<-lm(CEC~Type*Source,data=soil)
 qqPlot(m.CEC$residuals)
 Anova(m.CEC,type = 3)#Source p=0.024 (HECO low)
 
+mm.CEC<-lmer(CEC~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.CEC)
+anova(mm.CEC)#Sig interaction between type and source
+pairs(emmeans(mm.CEC,~Type|Source))#lower in live HECO vs. ST HECO
+
 #Nitrate
 m.N<-lm(Nitrate~Type*Source,data=soil)
 qqPlot(m.N$residuals)
-Anova(m.N,type = 3)#no diff
+Anova(m.N,type = 2)#no diff
+
+mm.N<-lmer(Nitrate~Type*Source+(1|Sample.pair),data=soil)
+summary(mm.N)
+anova(mm.N)#Sig type
+pairs(emmeans(mm.N,~Type))#Live higher
+
 
 #Paired LV-ST contrasts 190725-----------------------
 #Make ID column

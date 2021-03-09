@@ -1,9 +1,10 @@
 #Code to try and combine all life stage transitions in field PSF experiment
-#AC June 2020
+#AC Dec 2020
 
 setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 library(ggpubr)
 library(ggplot2)
+library(tidyr)
 
 #Data import------------------------
 all2018<-read.csv("./data/Transplant data clean 190102.csv") #2018 data
@@ -18,8 +19,18 @@ all2019$Trans.Don.Treat<-paste(all2019$Transplant,all2019$DonorSpp,all2019$Treat
 
 #Bootstrap params
 source("./code/func_BSDemog.R")
-mass.boot.2018<-bsDemog(dat=all2018,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
-mass.boot.2019<-bsDemog(dat=all2019,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
+mass.boot.2018.list<-bsDemog(dat=all2018,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
+mass.boot.2019.list<-bsDemog(dat=all2019,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
+
+#Assign estimate dataframe
+mass.boot.2018<-mass.boot.2018.list[[1]]
+mass.boot.2019<-mass.boot.2019.list[[1]]
+
+#Assign bootstrap vector lists
+bsVectors2018<-mass.boot.2018.list[[2]]
+bsVectors2019<-mass.boot.2019.list[[2]]
+names(bsVectors2018)<-mass.boot.2018$treat.combo
+names(bsVectors2019)<-mass.boot.2019$treat.combo
 
 # #Non-bootstrap
 # source("./code/func_noBSDemog.R")
@@ -29,22 +40,11 @@ mass.boot.2019<-bsDemog(dat=all2019,nb=5000,bs.var="Trans.Don.Treat", germ.var="
 #Data clean up and adding labels-----------
 #Delete final row from 2018 data since it has no treatment label
 mass.boot.2018<-mass.boot.2018[1:60,]
-mass.2018<-mass.2018[1:60,]
+#mass.2018<-mass.2018[1:60,]
 
 #Add labels back to data
-mass.boot.2018$Transplant<-substr(mass.boot.2018$treat.combo,1,4)
-mass.boot.2018$Donorspp<-substr(mass.boot.2018$treat.combo,6,9)
-mass.boot.2018$Treatment<-substr(mass.boot.2018$treat.combo,11,100)
-mass.boot.2019$Transplant<-substr(mass.boot.2019$treat.combo,1,4)
-mass.boot.2019$Donorspp<-substr(mass.boot.2019$treat.combo,6,9)
-mass.boot.2019$Treatment<-substr(mass.boot.2019$treat.combo,11,100)
-
-# mass.2018$Transplant<-substr(mass.boot.2018$treat.combo,1,4)
-# mass.2018$Donorspp<-substr(mass.boot.2018$treat.combo,6,9)
-# mass.2018$Treatment<-substr(mass.boot.2018$treat.combo,11,100)
-# mass.2019$Transplant<-substr(mass.boot.2019$treat.combo,1,4)
-# mass.2019$Donorspp<-substr(mass.boot.2019$treat.combo,6,9)
-# mass.2019$Treatment<-substr(mass.boot.2019$treat.combo,11,100)
+mass.boot.2018<-mass.boot.2018 %>% separate(treat.combo, c("Transplant", "Donorspp","Treatment"))
+mass.boot.2019<-mass.boot.2019 %>% separate(treat.combo, c("Transplant", "Donorspp","Treatment"))
 
 
 #Make Intra/Inter label
@@ -57,41 +57,54 @@ mass.boot.2019$Type[which(mass.boot.2019$Donorspp==mass.boot.2019$Transplant)]<-
 mass.boot.2019$Type <- factor(mass.boot.2019$Type, levels=c("Intra", "Inter"))#Flip the order of factors for easier visualization
 mass.boot.2019$Treatment <- factor(mass.boot.2019$Treatment, levels=c("Control","Feedback","Exclusion"))#Flip the order of factors for easier visualization
 
-# mass.2018$Type[which(mass.boot.2018$Donorspp!=mass.boot.2018$Transplant)]<-"Inter"
-# mass.2018$Type[which(mass.boot.2018$Donorspp==mass.boot.2018$Transplant)]<-"Intra"
-# mass.2018$Type <- factor(mass.boot.2018$Type, levels=c("Intra", "Inter"))#Flip the order of factors for easier visualization
-# mass.2018$Treatment <- factor(mass.boot.2018$Treatment, levels=c("Control","Feedback","Exclusion"))#Flip the order of factors for easier visualization
-# mass.2019$Type[which(mass.boot.2019$Donorspp!=mass.boot.2019$Transplant)]<-"Inter"
-# mass.2019$Type[which(mass.boot.2019$Donorspp==mass.boot.2019$Transplant)]<-"Intra"
-# mass.2019$Type <- factor(mass.boot.2019$Type, levels=c("Intra", "Inter"))#Flip the order of factors for easier visualization
-# mass.2019$Treatment <- factor(mass.boot.2019$Treatment, levels=c("Control","Feedback","Exclusion"))#Flip the order of factors for easier visualization
-
 #Visualize projections-----------------
 #BOOTSTRAPPED
 #2018
-ggplot(data=mass.boot.2018, aes(x=Type, y=massContrib.mean, color=Treatment, shape=Donorspp))+
-  facet_wrap(~Transplant,nrow=1)+
-  geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
-                  , position = position_dodge(width = 1))+  
-  scale_color_manual(values=c("#FF0000", "#00A08A", "#F2AD00"))+
-  xlab("Microsite")+ylab("Estimated shoot biomass contribution from 100 seeds")+
-  theme_bw()
+p.demog18<-ggplot(data=mass.boot.2018, aes(x=Type, y=massContrib.mean, color=Treatment, shape=Donorspp))+
+      facet_wrap(~Transplant,nrow=1)+
+      geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
+                      , position = position_dodge(width = 1))+  
+      scale_shape_discrete(name="Microsite")+
+      scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+      xlab("")+ylab("")+
+      geom_vline(xintercept=1.5,color="black",linetype="dashed")+
+      theme_bw()+
+      theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 #2019
-ggplot(data=mass.boot.2019, aes(x=Type, y=massContrib.mean, color=Treatment, shape=Donorspp))+
-  facet_wrap(~Transplant,nrow=1)+
-  geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
-                  , position = position_dodge(width = 1))+  
-  scale_color_manual(values=c("#FF0000", "#00A08A", "#F2AD00"))+
-  xlab("Microsite")+ylab("Estimated shoot biomass contribution from 100 seeds")+
-  theme_bw()
+p.demog19<-ggplot(data=mass.boot.2019, aes(x=Type, y=massContrib.mean, color=Treatment, shape=Donorspp))+
+          facet_wrap(~Transplant,nrow=1)+
+          geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
+                          , position = position_dodge(width = 1))+  
+          scale_shape_discrete(name="Microsite")+ 
+          scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+          xlab("Soil environment")+ylab("")+
+          geom_vline(xintercept=1.5,color="black",linetype="dashed")+
+          theme_bw()+
+          theme(legend.position = "none",
+            panel.grid.major = element_blank(),panel.grid.minor = element_blank())
+
+#Put together in panel
+annotate_figure(ggarrange(p.demog18,p.demog19,ncol = 1,labels = c("A","B"),vjust=T,common.legend = TRUE, legend = "right"),
+                left = text_grob("Estimated shoot biomass contribution from 100 seeds (g)", rot = 90))     
+
 #Alternative visualization 
+ggplot(data=mass.boot.2018, aes(x=Donorspp, y=massContrib.mean, color=Transplant, shape=Transplant))+
+  facet_grid(~Treatment)+
+  geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
+                  , position = position_dodge(width = 0.5))+
+  geom_line(aes(group=Transplant), position=position_dodge(width=0.5))+
+  scale_color_manual(values=c("#E2D200", "#46ACC8", "#E58601","#00A08A"))+
+  xlab("Soil environment microsite")+ylab("Estimated shoot biomass contribution from 100 seeds (g)")+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 ggplot(data=mass.boot.2019, aes(x=Donorspp, y=massContrib.mean, color=Transplant, shape=Transplant))+
   facet_grid(~Treatment)+
   geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
                   , position = position_dodge(width = 0.5))+
   geom_line(aes(group=Transplant), position=position_dodge(width=0.5))+
   scale_color_manual(values=c("#E2D200", "#46ACC8", "#E58601","#00A08A"))+
-  xlab("Microsite")+ylab("Estimated shoot biomass contribution from 100 seeds (g)")+
+  xlab("Soil environment microsite")+ylab("Estimated shoot biomass contribution from 100 seeds (g)")+
   theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 
@@ -219,100 +232,49 @@ ggarrange(control2018_mass, control2019_mass,
           ncol=1, labels = c("A", "B"),
           common.legend = TRUE, legend = "bottom")
 
-#Permutational differences 2018 only------------------
-np <- 1000
-
-#Make dataframe to store output
-bs.diff<-data.frame(matrix(0,nrow=np, ncol=48))
-colnames(bs.diff)<-mass.boot.2018$treat.combo[which(mass.boot.2018$Type=="Inter")]
-
-#Permutation and calculate differences
-for (i in 1:np){
-  #Randomize treatment labels in full dataset
-  all2018$bs.treat<-sample(all2018$Trans.Don.Treat, replace=F)
-  
-  #Estimate bootstrapped contributions
-  source("./code/func_BSDemog.R")
-  bs.means<-bsDemog(dat=all2018,nb=5000,bs.var="bs.treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
-  
-  # #Delete final row from 2018 data since it has no treatment label
-  # mass.boot.2018<-mass.boot.2018[1:60,]
-  # 
-  # #Calculate means for each treatment combo ***This doesn't work because the data is already aggregated
-  # bs.means<-aggregate.data.frame(mass.boot.2018$massContrib.mean, 
-  #                                by=list(mass.boot.2018$bs.treat), FUN="mean")
-  # colnames(bs.means)<-c("treat.combo","mean")
-  bs.means$transplant<-substring(bs.means$treat.combo,1,4)
-  bs.means$treatment<-substring(bs.means$treat.combo,11,100)
-  bs.means$donor<-substring(bs.means$treat.combo,6,9)
-  bs.means$trans.treat<-paste(bs.means$transplant,bs.means$treatment,sep=".")
-  #Calculate difference between means intra/inter comparisons
-  for (j in 1:12){
-    subdata<-subset(bs.means,trans.treat==unique(bs.means$trans.treat)[j]) #this should have 5 rows
-    intra<-subdata$massContrib.mean[which(subdata$transplant==subdata$donor)]
-    subdata$diff<-subdata$massContrib.mean-intra
-    for (k in 1:length(subdata[,1])){
-      if (subdata$diff[k]!=0) {
-        bs.diff[i,which(colnames(bs.diff)==subdata$treat.combo[k])] <- subdata$diff[k]
-      }
-      else next
-    }
-  }
+#Permutational differences----------------------------
+#We want to see if the 95% CI of all other vs. self comparisons overlaps zero
+#2018
+bs.diff2018<-data.frame(homeSpp=rep(c("ARTR","HECO","POSE","PSSP"),each=12),
+                   awaySpp=c(rep(c("HECO","POSE","PSSP","BARE"),3),
+                             rep(c("ARTR","POSE","PSSP","BARE"),3),
+                             rep(c("ARTR","HECO","PSSP","BARE"),3),
+                             rep(c("ARTR","HECO","POSE","BARE"),3)),
+                   Treatment=rep(c("Control","Feedback","Exclusion"),16),
+                   diff.mean=rep(0,48),
+                   diff.95lo=rep(0,48),
+                   diff.95hi=rep(0,48))
+for (i in 1:48){
+  home<-bsVectors2018[[which(mass.boot.2018$Transplant==bs.diff$homeSpp[i]&mass.boot.2018$Donorspp==bs.diff$homeSpp[i]&mass.boot.2018$Treatment==bs.diff$Treatment[i])]]
+  away<-bsVectors2018[[which(mass.boot.2018$Transplant==bs.diff$homeSpp[i]&mass.boot.2018$Donorspp==bs.diff$awaySpp[i]&mass.boot.2018$Treatment==bs.diff$Treatment[i])]]
+  diff<-home-away
+  bs.diff2018$diff.mean[i]<-mean(diff)
+  bs.diff2018$diff.95lo[i]<-quantile(diff,probs=0.025)
+  bs.diff2018$diff.95hi[i]<-quantile(diff,probs=0.975)
 }
-#Took almost 7 houra
+
+#2019
+bs.diff2019<-data.frame(homeSpp=rep(c("ARTR","HECO","POSE","PSSP"),each=12),
+                        awaySpp=c(rep(c("HECO","POSE","PSSP","BARE"),3),
+                                  rep(c("ARTR","POSE","PSSP","BARE"),3),
+                                  rep(c("ARTR","HECO","PSSP","BARE"),3),
+                                  rep(c("ARTR","HECO","POSE","BARE"),3)),
+                        Treatment=rep(c("Control","Feedback","Exclusion"),16),
+                        diff.mean=rep(0,48),
+                        diff.95lo=rep(0,48),
+                        diff.95hi=rep(0,48))
+for (i in 1:48){
+  home<-bsVectors2019[[which(mass.boot.2019$Transplant==bs.diff$homeSpp[i]&mass.boot.2019$Donorspp==bs.diff$homeSpp[i]&mass.boot.2019$Treatment==bs.diff$Treatment[i])]]
+  away<-bsVectors2019[[which(mass.boot.2019$Transplant==bs.diff$homeSpp[i]&mass.boot.2019$Donorspp==bs.diff$awaySpp[i]&mass.boot.2019$Treatment==bs.diff$Treatment[i])]]
+  diff<-home-away
+  bs.diff2019$diff.mean[i]<-mean(diff)
+  bs.diff2019$diff.95lo[i]<-quantile(diff,probs=0.025)
+  bs.diff2019$diff.95hi[i]<-quantile(diff,probs=0.975)
+}
+
+
 #Write out
-write.csv(bs.diff, "permute1000.csv")
-
-#Read back in
-bs.diff<-read.csv("./data/permute1000.csv",row.names = 1)
-
-##Check distributions
-hist(bs.diff[,5]) #looks good
-
-#Get 95% CI
-null.diff<-as.data.frame(t(apply( bs.diff , MARGIN=2 , FUN=quantile ,probs = c(0.025,0.975) , na.rm = TRUE )))
-#all extremely similar again
-
-#calculate observed diffs
-mass.boot.2018$trans.treat<-paste(mass.boot.2018$Transplant,mass.boot.2018$Treatment,sep=".")
-for (j in 1:length(unique(mass.boot.2018$trans.treat))){
-  subdata<-subset(mass.boot.2018,trans.treat==unique(mass.boot.2018$trans.treat)[j]) #this should have 5 rows
-  intra<-subdata$massContrib.mean[which(subdata$Transplant==subdata$Donorspp)]
-  subdata$diff<-subdata$massContrib.mean-intra
-  for (k in 1:length(subdata[,1])){
-    if (subdata$diff[k]!=0) {
-      null.diff$obs[which(rownames(null.diff)==subdata$treat.combo[k])] <- subdata$diff[k]
-    }
-    else next
-  }
-}
-
-View(null.diff) #Only 1 comparison is outside of CI. All CI's are surprisingly similar...
-
-#Try again with permutational differences, controls only, 2019 data [This code is incomplete and abandoned]----
-np <- 10
-in.dat<-all2019[all2019$Treatment=="Control",] 
-
-#Make dataframe to store output
-perm.diff<-data.frame(matrix(0,nrow=np*4*10, ncol=5))
-colnames(perm.diff)<-c("permIndex","Transplant","Contrast1","Contrast2","Diff")
-perm.diff$permIndex<-rep(1:np,each=40)
-perm.diff$Transplant<-rep(rep(c("ARTR","HECO","POSE","PSSP"),each=10),np)
+write.csv(bs.diff2018, "./data/bs.diff2018.201203.csv")
+write.csv(bs.diff2019, "./data/bs.diff2019.201203.csv")
 
 
-for (i in 1:np){
-  #Randomize treatment labels in full dataset
-  in.dat$bs.treat<-sample(in.dat$Trans.Don.Treat, replace=F)
-  
-  #Estimate bootstrapped contributions
-  source("./code/func_BSDemog.R")
-  bs.means<-bsDemog(dat=in.dat,nb=5000,bs.var="bs.treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
-  bs.means$transplant<-substring(bs.means$treat.combo,1,4)
-  bs.means$treatment<-substring(bs.means$treat.combo,11,100)
-  bs.means$donor<-substring(bs.means$treat.combo,6,9)
-  
-  #Calculate contrasts
-  subdata<-subset(bs.means,transplant=perm.diff$Transplant[i])
-  
-  
-}

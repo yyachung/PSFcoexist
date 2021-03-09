@@ -2,10 +2,11 @@
 #Code to analyze soil moisture data during the experiment
 ################################################################
 
-setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
-library(visreg)
+#setwd("C:/Users/A02268715/Box Sync/PSFcoexist/R/PSFcoexist")
+library(emmeans)
+library(car)
 
-#Data 180612 (still no consistent plant or spatial effects)---------------
+#Data 180612 (only small spatial effect in Apr)---------------
 #Data
 all<-read.csv("./data/Transplant data 180612.csv")
 dat180418<-subset(all,!is.na(VWC180418))
@@ -17,10 +18,11 @@ boxplot(dat180418$VWC180418~dat180418$Transect)#no differences
 boxplot(dat180418$VWC180418~dat180418$DonorSpp)#POSE seems a bit low
 boxplot(dat180418$VWC180418~dat180418$Rep)#quite a bit of variation
 plot(dat180418$Position,dat180418$VWC180418,pch=dat180418$Transect,col=dat180418$Transect)#no super strong slope patterns
-m1<-lm(VWC180418~DonorSpp*factor(Transect),data=dat180418)#plant effects
-summary(m1)#nothing
-m2<-lm(VWC180418~Position*factor(Transect),data=dat180418)#spatial effects
-summary(m2)#position:transect 3 p=0.0449 (positive slope)
+
+m1<-lm(VWC180418~DonorSpp+Position*factor(Transect),data=dat180418)
+qqPlot(m1)#good
+summary(m1)#POSE may be lower than ARTR; #Transect 3 has potential spatial effect
+Anova(m1)#position:transect only based on ANOVA hypotheses
 
 #180531
 hist(dat180531$VWC180531)#pretty normal
@@ -28,11 +30,11 @@ boxplot(dat180531$VWC180531~dat180531$Transect)#no differences
 boxplot(dat180531$VWC180531~dat180531$DonorSpp)#ARTR seems a bit low
 boxplot(dat180531$VWC180531~dat180531$Rep)#not as much variation
 plot(dat180531$Position,dat180531$VWC180531,pch=dat180531$Transect,col=dat180531$Transect)#no super strong slope patterns
-m1<-lm(VWC180531~DonorSpp*factor(Transect),data=dat180531)#plant effects
-summary(m1)#BARE has highest VWC (p=0.0509 from ARTR); HECO:Transect2 (p=0.04)
-visreg(m1,"DonorSpp","Transect",type="conditional")
-m2<-lm(VWC180531~Position*factor(Transect),data=dat180531)#spatial effects
-summary(m2)#no relationship
+
+m2<-lm(VWC180531~DonorSpp+Position*factor(Transect),data=dat180531)
+qqPlot(m2)#good
+summary(m2)#BARE may be higher than ARTR
+Anova(m2)#no differences
 
 
 #Data 171107 (no spatial or plant effects)---------------
@@ -48,15 +50,17 @@ boxplot(dat$VWC171110~dat$Rep)#not too different
 plot(dat$Position,dat$VWC171110,pch=dat$Transect,col=dat$Transect)#no super strong slope patterns
 
 #Stats
-m1<-lm(VWC171110~DonorSpp*factor(Transect),data=dat)#plant effects
-summary(m1)#nothing
-m2<-lm(VWC171110~Position*factor(Transect),data=dat)#spatial effects
-summary(m2)#nothing
+m3<-lm(VWC171110~DonorSpp+Position*factor(Transect),data=dat)
+qqPlot(m3)#good
+summary(m3)#no effects
+Anova(m3)#no differences
 
-# Data 190509 ------------------------------
-dat<-read.csv("./data/Soil moisture 190509.csv")
+
+# Data 190605 ------------------------------
+dat<-read.csv("./data/Soil moisture 190605.csv")
 dat$locality<-paste(dat$Transect,dat$Position,dat$Offset,dat$Side,sep=".")
 
+#VWC 190509
 #Prelim examination/dataviz
 hist(dat$Moist_190509)#pretty normal
 boxplot(dat$Moist_190509~dat$Transect)#not too different
@@ -65,14 +69,34 @@ boxplot(dat$Moist_190509~dat$Transplant)#Same
 boxplot(dat$Moist_190509~dat$Treatment)#Same
 boxplot(dat$Moist_190509~dat$Rep)#reps 1 and 2 noticeably higher
 plot(dat$Position,dat$Moist_190509,pch=dat$Transect,col=dat$Transect)
-#Maybe slope pattern for transect 1, definitely microsite patterns
 boxplot(dat$Moist_190509~dat$locality)#lots of variation
-
 #Stats
-m1<-lm(Moist_190509~DonorSpp*Transplant*Treatment,data=dat)#Manipulation effects
-Anova(m1,type = 3)#No sig effects 
+m4<-lm(Moist_190509~DonorSpp+Position*factor(Transect),data=dat)
+qqPlot(m4)#good
+summary(m4)#most effects are significant, negative position slope for Transect 1
+Anova(m4)#all effects significant
+pairs(emmeans(m4,~DonorSpp))#ARTR=POSE=BARE<PSSP<HECO
+pairs(emmeans(m4,~factor(Transect)*Position))#2=3<1
 
-#Include spatial random effects
+#VWC 190605
+#Prelim examination/dataviz
+hist(dat$Moist_190605)#pretty normal
+boxplot(dat$Moist_190605~dat$Transect)#not too different
+boxplot(dat$Moist_190605~dat$DonorSpp)#not too different
+boxplot(dat$Moist_190605~dat$Transplant)#Same
+boxplot(dat$Moist_190605~dat$Treatment)#Same
+boxplot(dat$Moist_190605~dat$Rep)#reps 10 and 2 noticeably higher
+plot(dat$Position,dat$Moist_190605,pch=dat$Transect,col=dat$Transect)
+boxplot(dat$Moist_190605~dat$locality)#lots of variation
+#Stats
+m5<-lm(Moist_190605~DonorSpp+Position*factor(Transect),data=dat)
+qqPlot(m5)#good
+summary(m5)#a few significant effects in each category, negative slopes for Transect 1 and 2, positive for 3
+Anova(m5)#Donor and position:transect sig
+pairs(emmeans(m5,~DonorSpp))#POSE=PSSP=ARTR=BARE=HECO: a,ab,b,bc,c
+pairs(emmeans(m5,~factor(Transect)*Position))#2<3<1
+
+#Include spatial random effects (not used)
 library(lme4)
 m2<-lmer(Moist_190509~DonorSpp*Transplant*Treatment
          +(1|locality),data=dat)#spatial effects
