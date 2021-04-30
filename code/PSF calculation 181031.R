@@ -298,7 +298,7 @@ panel.g<-ggerrorplot(data=PSF.all, x="DonorSpp", y="lnRatio.germ", color="Treatm
                      palette=c("#E69F00", "#56B4E9", "#009E73"),
                      xlab="Soil environment microsite",
                      ylab="Germination plant-soil feedback log ratio",
-                     legend="right")+
+                     legend="right")+ 
   geom_hline(yintercept=0,linetype=2)
 panel.g
 

@@ -5,6 +5,7 @@ setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 library(ggpubr)
 library(ggplot2)
 library(tidyr)
+library(cowplot)
 
 #Data import------------------------
 all2018<-read.csv("./data/Transplant data clean 190102.csv") #2018 data
@@ -107,6 +108,55 @@ ggplot(data=mass.boot.2019, aes(x=Donorspp, y=massContrib.mean, color=Transplant
   xlab("Soil environment microsite")+ylab("Estimated shoot biomass contribution from 100 seeds (g)")+
   theme_bw()+
   theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())
+
+#New figures for panel plot with better annotations and spacing------------------
+#2018
+mass.boot.2018$plotX<-paste(mass.boot.2018$Type,mass.boot.2018$Donorspp)
+mass.boot.2018$plotX <- factor(mass.boot.2018$plotX, 
+                            levels=c("Intra ARTR", "Intra HECO","Intra POSE","Intra PSSP",
+                                     "Inter ARTR", "Inter BARE", "Inter HECO", "Inter POSE", "Inter PSSP"))#Flip the order of factors for easier visualization
+demog18<-ggplot(data=mass.boot.2018, aes(x=plotX, y=massContrib.mean, color=Treatment, shape=Donorspp))+
+  facet_grid(~Transplant,scales="free_x")+
+  geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
+                  , position = position_dodge(width = 1))+  
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  scale_shape_discrete(name="Microsite")+
+  xlab("")+ylab("")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
+  theme_bw()+
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+        axis.text.x=element_blank(), axis.ticks.x=element_blank())
+p.demog18<-demog18+coord_cartesian(clip = "off") + # allows plotting anywhere on the canvas
+  draw_label("Intra", x = 1, y = -1.1, size=10)+
+  draw_label("Inter", x = 3.5, y = -1.1, size=10) 
+
+
+#2019
+mass.boot.2019$plotX<-paste(mass.boot.2019$Type,mass.boot.2019$Donorspp)
+mass.boot.2019$plotX <- factor(mass.boot.2019$plotX, 
+                               levels=c("Intra ARTR", "Intra HECO","Intra POSE","Intra PSSP",
+                                        "Inter ARTR", "Inter BARE", "Inter HECO", "Inter POSE", "Inter PSSP"))#Flip the order of factors for easier visualization
+demog19<-ggplot(data=mass.boot.2019, aes(x=plotX, y=massContrib.mean, color=Treatment, shape=Donorspp))+
+  facet_grid(~Transplant,scales="free_x")+
+  geom_pointrange(aes(ymin=massContrib.95CIlo, ymax=massContrib.95CIhi)
+                  , position = position_dodge(width = 1))+  
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  scale_shape_discrete(name="Microsite")+
+  xlab("\nSoil environment")+ylab("")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
+  theme_bw()+
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+        axis.text.x=element_blank(), axis.ticks.x=element_blank())
+p.demog19<-demog19+coord_cartesian(clip = "off") + # allows plotting anywhere on the canvas
+  draw_label("Intra", x = 1, y = -1.8, size=10)+
+  draw_label("Inter", x = 3.5, y = -1.8, size=10)#not sure why this x value has to be different 
+
+#Put together in panel
+annotate_figure(ggarrange(p.demog18,p.demog19,ncol = 1,labels = c("A","B"),vjust=T,common.legend = TRUE, legend = "right"),
+                left = text_grob("Estimated shoot biomass contribution from 100 seeds (g)", rot = 90))     
+
 
 # #NONBOOTSTRAPPED
 # #2018 using SEs

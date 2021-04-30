@@ -3,11 +3,11 @@
 #200717 AC                                                 #
 ############################################################
 
-setwd("C:/Users/yyach/Desktop/Box Sync/PSFcoexist/R/PSFcoexist")
 library(emmeans)
 library(car)
 library(lme4)
 library(ggpubr)
+library(cowplot)
 
 #Load data and process ---------------------------
 all2018<-read.csv("./data/Transplant data clean 190102.csv") #2018 data
@@ -37,7 +37,8 @@ qqPlot(m.abv$resid)#not perfect but scedasticity is better compared to no transf
 summary(m.abv)
 Anova(m.abv)#Treatment p~0, DonorSpp p<0.0001, Transplant p~0, Year p~0, Donor:Transplant p=0.00375
 plotdf.abv<-summary(emmeans(m.abv,~DonorSpp|Transplant|Treatment,type = "response"))
-                    
+
+write.csv(plotdf.abv,"./data/Growth coefficients.csv")                    
 #Germination global model-------------------
 #Calculate #failues
 summary(all$Germ)#max is 11 
@@ -121,3 +122,89 @@ germ
 ggarrange(germ, surv, abv, ncol = 1, nrow = 3, align = "v",labels = c("A", "B","C"),
           common.legend = TRUE, legend = "right")
 
+#Alternative multi=panel plot with better spacing and annotations------------------
+#Make Intra/Inter label
+plotdf.abv$Type<-NA
+plotdf.abv$Type[which(as.character(plotdf.abv$DonorSpp)!=as.character(plotdf.abv$Transplant))]<-"Inter"
+plotdf.abv$Type[which(as.character(plotdf.abv$DonorSpp)==as.character(plotdf.abv$Transplant))]<-"Intra"
+plotdf.abv$Type <- factor(plotdf.abv$Type, levels=c("Intra", "Inter"))#Flip the order of factors for easier visualization
+plotdf.abv$Treatment <- factor(plotdf.abv$Treatment, levels=c("Control", "Feedback","Exclusion"))#Flip the order of factors for easier visualization
+plotdf.surv$Type<-NA
+plotdf.surv$Type[which(as.character(plotdf.surv$DonorSpp)!=as.character(plotdf.surv$Transplant))]<-"Inter"
+plotdf.surv$Type[which(as.character(plotdf.surv$DonorSpp)==as.character(plotdf.surv$Transplant))]<-"Intra"
+plotdf.surv$Type <- factor(plotdf.surv$Type, levels=c("Intra", "Inter"))#Flip the order of factors for easier visualization
+plotdf.surv$Treatment <- factor(plotdf.surv$Treatment, levels=c("Control", "Feedback","Exclusion"))#Flip the order of factors for easier visualization
+plotdf.germ$Type<-NA
+plotdf.germ$Type[which(as.character(plotdf.germ$DonorSpp)!=as.character(plotdf.germ$Transplant))]<-"Inter"
+plotdf.germ$Type[which(as.character(plotdf.germ$DonorSpp)==as.character(plotdf.germ$Transplant))]<-"Intra"
+plotdf.germ$Type <- factor(plotdf.germ$Type, levels=c("Intra", "Inter"))#Flip the order of factors for easier visualization
+plotdf.germ$Treatment <- factor(plotdf.germ$Treatment, levels=c("Control", "Feedback","Exclusion"))#Flip the order of factors for easier visualization
+
+#Abv
+plotdf.abv$plotX<-paste(plotdf.abv$Type,plotdf.abv$DonorSpp)
+plotdf.abv$plotX <- factor(plotdf.abv$plotX, 
+                           levels=c("Intra ARTR", "Intra HECO","Intra POSE","Intra PSSP",
+                                    "Inter ARTR", "Inter BARE", "Inter HECO", "Inter POSE", "Inter PSSP"))#Flip the order of factors for easier visualization
+abv<-ggplot(data=plotdf.abv, aes(x=plotX, y=response, color=Treatment, shape=DonorSpp))+
+  facet_grid(~Transplant,scales="free_x")+
+  geom_pointrange(aes(ymin=response-SE, ymax=response+SE)
+                  , position = position_dodge(width = 1))+  
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  scale_shape_discrete(name="Microsite")+
+  xlab("\n Soil environment")+ylab("Aboveground biomass (g)")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
+  theme_bw()+
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+        axis.text.x=element_blank(), axis.ticks.x=element_blank())
+abvp<-abv+coord_cartesian(clip = "off") + # allows plotting anywhere on the canvas
+  draw_label("Intra", x = 1, y = -0.012, size=10)+
+  draw_label("Inter", x = 3.5, y = -0.012, size=10)
+
+#Surv
+plotdf.surv$plotX<-paste(plotdf.surv$Type,plotdf.surv$DonorSpp)
+plotdf.surv$plotX <- factor(plotdf.surv$plotX, 
+                           levels=c("Intra ARTR", "Intra HECO","Intra POSE","Intra PSSP",
+                                    "Inter ARTR", "Inter BARE", "Inter HECO", "Inter POSE", "Inter PSSP"))#Flip the order of factors for easier visualization
+surv<-ggplot(data=plotdf.surv, aes(x=plotX, y=prob, color=Treatment, shape=DonorSpp))+
+  facet_grid(~Transplant,scales="free_x")+
+  geom_pointrange(aes(ymin=prob-SE, ymax=prob+SE)
+                  , position = position_dodge(width = 1))+  
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  scale_shape_discrete(name="Microsite")+
+  xlab("\n Soil environment")+ylab("Survival probability")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
+  ylim(0,1.05)+
+  theme_bw()+
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+        axis.text.x=element_blank(), axis.ticks.x=element_blank())
+survp<-surv+coord_cartesian(clip = "off") + # allows plotting anywhere on the canvas
+  draw_label("Intra", x = 1, y = -0.08, size=10)+
+  draw_label("Inter", x = 3.5, y = -0.08, size=10)
+
+#Germ
+plotdf.germ$plotX<-paste(plotdf.germ$Type,plotdf.germ$DonorSpp)
+plotdf.germ$plotX <- factor(plotdf.germ$plotX, 
+                            levels=c("Intra ARTR", "Intra HECO","Intra POSE","Intra PSSP",
+                                     "Inter ARTR", "Inter BARE", "Inter HECO", "Inter POSE", "Inter PSSP"))#Flip the order of factors for easier visualization
+germ<-ggplot(data=plotdf.germ, aes(x=plotX, y=prob, color=Treatment, shape=DonorSpp))+
+  facet_grid(~Transplant,scales="free_x")+
+  geom_pointrange(aes(ymin=prob-SE, ymax=prob+SE)
+                  , position = position_dodge(width = 1))+  
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  scale_shape_discrete(name="Microsite")+
+  xlab("\n Soil environment")+ylab("Germination probability")+
+  geom_vline(xintercept=1.5,color="black",linetype="dashed")+
+  theme_bw()+
+  ylim(0,0.4)+
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(),
+        axis.text.x=element_blank(), axis.ticks.x=element_blank())
+germp<-germ+coord_cartesian(clip = "off") + # allows plotting anywhere on the canvas
+  draw_label("Intra", x = 1, y = -0.03, size=10)+
+  draw_label("Inter", x = 3.5, y = -0.03, size=10)
+
+#Plot together
+ggarrange(germp, survp, abvp, ncol = 1, nrow = 3, align = "v",labels = c("A", "B","C"),
+          common.legend = TRUE, legend = "right")
