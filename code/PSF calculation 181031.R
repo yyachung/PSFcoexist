@@ -74,7 +74,11 @@ summary(ARTR.m2)
 #2019: Control PSSP, Exclusion PSSP are significantly less than zero
 #P<0.1: 2019 Control POSE, 2019 Exclusion BARE, 2018 Exclusion PSSP 
 
-#Visualization
+#try mixed model
+PSF.ARTR$block<-paste(PSF.ARTR$Year,PSF.ARTR$Rep,sep=".")
+ARTR.mix<-lmer(lnRatio.mass~Treatment*DonorSpp*factor(Year)+(1|block),data=PSF.ARTR)
+Anova(ARTR.mix)#same
+
 # #need to make a damn dataframe with all the annotation params
 # ann_text<-data.frame(DonorSpp=factor("HECO","PSSP","PSSP","PSSP",levels=unique(PSF.ARTR$DonorSpp)),
 #                      lmRatio.mass=c(-0.5,-0.3,-0.5,-0.2),
@@ -141,6 +145,11 @@ summary(HECO.m2)
 #2019: Feedback ARTR significantly positive
 #P<0.1: 2018 Exclusion ARTR 
 
+#try mixed model
+PSF.HECO$block<-paste(PSF.HECO$Year,PSF.HECO$Rep,sep=".")
+HECO.mix<-lmer(lnRatio.mass~Treatment*DonorSpp*factor(Year)+(1|block),data=PSF.HECO)
+Anova(HECO.mix)#same
+
 #Visualization
 p.mHECO<-ggerrorplot(PSF.HECO, x = "DonorSpp", y = "lnRatio.mass",
             facet.by = c("Year","Treatment"),
@@ -190,6 +199,11 @@ summary(POSE.m2)
 #2018: Exclusion BARE significantly negative
 #2019:Control BARE, Control HECO, Exclusion HECO, Feedback HECO, Feedback PSSP negative
 
+#try mixed model
+PSF.POSE$block<-paste(PSF.POSE$Year,PSF.POSE$Rep,sep=".")
+POSE.mix<-lmer(lnRatio.mass~Treatment*DonorSpp*factor(Year)+(1|block),data=PSF.POSE)
+Anova(POSE.mix)#same
+
 #Visualization
 p.mPOSE_out<-ggerrorplot(PSF.POSE, x = "DonorSpp", y = "lnRatio.mass",
             facet.by = c("Year","Treatment"),
@@ -235,6 +249,11 @@ PSSP.m2<-lm(lnRatio.mass~levels-1,data=PSF.PSSP)
 summary(PSSP.m2)
 #2019: Control BARE, Control POSE, Feedback HECO significantly negative
 #P<0.1: 2018 Feedback ARTR, 2018 Feedback HECO 
+
+#try mixed model
+PSF.PSSP$block<-paste(PSF.PSSP$Year,PSF.PSSP$Rep,sep=".")
+PSSP.mix<-lmer(lnRatio.mass~Treatment*DonorSpp*factor(Year)+(1|block),data=PSF.PSSP)
+Anova(PSSP.mix)#same
 
 #Visualization
 p.mPSSP<-ggerrorplot(PSF.PSSP, x = "DonorSpp", y = "lnRatio.mass",
@@ -302,6 +321,15 @@ panel.g<-ggerrorplot(data=PSF.all, x="DonorSpp", y="lnRatio.germ", color="Treatm
   geom_hline(yintercept=0,linetype=2)
 panel.g
 
+#Correlating responses across vital rates----------------
+ggplot(data=PSF.all, aes(x=lnRatio.germ, y=lnRatio.mass, color=Treatment, shape=DonorSpp))+
+  facet_grid(cols=vars(Transplant), rows=vars(Year))+
+  geom_point()+  
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
+  scale_shape_discrete(name="Soil environment")+
+  xlab("Germination ln ratio")+ylab("Aboveground biomass ln ratio")
 
 #Is (only ARTR-PSSP "feedback" sig neg)-----------------------------------
 #Data pre-processing

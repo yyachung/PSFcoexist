@@ -1,5 +1,5 @@
 #Code to try and combine all life stage transitions in field PSF experiment
-#AC Dec 2020
+#AC Jun 2022
 
 setwd("C:/Users/yc68991/Box Sync/PSFcoexist/R/PSFcoexist")
 library(ggpubr)
@@ -22,6 +22,11 @@ all2019$Trans.Don.Treat<-paste(all2019$Transplant,all2019$DonorSpp,all2019$Treat
 source("./code/func_BSDemog.R")
 mass.boot.2018.list<-bsDemog(dat=all2018,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
 mass.boot.2019.list<-bsDemog(dat=all2019,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
+
+#Bootstrap the other way (same results)
+#source("./code/func_BS1Demog.R")
+#mass.boot.2018.list<-bsDemog1(dat=all2018,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
+#mass.boot.2019.list<-bsDemog1(dat=all2019,nb=5000,bs.var="Trans.Don.Treat", germ.var="Germ",surv.var = "Surv",growth.var = "Abv")
 
 #Assign estimate dataframe
 mass.boot.2018<-mass.boot.2018.list[[1]]
@@ -295,8 +300,8 @@ bs.diff2018<-data.frame(homeSpp=rep(c("ARTR","HECO","POSE","PSSP"),each=12),
                    diff.95lo=rep(0,48),
                    diff.95hi=rep(0,48))
 for (i in 1:48){
-  home<-bsVectors2018[[which(mass.boot.2018$Transplant==bs.diff$homeSpp[i]&mass.boot.2018$Donorspp==bs.diff$homeSpp[i]&mass.boot.2018$Treatment==bs.diff$Treatment[i])]]
-  away<-bsVectors2018[[which(mass.boot.2018$Transplant==bs.diff$homeSpp[i]&mass.boot.2018$Donorspp==bs.diff$awaySpp[i]&mass.boot.2018$Treatment==bs.diff$Treatment[i])]]
+  home<-bsVectors2018[[which(mass.boot.2018$Transplant==bs.diff2018$homeSpp[i]&mass.boot.2018$Donorspp==bs.diff2018$homeSpp[i]&mass.boot.2018$Treatment==bs.diff2018$Treatment[i])]]
+  away<-bsVectors2018[[which(mass.boot.2018$Transplant==bs.diff2018$homeSpp[i]&mass.boot.2018$Donorspp==bs.diff2018$awaySpp[i]&mass.boot.2018$Treatment==bs.diff2018$Treatment[i])]]
   diff<-home-away
   bs.diff2018$diff.mean[i]<-mean(diff)
   bs.diff2018$diff.95lo[i]<-quantile(diff,probs=0.025)
@@ -314,8 +319,8 @@ bs.diff2019<-data.frame(homeSpp=rep(c("ARTR","HECO","POSE","PSSP"),each=12),
                         diff.95lo=rep(0,48),
                         diff.95hi=rep(0,48))
 for (i in 1:48){
-  home<-bsVectors2019[[which(mass.boot.2019$Transplant==bs.diff$homeSpp[i]&mass.boot.2019$Donorspp==bs.diff$homeSpp[i]&mass.boot.2019$Treatment==bs.diff$Treatment[i])]]
-  away<-bsVectors2019[[which(mass.boot.2019$Transplant==bs.diff$homeSpp[i]&mass.boot.2019$Donorspp==bs.diff$awaySpp[i]&mass.boot.2019$Treatment==bs.diff$Treatment[i])]]
+  home<-bsVectors2019[[which(mass.boot.2019$Transplant==bs.diff2019$homeSpp[i]&mass.boot.2019$Donorspp==bs.diff2019$homeSpp[i]&mass.boot.2019$Treatment==bs.diff2019$Treatment[i])]]
+  away<-bsVectors2019[[which(mass.boot.2019$Transplant==bs.diff2019$homeSpp[i]&mass.boot.2019$Donorspp==bs.diff2019$awaySpp[i]&mass.boot.2019$Treatment==bs.diff2019$Treatment[i])]]
   diff<-home-away
   bs.diff2019$diff.mean[i]<-mean(diff)
   bs.diff2019$diff.95lo[i]<-quantile(diff,probs=0.025)
@@ -324,7 +329,58 @@ for (i in 1:48){
 
 
 #Write out
-write.csv(bs.diff2018, "./data/bs.diff2018.201203.csv")
-write.csv(bs.diff2019, "./data/bs.diff2019.201203.csv")
+write.csv(bs.diff2018, "./data/bs.diff2018.220627.csv")
+write.csv(bs.diff2019, "./data/bs.diff2019.220627.csv")
 
+#Try to get it all the way to bootstrapped Is-----------------------------
+#Calculate using the bsVectors output lists
+#2018
+b.Is.2018<-data.frame(Pair=rep(c("ARTR-HECO","ARTR-POSE","ARTR-PSSP","HECO-POSE","HECO-PSSP","POSE-PSSP"),3),
+                      Treatment=rep(c("Control","Feedback","Exclusion"),each=6))
+b.Is.2018$Is<-rep(0,18)
+b.Is.2018$Is.95lo<-rep(0,18)
+b.Is.2018$Is.95hi<-rep(0,18)
 
+for (i in 1:length(b.Is.2018[,1])){
+  sp1<-substr(b.Is.2018$Pair[i],1,4)
+  sp2<-substr(b.Is.2018$Pair[i],6,9)
+  n11<-paste(sp1,sp1,b.Is.2018$Treatment[i],sep=".")
+  n12<-paste(sp1,sp2,b.Is.2018$Treatment[i],sep=".")
+  n22<-paste(sp2,sp2,b.Is.2018$Treatment[i],sep=".")
+  n21<-paste(sp2,sp1,b.Is.2018$Treatment[i],sep=".")
+  Is.vec<-log(bsVectors2018[[n11]]/bsVectors2018[[n12]])+log(bsVectors2018[[n22]]/bsVectors2018[[n21]])
+  b.Is.2018$Is[i]<-mean(Is.vec[is.finite(Is.vec)==TRUE])
+  b.Is.2018$Is.95lo[i]<-quantile(Is.vec[is.finite(Is.vec)==TRUE],probs = 0.025)
+  b.Is.2018$Is.95hi[i]<-quantile(Is.vec[is.finite(Is.vec)==TRUE],probs = 0.975)
+}
+
+#2019
+b.Is.2019<-b.Is.2018
+for (i in 1:length(b.Is.2019[,1])){
+  sp1<-substr(b.Is.2019$Pair[i],1,4)
+  sp2<-substr(b.Is.2019$Pair[i],6,9)
+  n11<-paste(sp1,sp1,b.Is.2019$Treatment[i],sep=".")
+  n12<-paste(sp1,sp2,b.Is.2019$Treatment[i],sep=".")
+  n22<-paste(sp2,sp2,b.Is.2019$Treatment[i],sep=".")
+  n21<-paste(sp2,sp1,b.Is.2019$Treatment[i],sep=".")
+  Is.vec<-log(bsVectors2019[[n11]]/bsVectors2019[[n12]])+log(bsVectors2019[[n22]]/bsVectors2019[[n21]])
+  b.Is.2019$Is[i]<-mean(Is.vec[is.finite(Is.vec)==TRUE])
+  b.Is.2019$Is.95lo[i]<-quantile(Is.vec[is.finite(Is.vec)==TRUE],probs = 0.025)
+  b.Is.2019$Is.95hi[i]<-quantile(Is.vec[is.finite(Is.vec)==TRUE],probs = 0.975)
+}
+
+#Visualize BS IS----------------------------- 
+ISall<-rbind(b.Is.2018,b.Is.2019)
+ISall$Year<-rep(c(2018,2019),each=18)
+ISall$Treatment<-factor(ISall$Treatment, levels=c("Control", "Feedback","Exclusion"))
+
+P.Is<-ggplot(data=ISall, aes(x=Pair, y=Is, color=Treatment))+
+  facet_wrap(~Year,nrow=1)+
+  geom_pointrange(aes(ymin=Is.95lo, ymax=Is.95hi),
+                  position=position_dodge(width=0.8))+
+  coord_flip()+
+  geom_hline(yintercept = 0,linetype="dashed")+
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  theme_bw()+
+  labs(x="Species pair", y="Projected pairwise interaction strength")
+P.Is

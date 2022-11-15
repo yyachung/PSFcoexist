@@ -8,6 +8,8 @@ library(car)
 library(lme4)
 library(ggpubr)
 library(cowplot)
+library(lmerTest)
+library(knitr)
 
 #Load data and process ---------------------------
 all2018<-read.csv("./data/Transplant data clean 190102.csv") #2018 data
@@ -38,7 +40,13 @@ summary(m.abv)
 Anova(m.abv)#Treatment p~0, DonorSpp p<0.0001, Transplant p~0, Year p~0, Donor:Transplant p=0.00375
 plotdf.abv<-summary(emmeans(m.abv,~DonorSpp|Transplant|Treatment,type = "response"))
 
-write.csv(plotdf.abv,"./data/Growth coefficients.csv")                    
+#write.csv(plotdf.abv,"./data/Growth coefficients.csv")   
+#Try mixed model 
+all$block<-paste(all$Year,all$Rep,sep=".")
+mixed.abv<-lmer(log(Abv)~Treatment*DonorSpp*Transplant+factor(Year)+(1|block),data=all)
+summary(mixed.abv)
+Anova(mixed.abv)#results stayed the same
+
 #Germination global model-------------------
 #Calculate #failues
 summary(all$Germ)#max is 11 
@@ -52,6 +60,11 @@ Anova(m.germ)#Type II Chisq Analysis of Deviance test
 summary(m.germ)
 plotdf.germ<-summary(emmeans(m.germ,~DonorSpp|Transplant|Treatment,type = "response"))
 
+#Try mixed model 
+mixed.germ<-glmer(cbind(Germ,Germ.fail)~Treatment*DonorSpp*Transplant+factor(Year)+(1|block),data=all,family="binomial")
+summary(mixed.germ)
+Anova(mixed.germ)#results stayed the same
+
 #Survival global model-------------------
 m.surv<-glm(Surv~Treatment*DonorSpp*Transplant+factor(Year),data=all,family="binomial")
 plot(m.surv)#hard to interpret
@@ -59,6 +72,11 @@ summary(m.surv)#hard to interpret
 Anova(m.surv)#Chi-sq should still apply. Transplant sig.
 #warning message about fitted prob 0/1, understandable since surv probs generally high
 plotdf.surv<-summary(emmeans(m.surv,~DonorSpp|Transplant|Treatment,type = "response"))
+
+#Try mixed model 
+mixed.surv<-glmer(Surv~Treatment*DonorSpp*Transplant+factor(Year)+(1|block),data=all,family="binomial")
+summary(mixed.surv)
+Anova(mixed.surv)#results stayed the same
 
 #Make big multi-panel of all results----------------
 #Make Intra/Inter label
@@ -208,3 +226,14 @@ germp<-germ+coord_cartesian(clip = "off") + # allows plotting anywhere on the ca
 #Plot together
 ggarrange(germp, survp, abvp, ncol = 1, nrow = 3, align = "v",labels = c("A", "B","C"),
           common.legend = TRUE, legend = "right")
+
+#Correlating responses across vital rates----------------
+ggplot(data=all, aes(x=Germ/10, y=Abv, color=Treatment, shape=DonorSpp))+
+  facet_grid(~Transplant)+
+  geom_point()+  
+  scale_color_manual(values=c("#E69F00", "#56B4E9", "#009E73"))+
+  theme_bw()+
+  theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+
+  scale_shape_discrete(name="Soil environment")+
+  xlab("Germination probability")+ylab("Aboveground biomass")
+
